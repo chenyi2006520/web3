@@ -39,7 +39,7 @@ return array(
         'game/:province\.html$' => 'Bsw/index?province=:1',//省 
         'game/:province/:city$' => 'Bsw/index?province=:1&=city=:2',//类型省市
         'game/:year\d$' => 'Bsw/index?year=:1&type=all',//年份        
-        'game?type=:type$' => 'Bsw/index?type=:1&=province=all',//类型
+        'game?type=:type$' => 'Bsw/index?type=:1',//类型
         
         'games/:id\d$'  => 'Home/Bsw/viewGame?id=:1',//赛事浏览，采用复数是为了减少与game/year/重复的几率
     ),
