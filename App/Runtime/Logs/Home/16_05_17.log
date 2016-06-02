@@ -1,0 +1,7 @@
+[ 2016-05-17T17:23:12+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[HY000] [1049] Unknown database 'mydbforcy'
+
+[ 2016-05-17T17:24:20+08:00 ] 127.0.0.1 /
+ERR: 1146:Table 'mydbforcy.ktm_bsw_game' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ktm_bsw_game`
+

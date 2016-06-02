@@ -1,0 +1,4 @@
+[ 2016-05-22T14:40:14+08:00 ] 127.0.0.1 /Admin/Bsw/handleAlterGame
+ERR: 1048:Column 'g_image' cannot be null
+ [ SQL语句 ] : UPDATE `ktm_bsw_game` SET `g_name`='湖南网儿码字',`g_event`='6',`g_location`='[{&quot;id&quot;:&quot;430000&quot;,&quot;name&quot;:&quot;湖南省&quot;},{&quot;id&quot;:&quot;430100&quot;,&quot;name&quot;:&quot;长沙市&quot;},{&quot;id&quot;:&quot;430102&quot;,&quot;name&quot;:&quot;芙蓉区&quot;}]',`g_time_s`='1463465100',`g_time_e`='1464069900',`g_age`='2',`g_star`='5',`g_gps`='31.942839972853083,117.23922727396712',`g_gender`='0',`g_introduction`='湖南网儿码字湖南网儿码字湖南网儿码字湖南湖南网儿码字湖南网儿码字湖南网儿码字湖南湖南网儿码字湖南网儿码字湖南网儿码字湖南湖南网儿码字湖南网儿码字湖南网儿码字湖南',`g_image`=NULL,`g_singup_s`='2016',`g_singup_e`='2016',`g_address`='芙蓉',`g_fee`='111',`g_amount`='121',`g_sponsor`='湖南网儿码字' WHERE `id` = 8
+

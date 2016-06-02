@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" href="__PUBLIC__/Css/public.css" />
+<link rel="stylesheet" href="__STATIC__/JQuery/jquery-ui.min.css">
+<script src="__STATIC__/JQuery/jquery-1.11.3.min.js"></script>
+<script src="__STATIC__/JQuery/jquery-ui.min.js"></script>
+<head>
+</head>
+<body>
+        <table class="table">
+            <tr>
+                <td align="right">赛事名称：</td>
+                <td>
+                    {$game.g_name}
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事项目：</td>
+                <td>
+                    {$game.nee}
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事地点：</td>
+                <td>
+                    {$game.g_location}（需要写一个数据库函数 来处理现有数据结构）
+                </td>
+            </tr>
+            <tr>
+                <td align="right">开始时间：</td>
+                <td>
+                     {$game.g_time_s}
+                </td>
+            </tr>
+            <tr>
+                <td align="right">结束时间：</td>
+                <td>
+                    {$game.g_time_e|mktime=###}
+                </td>
+            </tr>
+            <tr>
+                <td align="right">年龄：</td>
+                <td>{$game.g_age}</td>
+            </tr>
+            <tr>
+                <td align="right">星级：</td>
+                <td>
+                    {$game.g_star}
+                    </td>
+            </tr>
+            <tr>
+                <td align="right">GPS坐标：</td>
+                <td>
+                    {$game.g_gps}
+                    </td>
+            </tr>
+            <tr>
+                <td align="right">性别：</td>
+                <td>
+                    {$game.g_gender}
+                </td>
+            </tr>
+            <tr>
+                <td align="right">简介：</td>
+                <td>
+                    {$game.g_introduction}
+                    </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <input type="submit" value="保存添加">
+                </td>
+            </tr>
+        </table>
+</body>
+
+</html>

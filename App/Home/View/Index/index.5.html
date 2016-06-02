@@ -1,0 +1,1572 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta content="authenticity_token" name="csrf-param">
+    <meta name="apple-mobile-web-app-title" content="比赛网">
+    <link href="/Public/favicon.ico" rel="shortcut icon">
+    <block name="header"><include file="Public/header" title="比赛网-民间比赛第一门户" keywords="比赛网,比赛,体育比赛,足球比赛,篮球比赛,羽毛球比赛,民间比赛" description="民间比赛第一门户" copyright="合肥宽土猫科技有限公司"/></block>
+    <link rel="stylesheet" href="__STATIC__/css/bootstrap.min.css"  media="screen">
+    <link rel="stylesheet" href="__PUBLIC__/css/application_v3.css">    
+    <link rel="stylesheet" href="__PUBLIC__/css/bisai.css">
+    <script src="__STATIC__/js/jquery-2.2.0.min.js"></script>
+    <script src="__STATIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/bisai.js"></script>
+
+    <script src="http://js-agent.newrelic.com/nr-918.min.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script async="" src="http://static.sensorsdata.cn/sdk/vtrack.1.3.4.js"></script>
+    <script type="text/javascript" async="" src="http://dn-growing.qbox.me/vds.js"></script>
+    <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script>
+    <script type="text/javascript">
+        window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"555569109f","applicationID":"2084834","transactionName":"IVpfFUZXDV9SQk1bCQ9QHghaXARL","queueTime":0,"applicationTime":48,"agent":""}
+    </script>
+<!--
+    <link href="http://7viifb.com1.z0.glb.clouddn.com/assets/application_v3-0ab9612a7b751baf95585b4b32e01ad3.css" media="screen" rel="stylesheet" type="text/css">-->
+    <script src="http://7viifb.com1.z0.glb.clouddn.com/assets/application_v3-41efa7950c103c645432514dc7abdab3.js" type="text/javascript"></script>
+    <link href="http://v3.jiathis.com/code/css/jiathis_share.css" rel="stylesheet" type="text/css">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="http://pic.iranshao.com/photo/image/logo57x57-90c6683c093ade97e78c3e89461c568c.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://pic.iranshao.com/photo/image/logo72x72-8f06f6215fa5d284a330a3e69c82400b.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://pic.iranshao.com/photo/image/logo114x114-b0691720957893937b0f65eb60ec64df.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://pic.iranshao.com/photo/image/logo144x144-a8520c1e88b605b8ac650e7e34864062.png">
+    
+    <!--单页自定义样式引入-->
+    <block name="headerCss"></block>
+</head>
+
+<body>
+    <nav id="my-menu" class="mm-menu mm-horizontal mm-white mm-offcanvas">
+        <ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
+            <li class="user-status">
+                <a href="/login" data-ajax="false">登录</a>
+            </li>
+            <li><a href="/m" data-ajax="false">首页</a></li>
+            <li><a href="/m/races">比赛</a></li>
+            <li><a href="/m/articles">资讯</a></li>
+            <li><a href="/diaries">原创</a></li>
+            <li><a href="/m/trials">众测</a></li>
+            <li><a href="/m/profile/reg_orders">我的报名</a></li>
+            <li><a href="/m/profile/setting" data-ajax="false">账户设置</a></li>
+            <li></li>
+        </ul>
+    </nav>
+    <div class="mm-page">
+        <div id="flash_message" class="col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4" style="display: none;"></div>
+        <div class="mod-head visible-sm visible-xs">
+            <a href="#my-menu" class="mod-icon mod-left icon-menu"><span>导航</span></a>
+            <a href="/login" class="mod-icon mod-right icon-right icon-user"><span>账户</span>
+    </a>
+            <h1 class="mod-head-title">
+    <a href="/m" class="logo"><span>爱燃烧</span></a>
+  </h1>
+        </div>
+        <div class="page-header hidden-xs">
+            <div class="page-header-top">
+                <div class="container">
+                    <div class="page-logo hidden-sm hidden-xs" id="logo_v1">
+                        <a href="/" title="爱燃烧，运动不止于梦想">
+                            <i>运动不止于梦想</i>
+                        </a>
+                    </div>
+
+                    <div class="top-menu hidden-sm hidden-xs">
+                        <ul class="nav navbar-nav pull-right">
+
+
+
+                            <li class="dropdown hover-dropdown">
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="/login" class="js-modal-login dropdown-toggle" data-position="登录注册">登录/注册</a>
+                            </li>
+
+                            <li class="dropdown hover-dropdown">
+                                <a href="javascript:;" class="dropdown-toggle btn btn-icon-only btn-irs" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"
+                                    style="margin:10px 0 0 0; padding:9px 0 0 3px">
+                                    <i class="fa fa-plus" style="color:#ffffff;"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-default">
+                                    <li>
+                                        <a href="/images/new" onclick="_czc.push(['_trackEvent', 'dropdown-menu-button', 'upload_photo', 'page: http://iranshao.com/','0','']); mixpanel.track('上传照片',{'position':'下拉菜单','user_name':'', 'user':''}); sa.track('upload_photos',{'position':'下拉菜单','user_name':'', 'user':''});"
+                                            class="js-modal-login" data-return-to="/images/new" data-position="上传照片">上传照片</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/races/new" onclick="_czc.push(['_trackEvent', 'dropdown-menu-button', 'create_race', 'page: http://iranshao.com/','0','']);"
+                                            class="js-modal-login" data-return-to="/races/new" data-position="创建比赛">创建比赛</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/gears/new" onclick="_czc.push(['_trackEvent', 'dropdown-menu-button', 'create_gear', 'page: http://iranshao.com/','0','']);"
+                                            class="js-modal-login" data-return-to="/gears/new" data-position="发布装备">发布装备</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/diaries/new" class="js-modal-login" data-position="发布原创" data-return-to="/diaries/new" onclick="_czc.push(['_trackEvent', 'dropdown-menu-button', 'post_diary', 'page: http://iranshao.com/','0','']); mixpanel.track('发布原创',{'position':'下拉菜单','user':'', 'user_name': ''});">发布原创</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/results/search" class="js-modal-login" data-position="认领成绩" data-return-to="/results/search" onclick="_czc.push(['_trackEvent', 'dropdown-menu-button', 'claim_result', 'page: http://iranshao.com/','0','']); mixpanel.track('认领成绩',{'position':'下拉菜单','user_name':'', 'user':''});">认领成绩</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="top-search">
+                        <form action="/s" method="get">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" placeholder="搜索比赛,选手,装备,测评,资讯">
+                                <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">搜索</button>
+        </span>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="page-header-menu">
+                <div class="container">
+                    <div class="fast-menu open">
+                        <a href="javascript:;"> 快速入口 <i class="fa fa-angle-down"></i> </a>
+
+                        <ul class="dropdown-menu without-shadow">
+                            <li class="menu-item clearfix">
+                                <a href="/bundled_races" class="leader">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                    <span>1689场比赛</span> 查找比赛
+                                </a>
+                            </li>
+
+                            <li class="menu-item clearfix">
+                                <a href="/gears" class="leader">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                    <span>1743个装备</span> 查找装备
+                                </a>
+                            </li>
+
+                            <li class="menu-item clearfix">
+                                <a href="/albums" class="leader" ,="" onclick="_czc.push(['_trackEvent', 'fast-menu-button', 'albums_index', 'page: #{request.url.force_encoding('UTF-8')}','0','']);">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                    <span>2504096张照片</span> 查找照片
+                                </a>
+                            </li>
+
+                            <li class="menu-item clearfix">
+                                <a href="/bundled_races?reg_status=doing" class="leader">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                    <span>153场比赛</span> 比赛报名
+                                </a>
+                            </li>
+                            <li class="menu-item clearfix">
+                                <a href="/results/search" class="leader hl" onclick="_czc.push(['_trackEvent', 'fast-menu-button', 'claim_result', 'page: http://iranshao.com/?nonce=1460665230&amp;timestamp=1460667593&amp;signature=a51491e67829a574de2f92763d4d00931d27e48e','0','']); mixpanel.track('认领成绩',{'position':'快速入口','user_name':'', 'user':''});">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                    <span>1010449条成绩</span> 认领成绩
+                                </a>
+                            </li>
+
+                            <li class="menu-btns">
+                                <div class="one-line">
+                                    <a href="/images/new" class="js-modal-login btn btn-sm green" onclick="_czc.push(['_trackEvent', 'fast-menu-button', 'upload_photo', 'page: http://iranshao.com/','0','']); mixpanel.track('上传照片',{'position':'快速入口','user_name':'#{current_user.try :nickname}', 'user':'#{current_user.try :id}'}); sa.track('upload_photos',{'position':'快速入口','user_name':'#{current_user.try :nickname}', 'user':'#{current_user.try :id}'});"
+                                        data-position="上传照片">
+                                        <i class="fa fa-upload"></i>上传照片
+                                    </a>
+                                </div>
+                                <div class="two-line clearfix">
+                                    <a href="/races/new" class="js-modal-login btn btn-sm yellow lf" onclick="_czc.push(['_trackEvent', 'fast-menu-button', 'create_race', 'page: http://iranshao.com/','0','']);"
+                                        data-position="创建比赛">
+                                        <i class="fa fa-pencil"></i>创建比赛
+                                    </a>
+                                    <a href="/diaries/new" class="js-modal-login btn btn-sm yellow rt" data-position="发布原创" onclick="_czc.push(['_trackEvent', 'fast-menu-button', 'post_diary', 'page: http://iranshao.com/','0','']); mixpanel.track('发布原创',{'position':'快速入口','user':'', 'user_name': ''});">
+                                        <i class="fa fa-pencil"></i>发布原创
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="hor-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="/">首页</a>
+                            </li>
+                            <li class="">
+                                <a href="/race">比赛</a>
+                            </li>
+                            <li class="">
+                                <a href="/gear">装备</a>
+                            </li>
+                            <li class="">
+                                <a href="/articles">资讯</a>
+                            </li>
+                            <li class="">
+                                <a href="/diaries">原创</a>
+                            </li>
+                            <li class="">
+                                <a href="/trials">
+              众测 <img alt="new" class="sup-new" src="http://pic.iranshao.com/photo/image/sup_new@2x-08770ca6e46c3ea0b94b237be8b807c7.png">
+            </a>
+                            </li>
+                            <!-- <li class="">
+            <a href="/groups">小组</a>
+          </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-header"></div>
+        <div class="content-container home">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-9 home-page">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="topping clearfix">
+                                    <div class="focus clearfix">
+                                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel" data-slide-to="0" class=""></li>
+                                                <li data-target="#carousel" data-slide-to="1" class=""></li>
+                                                <li data-target="#carousel" data-slide-to="2" class=""></li>
+                                                <li data-target="#carousel" data-slide-to="3" class=""></li>
+                                            </ol>
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="item">
+                                                    <a href="http://c.admaster.com.cn/c/a66492,b1038354,c2848,i0,m101,h" onclick="_czc.push(['_trackEvent', 'home_v4', 'carousel-click', '0--http://c.admaster.com.cn/c/a66492,b1038354,c2848,i0,m101,h','0','']); sa.track('carousel_click', {home_key: 'home_v4', index: '0', slide_text: '', slide_link: 'http://c.admaster.com.cn/c/a66492,b1038354,c2848,i0,m101,h'});"
+                                                        target="_blank">
+                                                        <img alt="" src="http://pic.iranshao.com/photo/image/cab74c64ceb1c1f75d16ad1691701bdf.jpg">
+                                                        <div class="carousel-caption">
+
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item active left">
+                                                    <a href="http://iranshao.com/races/684" onclick="_czc.push(['_trackEvent', 'home_v4', 'carousel-click', '1--http://iranshao.com/races/684','0','']); sa.track('carousel_click', {home_key: 'home_v4', index: '1', slide_text: '', slide_link: 'http://iranshao.com/races/684'});"
+                                                        target="_blank">
+                                                        <img alt="" src="http://pic.iranshao.com/photo/image/e3a6e443f262b5e66c6bea296e176cf7.jpg">
+                                                        <div class="carousel-caption">
+
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item next left">
+                                                    <a href="http://iranshao.com/races/1985" onclick="_czc.push(['_trackEvent', 'home_v4', 'carousel-click', '2--http://iranshao.com/races/1985','0','']); sa.track('carousel_click', {home_key: 'home_v4', index: '2', slide_text: '', slide_link: 'http://iranshao.com/races/1985'});"
+                                                        target="_blank">
+                                                        <img alt="" src="http://pic.iranshao.com/photo/image/bdf72fb0b8c1d015a70d91e8896ed927.jpg">
+                                                        <div class="carousel-caption">
+
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="http://boston2016.iranshao.com/" onclick="_czc.push(['_trackEvent', 'home_v4', 'carousel-click', '3--http://boston2016.iranshao.com/','0','']); sa.track('carousel_click', {home_key: 'home_v4', index: '3', slide_text: '', slide_link: 'http://boston2016.iranshao.com/'});"
+                                                        target="_blank">
+                                                        <img alt="" src="http://pic.iranshao.com/photo/image/4875e5e9d6608ef5de3153aab99a164e.jpg">
+                                                        <div class="carousel-caption">
+
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Controls -->
+                                            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                <span class="sr-only"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                <span class="sr-only"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 hot">
+                                <div class="mod mod-lg">
+                                    <div class="mod-hd">
+                                        <h2>热门</h2>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                        <a href="http://iranshao.com/register/reg_races/526" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'0', 'name': '一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名', 'link': 'http://iranshao.com/register/reg_races/526', 'type':'image'});"
+                                            target="_blank" title="一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名">
+                                            <img alt="一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名" src="http://pic.iranshao.com/photo/image/a9b4f045e5532f2f2d75ff8922c9c4a1.jpg">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="text txt-line-2 img-bt-title">
+                                                <a href="http://iranshao.com/register/reg_races/526" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'0', 'name': '一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名', 'link': 'http://iranshao.com/register/reg_races/526', 'type':'text'});"
+                                                    target="_blank" title="一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名">一键报名 | 世界第一马拉松-纽约马拉松少量名额，免抽签报名</a>
+                                            </div>
+                                            <div class="attr">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                        <a href="http://iranshao.com/trials" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'1', 'name': '众测 | Nathan、Garmin、adidas…装备尖货免费申请', 'link': 'http://iranshao.com/trials', 'type':'image'});"
+                                            target="_blank" title="众测 | Nathan、Garmin、adidas…装备尖货免费申请">
+                                            <img alt="众测 | Nathan、Garmin、adidas…装备尖货免费申请" src="http://pic.iranshao.com/photo/image/7dc2a8401d2257eef933d3c5cc758447.jpg">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="text txt-line-2 img-bt-title">
+                                                <a href="http://iranshao.com/trials" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'1', 'name': '众测 | Nathan、Garmin、adidas…装备尖货免费申请', 'link': 'http://iranshao.com/trials', 'type':'text'});"
+                                                    target="_blank" title="众测 | Nathan、Garmin、adidas…装备尖货免费申请">众测 | Nathan、Garmin、adidas…装备尖货免费申请</a>
+                                            </div>
+                                            <div class="attr">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                        <a href="http://iranshao.com/diaries/topic/747" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'2', 'name': '原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品', 'link': 'http://iranshao.com/diaries/topic/747', 'type':'image'});"
+                                            target="_blank" title="原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品">
+                                            <img alt="原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品" src="http://pic.iranshao.com/photo/image/dd57c2b1bc7bb9fe09c4203eaf584ebf.jpg">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="text txt-line-2 img-bt-title">
+                                                <a href="http://iranshao.com/diaries/topic/747" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'2', 'name': '原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品', 'link': 'http://iranshao.com/diaries/topic/747', 'type':'text'});"
+                                                    target="_blank" title="原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品">原创活动 | 写武汉国际马拉松原创赛事日记，赢取礼品</a>
+                                            </div>
+                                            <div class="attr">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                        <a href="http://iranshao.com/register/reg_races/cfd466" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'3', 'name': '一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募', 'link': 'http://iranshao.com/register/reg_races/cfd466', 'type':'image'});"
+                                            target="_blank" title="一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募">
+                                            <img alt="一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募" src="http://pic.iranshao.com/photo/image/b51a1fc15a26b316fa4f3585c0bcb3bd.jpg">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="text txt-line-2 img-bt-title">
+                                                <a href="http://iranshao.com/register/reg_races/cfd466" onclick="sa.track('recommend_click', {'place':'homehot', 'position':'3', 'name': '一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募', 'link': 'http://iranshao.com/register/reg_races/cfd466', 'type':'text'});"
+                                                    target="_blank" title="一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募">一键报名 | 吃好喝好，不醉不归！波尔多红酒马拉松正在招募</a>
+                                            </div>
+                                            <div class="attr">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 grid">
+                                <div class="mod mod-lg">
+                                    <div class="mod-hd">
+                                        <h2>推荐比赛</h2>
+                                        <a href="/bundled_races" class="more pull-right">更多</a>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/races/1595" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'0', 'name': '括苍之巅-柴古唐斯PLUS越野赛', 'link': '#<Race:0x007f56cd24bde8>', 'type':'image'});"
+                                        target="_blank" title="括苍之巅-柴古唐斯PLUS越野赛">
+                                        <img alt="括苍之巅-柴古唐斯PLUS越野赛" src="http://pic.iranshao.com/photo/image/QQ%E6%88%AA%E5%9B%BE20151022100502-9b6e65311381d291ae255586e5890f41.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/races/1595" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'0', 'name': '括苍之巅-柴古唐斯PLUS越野赛', 'link': '#<Race:0x007f56cd24bde8>', 'type':'text'});"
+                                                target="_blank" title="括苍之巅-柴古唐斯PLUS越野赛">括苍之巅-柴古唐斯PLUS越野赛</a>
+                                        </div>
+                                        <div class="attr time">2016-04-16</div>
+                                        <div class="attr state">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/races/1985" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'1', 'name': '上海国际半程马拉松赛', 'link': '#<Race:0x007f56e41ad8c0>', 'type':'image'});"
+                                        target="_blank" title="上海国际半程马拉松赛">
+                                        <img alt="上海国际半程马拉松赛" src="http://pic.iranshao.com/photo/image/QQ%E6%88%AA%E5%9B%BE20150925150929-2905e9a3f4f1e4f550555ada435db911.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/races/1985" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'1', 'name': '上海国际半程马拉松赛', 'link': '#<Race:0x007f56e41ad8c0>', 'type':'text'});"
+                                                target="_blank" title="上海国际半程马拉松赛">上海国际半程马拉松赛</a>
+                                        </div>
+                                        <div class="attr time">2016-04-17</div>
+                                        <div class="attr state">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/races/1874" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'2', 'name': '太湖图影国际半程马拉松', 'link': '#<Race:0x007f56d68aa190>', 'type':'image'});"
+                                        target="_blank" title="太湖图影国际半程马拉松">
+                                        <img alt="太湖图影国际半程马拉松" src="http://pic.iranshao.com/photo/image/1-d99a5dcb91543828b442e82ca247dd7a.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/races/1874" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'2', 'name': '太湖图影国际半程马拉松', 'link': '#<Race:0x007f56d68aa190>', 'type':'text'});"
+                                                target="_blank" title="太湖图影国际半程马拉松">太湖图影国际半程马拉松</a>
+                                        </div>
+                                        <div class="attr time">2016-04-17</div>
+                                        <div class="attr state">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/races/4897" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'3', 'name': '北京妫水河女子半程马拉松', 'link': '#<Race:0x007f56cd831258>', 'type':'image'});"
+                                        target="_blank" title="北京妫水河女子半程马拉松">
+                                        <img alt="北京妫水河女子半程马拉松" src="http://pic.iranshao.com/photo/image/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-06%20%E4%B8%8A%E5%8D%8810.39.29-e507ac7e33b60404c2b516ce2cecf098.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/races/4897" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'3', 'name': '北京妫水河女子半程马拉松', 'link': '#<Race:0x007f56cd831258>', 'type':'text'});"
+                                                target="_blank" title="北京妫水河女子半程马拉松">北京妫水河女子半程马拉松</a>
+                                        </div>
+                                        <div class="attr time">2016-05-22</div>
+                                        <div class="attr state">
+                                            报名中
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/races/4893" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'4', 'name': ' 乐逐自然系列赛·春之赏花', 'link': '#<Race:0x007f56cf19ed58>', 'type':'image'});"
+                                        target="_blank" title=" 乐逐自然系列赛·春之赏花">
+                                        <img alt=" 乐逐自然系列赛·春之赏花" src="http://pic.iranshao.com/photo/image/9696F10C-AB95-4D55-9AA0-3DD15F96F052-cacb8760a523f414a4dfb938a4c7c9b7.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/races/4893" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'4', 'name': ' 乐逐自然系列赛·春之赏花', 'link': '#<Race:0x007f56cf19ed58>', 'type':'text'});"
+                                                target="_blank" title=" 乐逐自然系列赛·春之赏花"> 乐逐自然系列赛·春之赏花</a>
+                                        </div>
+                                        <div class="attr time">2016-04-30</div>
+                                        <div class="attr state">
+                                            报名中
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="http://iranshao.com/register/reg_races/nansilu" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'5', 'name': '2016邛崃南丝路半程马拉松', 'link': 'http://iranshao.com/register/reg_races/nansilu', 'type':'image'});"
+                                        target="_blank" title="2016邛崃南丝路半程马拉松">
+                                        <img alt="2016邛崃南丝路半程马拉松" src="http://pic.iranshao.com/photo/image/%E5%8D%97%E4%B8%9D%E8%B7%AF%E4%B8%BB%E8%A7%86%E8%A7%89-01-2de5eb2f78cdc95b420cef5684f6e786.jpg!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="http://iranshao.com/register/reg_races/nansilu" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'5', 'name': '2016邛崃南丝路半程马拉松', 'link': 'http://iranshao.com/register/reg_races/nansilu', 'type':'text'});"
+                                                target="_blank" title="2016邛崃南丝路半程马拉松">2016邛崃南丝路半程马拉松</a>
+                                        </div>
+                                        <div class="attr time">2016-05-22</div>
+                                        <div class="attr state">
+                                            报名中
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 grid">
+                                <div class="mod mod-lg">
+                                    <div class="mod-hd">
+                                        <h2>推荐装备</h2>
+                                        <a href="/gears" class="more pull-right">更多</a>
+                                    </div>
+                                </div>
+
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/gears/2388" onclick="sa.track('recommend_click', {'place':'recommend_gear', 'position':'0', 'name': 'Superior 2.0', 'link': '#<Gear:0x007fa77f1e83f8>', 'type':'image'});"
+                                        target="_blank" title="Superior 2.0">
+                                        <img alt="Superior 2.0" src="http://pic.iranshao.com/photo/image/DSC_7217-c6867690bf09fe6b8f7fab7e328cf38c.jpg!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/gears/2388" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'0', 'name': 'Superior 2.0', 'link': '#<Gear:0x007fa77f1e83f8>', 'type':'text'});"
+                                                target="_blank" title="Superior 2.0">Superior 2.0</a>
+                                        </div>
+                                        <div class="attr">¥ 849.00</div>
+                                    </div>
+                                </div>
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/gears/2387" onclick="sa.track('recommend_click', {'place':'recommend_gear', 'position':'1', 'name': 'Nike Free RN Motion Flyknit', 'link': '#<Gear:0x007fa77693cf40>', 'type':'image'});"
+                                        target="_blank" title="Nike Free RN Motion Flyknit">
+                                        <img alt="Nike Free RN Motion Flyknit" src="http://pic.iranshao.com/photo/image/Nike_Free_RN_Motion_Flyknit_8_original-a6781b5dcc8681a542628f0aedb6ba69.jpg!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/gears/2387" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'1', 'name': 'Nike Free RN Motion Flyknit', 'link': '#<Gear:0x007fa77693cf40>', 'type':'text'});"
+                                                target="_blank" title="Nike Free RN Motion Flyknit">Nike Free RN Motion Flyknit</a>
+                                        </div>
+                                        <div class="attr">¥ 999.00</div>
+                                    </div>
+                                </div>
+                                <div class="cell col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="/gears/2331" onclick="sa.track('recommend_click', {'place':'recommend_gear', 'position':'2', 'name': 'Ambit3 VERTICAL', 'link': '#<Gear:0x007fa776f5b700>', 'type':'image'});"
+                                        target="_blank" title="Ambit3 VERTICAL">
+                                        <img alt="Ambit3 VERTICAL" src="http://pic.iranshao.com/photo/image/SS021844000-Ambit3-Vertical-Black-Front-View-Ascent-since-reset-date-metric-NEGAVIVE-7f713be59db120e431c10b9aac93125c.png!80x80">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="text img-rt-title">
+                                            <a href="/gears/2331" onclick="sa.track('recommend_click', {'place':'recommend_race', 'position':'2', 'name': 'Ambit3 VERTICAL', 'link': '#<Gear:0x007fa776f5b700>', 'type':'text'});"
+                                                target="_blank" title="Ambit3 VERTICAL">Ambit3 VERTICAL</a>
+                                        </div>
+                                        <div class="attr">¥ 3,090.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 articles">
+                                <div class="mod mod-lg">
+                                    <div class="mod-hd">
+                                        <h2>推荐资讯</h2>
+                                        <a href="/articles" class="more pull-right">更多</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 left">
+                                    <div class="pos-1">
+                                        <a href="/articles/2505-boston-marathon-pre-nights" target="_blank">
+                                            <img alt="波士顿梦想 | 波马前夜 让人无法拒绝的城市" src="http://pic.iranshao.com/photo/image/6b096277024ac0452c86394f7ef8870e.jpg!660x360">
+                                            <div class="caption">波士顿梦想 | 波马前夜 让人无法拒绝的城市</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="clearfix pos-2">
+                                        <div class="title">
+                                            <a href="/articles/2501-2016-shaghai-half-marathon" target="_blank">2016上海半程国际马拉松探路报告+完赛指南</a>
+                                        </div>
+                                        <div class="text subtitle">
+                                            <a href="/articles/2501-2016-shaghai-half-marathon" target="_blank">
+                                                <img alt="2016上海半程国际马拉松探路报告+完赛指南" src="http://pic.iranshao.com/photo/image/dfc5ef396ff18c65abbdc6921942a83f.jpg!660x360">
+                                            </a>
+                                            <p class="hidden-xs">
+                                                我们根据不同的半马目标成绩——130、145、200和215，配合不同的路段，为大家提供了针对性的意见，希望所有参赛跑者可以安全愉快地完成比赛，享受比赛带来的乐趣。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 right">
+                                    <div class="item col-xs-12">
+                                        <a href="/articles/2503-boston-2016-guide" target="_blank">
+                                            <img alt="波士顿梦想 | 波士顿马拉松参赛指南" src="http://pic.iranshao.com/photo/image/08f85939c179d2c10b8eb1e28f779c51.png!320x175">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="title">
+                                                <a href="/articles/2503-boston-2016-guide" target="_blank">波士顿梦想 | 波士顿马拉松参赛指南</a>
+                                            </div>
+                                            <div class="text txt-line-2 subtitle hidden-xs">
+                                                波士顿马拉松，一般简称波马（波特兰马拉松也简称波马）是全世界唯一一个不在周末举办的马拉松，它在每年的爱国者日（Patriots' Day（四月的第三个星期一，在这一天，波士顿红袜队也会举办纪念比赛），于美国马萨诸塞州的波士顿地区举办。1897年创立的波士顿马拉松是在1896年夏季奥运会的基础上产生的。它是全世界最古老的马拉松比赛，也是七大世界马拉松大满贯赛事之一。波士顿田径协会是波士顿马拉松的主办方。
+                                            </div>
+                                            <!-- <span class="time pull-right"></span> -->
+                                        </div>
+                                    </div>
+                                    <div class="item col-xs-12">
+                                        <a href="/articles/2504-altra-superior-unbox" target="_blank">
+                                            <img alt="开箱 | Altra Superior 2.0 大头越野鞋 越野新风格？" src="http://pic.iranshao.com/photo/image/deb0522767e883aae6d9e4f0b67e2168.jpg!320x175">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="title">
+                                                <a href="/articles/2504-altra-superior-unbox" target="_blank">开箱 | Altra Superior 2.0 大头越野鞋 越野新风格？</a>
+                                            </div>
+                                            <div class="text txt-line-2 subtitle hidden-xs">
+                                                独具特色的新兴跑鞋品牌Altra进入中国，大鞋头是否会改变跑鞋市场现状？
+                                            </div>
+                                            <!-- <span class="time pull-right"></span> -->
+                                        </div>
+                                    </div>
+                                    <div class="item col-xs-12">
+                                        <a href="/articles/2497-mindful-runner" target="_blank">
+                                            <img alt="怎样才能在奔跑中学会沉思" src="http://pic.iranshao.com/photo/image/e142d472d29fa3357c525671d29e7587.jpg!320x175">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="title">
+                                                <a href="/articles/2497-mindful-runner" target="_blank">怎样才能在奔跑中学会沉思</a>
+                                            </div>
+                                            <div class="text txt-line-2 subtitle hidden-xs">
+                                                仁波切与跑者的邂逅，一个着魔老外的自述：怎样才能以正念奔跑？
+                                            </div>
+                                            <!-- <span class="time pull-right"></span> -->
+                                        </div>
+                                    </div>
+                                    <div class="item col-xs-12">
+                                        <a href="/articles/2499-energy-gels" target="_blank">
+                                            <img alt="扫盲 | 关于能量胶看这一篇就够了" src="http://pic.iranshao.com/photo/image/f118267b21513f7072e2f7a608a14a71.jpg!320x175">
+                                        </a>
+                                        <div class="meta">
+                                            <div class="title">
+                                                <a href="/articles/2499-energy-gels" target="_blank">扫盲 | 关于能量胶看这一篇就够了</a>
+                                            </div>
+                                            <div class="text txt-line-2 subtitle hidden-xs">
+                                                耐力运动的补给有多重要？笔者是深有体会的。笔者跑第一次半马时，啥都不懂，什么补给也没准备...跑到15k的时候，饿得不要不要地又拉不下脸向其他跑友讨要补给，当时真是饿得我泪流满面心想以后再也不跑步了....饿成狗的这次半马经历，让我对跑步补给产生了浓厚兴趣。
+                                            </div>
+                                            <!-- <span class="time pull-right"></span> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div style="margin: 15px 0;">
+                            <a href="http://iranshao.com/register/reg_races/412" onclick="_czc.push(['_trackEvent', 'home_v4', 'a4', '0--book','0','']);"
+                                target="_blank">
+                                <img src="http://pic.iranshao.com/photo/image/5a1e5eaa01dd7d7d964dc935e585851b.jpg" width="100%">
+                            </a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 diary-list">
+                                <div class="mod mod-lg">
+                                    <div class="mod-hd">
+                                        <h2>推荐原创</h2>
+                                        <a href="/diaries" class="more pull-right">更多</a>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/irs_3124" class="user" target="_blank">
+                                        <img alt="F59e7be883ed3375b5c7be3baedfe2a7" src="http://bskavatar.b0.upaiyun.com/profile/avatar/f59e7be883ed3375b5c7be3baedfe2a7.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170647" target="_blank">只想强风正劲---------记我的海陵岛马拉松</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170647">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">3</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170647#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 1
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/irs_3124" target="_blank">杜鸭</a> 2016-04-15
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            《强风正劲》是我心仪已久的一部关于马拉松的电影，虽然还没来看过，但是看标题就能想象男主角们披着一头长发在风中奔跑的样子；在此之前，我在马拉松的赛道上都是以标志性的短发示人，而这一次的海陵岛马拉松，正是体验一把强风正劲的最好时机，想想若能迎着海风，奔跑在海岸线上，长...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170647" target="_blank">
+                                                <img alt="2016 海陵岛环岛国际马拉松赛" src="http://pic.iranshao.com/photo/image/image001-0c055f21af73fbb3ac5067fbc6a66792.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170647" target="_blank">
+                                                <img alt="2016 海陵岛环岛国际马拉松赛" src="http://pic.iranshao.com/photo/image/image003-ad1822b6a34c240433e5ca60ac95fc47.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170647" target="_blank">
+                                                <img alt="2016 海陵岛环岛国际马拉松赛" src="http://pic.iranshao.com/photo/image/image005-83597ea492fe81c9126c5b6bb6fe8c2a.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170647" target="_blank">
+                                                <img alt="2016 海陵岛环岛国际马拉松赛" src="http://pic.iranshao.com/photo/image/image007-31f0699d0f232ed1057c2243cb023335.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/3884" target="_blank">
+                                                <span class="from label label-default">
+          2016 海陵岛环岛国际马拉松赛
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/luan-shi-yong-ren" class="user" target="_blank">
+                                        <img alt="D97174ac65fe8cb25988965b322fc511" src="http://bskavatar.b0.upaiyun.com/profile/avatar/d97174ac65fe8cb25988965b322fc511.png!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170646" target="_blank">女款斯凯奇众测 | Skechers Go Run 4~超马利器~舒适的穿着体验~</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170646">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">3</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170646#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 2
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/luan-shi-yong-ren" target="_blank">乱世庸人</a> 2016-04-15
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            首先非常感谢爱燃烧给到这个众测名额~从3月24日收到测评的鞋后，到4月10日，三周时间，一共参加了3场超马赛事，累计跑了400+公里，根据赛事额实测体验，给出如下测评，以供其他跑友参考，谢谢~ 开箱篇 收到额快递盒轻到前台美眉不相信会是双鞋~打开依然是熟悉额靓玫红...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170646" target="_blank">
+                                                <img alt="斯凯奇SKECHERS GO Run 4 | 波马冠军的选择" src="http://pic.iranshao.com/photo/image/IMG_5115-4b77c8138e6b46b439e46589e046b223.JPG!168x168">
+                                            </a>
+                                            <a href="/diaries/170646" target="_blank">
+                                                <img alt="斯凯奇SKECHERS GO Run 4 | 波马冠军的选择" src="http://pic.iranshao.com/photo/image/IMG_5116-4eb64c2e94b1ed9ed57252513613f241.JPG!168x168">
+                                            </a>
+                                            <a href="/diaries/170646" target="_blank">
+                                                <img alt="斯凯奇SKECHERS GO Run 4 | 波马冠军的选择" src="http://pic.iranshao.com/photo/image/IMG_5118-9d35abd525b5a132398d96038a3e1050.JPG!168x168">
+                                            </a>
+                                            <a href="/diaries/170646" target="_blank">
+                                                <img alt="斯凯奇SKECHERS GO Run 4 | 波马冠军的选择" src="http://pic.iranshao.com/photo/image/IMG_5123-1b1522fe934735aab08a66acc50ef905.JPG!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/trials/73" target="_blank">
+                                                <span class="from label label-default">
+          斯凯奇SKECHERS GO Run 4 | 波马冠军的选择
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/irs_8ed720" class="user" target="_blank">
+                                        <img alt="Default" src="http://bskavatar.b0.upaiyun.com/default.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170642" target="_blank">平壤马拉松 ——  神秘之旅</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170642">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">13</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170642#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 5
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/irs_8ed720" target="_blank">何东1982</a> 2016-04-14
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            &nbsp; &nbsp; &nbsp;去年在爱燃烧上看见一篇马拉松跑团招募文章《平壤马拉松， 金三胖喊你跑马啦》， 我立刻想起了大学时代的好基友， 楷楷同学，他是三胖的粉丝，连微信头像用的都是三胖那可爱的笑容。楷楷是个跑渣，自从去年和我一起在横店跑了半马之后，他就再也不跑步了，理由是跑步会让...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170642" target="_blank">
+                                                <img alt="2016平壤马拉松" src="http://pic.iranshao.com/photo/image/f496e0aabde0fa9294872b270db59cf4-cc8b4f97d5c59ca254a701fcd864767a.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170642" target="_blank">
+                                                <img alt="2016平壤马拉松" src="http://pic.iranshao.com/photo/image/mmexport1460610614153-7dd55e16bc81e013e05c345e69938fb0.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170642" target="_blank">
+                                                <img alt="2016平壤马拉松" src="http://pic.iranshao.com/photo/image/IMG_20160409_154236-0e9cb13ee0b4423624893977a1c770c1.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170642" target="_blank">
+                                                <img alt="2016平壤马拉松" src="http://pic.iranshao.com/photo/image/mmexport1460613104544-ef45261a09ac2db7a938149b6976c00b.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/3491" target="_blank">
+                                                <span class="from label label-default">
+          2016平壤马拉松
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/xiao-sheng-kou" class="user" target="_blank">
+                                        <img alt="F540fb2aa58732fa3a747425346115ac" src="http://bskavatar.b0.upaiyun.com/profile/avatar/f540fb2aa58732fa3a747425346115ac.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170640" target="_blank">【跑呀，小怪兽】跑崩也没关系的巴黎马拉松，明年你报了吗？</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170640">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">11</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170640#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 4
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/xiao-sheng-kou" target="_blank">小牲口</a> 2016-04-14
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            提前一年就开启报名的巴黎马拉松，2017年，你报了吗？ 巴黎马拉松对于妹子来言，重要程度可能仅仅次于tiffany的名古屋。 毕竟除了买买买的动机外，想到能够在香榭丽舍大街上路过无数的奢侈品店铺，看着无数的巴黎贵妇为你呐喊起跑就会让人激动万分，感慨不已；然后再最崩...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170640" target="_blank">
+                                                <img alt="2016巴黎马拉松" src="http://pic.iranshao.com/photo/image/6a86c5385d2e988234bddccae00e1ff0.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170640" target="_blank">
+                                                <img alt="2016巴黎马拉松" src="http://pic.iranshao.com/photo/image/384dbdee1408c0687a776aa335b33eec.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170640" target="_blank">
+                                                <img alt="2016巴黎马拉松" src="http://pic.iranshao.com/photo/image/26361da9721380ef6fa4ee6141138e71.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170640" target="_blank">
+                                                <img alt="2016巴黎马拉松" src="http://pic.iranshao.com/photo/image/0fbc2a6ef5aa0b4b7bbd1caf6b11ea73.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/2177" target="_blank">
+                                                <span class="from label label-default">
+          2016巴黎马拉松
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/irs_a8653c" class="user" target="_blank">
+                                        <img alt="Cd4dadba7ca0d2dbf2c92bcf12f75edc" src="http://bskavatar.b0.upaiyun.com/profile/avatar/cd4dadba7ca0d2dbf2c92bcf12f75edc.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170609" target="_blank">武汉马拉松是怎样的体验？</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170609">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">12</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170609#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 5
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/irs_a8653c" target="_blank">Crazy碧池</a> 2016-04-13
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            摘要：据说在武汉，美女可以每天被大叔搭讪，虽然内容只有「走不走」。 大部分时间， 你像是跑在一个有很多桥的厨房里， 一个正在油炸烧麦的厨房里，而且抽油烟机坏了。 层层叠叠的围观群众会伴随你全程， 他们是如此热情高涨，像是在观看动物大迁徙。 原来准备用一条微博的长度...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170609" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/b92f7b155a6bf6b92f76daff5edffb9e.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170609" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/f3ec5607e47905220811d2fade1ac23b.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170609" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/8e02af5b9f1757ce2f71cc120fc4f1bc.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170609" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/QQ截图20160413141041-c29a5a6c789e76f21d001f2224a91d75.png!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/3226" target="_blank">
+                                                <span class="from label label-default">
+          2016武汉国际马拉松
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/tang-zheng-yu" class="user" target="_blank">
+                                        <img alt="Da00fe515b67efe442e019970f5bcd1a" src="http://bskavatar.b0.upaiyun.com/profile/avatar/da00fe515b67efe442e019970f5bcd1a.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170563" target="_blank">汉马，足够真诚</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170563">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">21</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170563#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 12
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/tang-zheng-yu" target="_blank">步戈</a> 2016-04-11
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            武汉，这座拥有悠久历史的江城，迎来了他热闹的4月10日。 领物篇 高铁从上海虹桥出发，下午两点多到达汉口，地铁2号线直达中山公园，B1、B2出口在武汉国际会议中心领物。 入口 细细的查看 跟着指引上楼 许是最后一天的缘故，领物的选手不多 志愿者非常热情
+                                            赛事篇 酒...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170563" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/IMG20160409180823878-4610ab197ad00567605558fe26695f46.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170563" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/IMG20160409181044950-3f2a701081804e7fd220a5b94c26db50.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170563" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/IMG20160409181802331-618f70532bd9883765cae68351cb780e.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170563" target="_blank">
+                                                <img alt="2016武汉国际马拉松" src="http://pic.iranshao.com/photo/image/IMG20160409181834176-c72b84eb4fb15bf739959f28104044cf.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/3226" target="_blank">
+                                                <span class="from label label-default">
+          2016武汉国际马拉松
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/pao-zhe-chu-tian" class="user" target="_blank">
+                                        <img alt="0b42cfc3b91cc12cd4580f1696308014" src="http://bskavatar.b0.upaiyun.com/profile/avatar/0b42cfc3b91cc12cd4580f1696308014.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170514" target="_blank">【百马之旅74】我的涅槃之路-南中国最难越野赛</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170514">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">43</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170514#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 25
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/pao-zhe-chu-tian" target="_blank">跑者楚天</a> 2016-04-07
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            微信：5270593 新浪微博：跑者楚天 &nbsp; &nbsp; &nbsp; 【序】希望通过这篇赛记能够让对珠海凤凰山涅槃之路感兴趣的跑友有更多的了解，特别是尚未接触越野赛事的朋友可以从中了解到一些小小的心得。更希望通过这篇小文表达我对组委会、志愿者、所有参与赛事工作的义工、工作人员们的...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170514" target="_blank">
+                                                <img alt="2016涅槃之路超级越野赛" src="http://pic.iranshao.com/photo/image/PIC_20160403_054522_C7D-8f14ac5c7feca5cba1480dea6ced0208.JPG!168x168">
+                                            </a>
+                                            <a href="/diaries/170514" target="_blank">
+                                                <img alt="2016涅槃之路超级越野赛" src="http://pic.iranshao.com/photo/image/50数据-bce69cdff0f1777422366c49366bcbf0.JPG!168x168">
+                                            </a>
+                                            <a href="/diaries/170514" target="_blank">
+                                                <img alt="2016涅槃之路超级越野赛" src="http://pic.iranshao.com/photo/image/强制装备-4130f206096cb890e91a2e7743b2f763.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170514" target="_blank">
+                                                <img alt="2016涅槃之路超级越野赛" src="http://pic.iranshao.com/photo/image/说明会-d89e79f8b88e7dea03cc124786d5b1e7.JPG!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/4585" target="_blank">
+                                                <span class="from label label-default">
+          2016涅槃之路超级越野赛
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/ed78167b74" class="user" target="_blank">
+                                        <img alt="3dc028f99fc154dfeab378dbfa62ed5b" src="http://bskavatar.b0.upaiyun.com/profile/avatar/3dc028f99fc154dfeab378dbfa62ed5b.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170499" target="_blank">郑开PB--Altra Instinct3.5跑鞋评测</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170499">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">5</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170499#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 4
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/ed78167b74" target="_blank">=飞机=</a> 2016-04-06
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            今年郑开跑了3小时38分，自己的马拉松最好成绩，穿的是Altra Instinct3.5这款跑鞋，很开心，一定要好好给大家推荐下这款跑鞋！ 从朋友那里了解到的这个跑鞋品牌&nbsp;Altra官网，它来自美国，创始人Golden Harper是12岁就以2小时45分完赛的精...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170499" target="_blank">
+                                                <img alt="郑开PB--Altra Instinct3.5跑鞋评测" src="http://pic.iranshao.com/photo/image/497547001-6b7a445d736da0ba45b33a771707891b.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170499" target="_blank">
+                                                <img alt="郑开PB--Altra Instinct3.5跑鞋评测" src="http://pic.iranshao.com/photo/image/1318638204-af3d6bb245b8dae12c6bce644da67e76.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170499" target="_blank">
+                                                <img alt="郑开PB--Altra Instinct3.5跑鞋评测" src="http://pic.iranshao.com/photo/image/388920712-d3249ea5220595fb4870d84d971f3577.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170499" target="_blank">
+                                                <img alt="郑开PB--Altra Instinct3.5跑鞋评测" src="http://pic.iranshao.com/photo/image/1226200964-05bf74c969842b0e26a49d259b9d9517.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/xiao-xiong-kuai-pao" class="user" target="_blank">
+                                        <img alt="E8f7d4cc5734e0442ac71be030ffabb5" src="http://bskavatar.b0.upaiyun.com/profile/avatar/e8f7d4cc5734e0442ac71be030ffabb5.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170456" target="_blank">Adidas Terrex Skychaser GTX满满的槽点满满的爱 </a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170456">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">2</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170456#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 8
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/xiao-xiong-kuai-pao" target="_blank">小熊快跑</a> 2016-04-01
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            感谢爱燃烧选择我进行此次的众测，鞋测+赛测简直完美。 关于这场比赛，可以用我拍的这个短片大致了解一下~ &amp;lt;iframe height=498 width=510 src="http://player.youku.com/embed/XMTUxNTE0NzI2...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170456" target="_blank">
+                                                <img alt="2016阿迪达斯杯香山三夫超能量越野赛 | 阿迪越野跑鞋+参赛名额免费拿！" src="http://pic.iranshao.com/photo/image/IMG_2132-704f50c17b5a4b1a73d8a59f03078772.PNG!168x168">
+                                            </a>
+                                            <a href="/diaries/170456" target="_blank">
+                                                <img alt="2016阿迪达斯杯香山三夫超能量越野赛 | 阿迪越野跑鞋+参赛名额免费拿！" src="http://pic.iranshao.com/photo/image/B22848_04_standard-dca4d60c828ffcf64e0336138806aba9.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170456" target="_blank">
+                                                <img alt="2016阿迪达斯杯香山三夫超能量越野赛 | 阿迪越野跑鞋+参赛名额免费拿！" src="http://pic.iranshao.com/photo/image/initpintu_副本3-dff8dd813611e94d030c2b6f2ba8fc07.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170456" target="_blank">
+                                                <img alt="2016阿迪达斯杯香山三夫超能量越野赛 | 阿迪越野跑鞋+参赛名额免费拿！" src="http://pic.iranshao.com/photo/image/IMG_2107-4323b152191bd364c42475197bccba9a.JPG!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/trials/81" target="_blank">
+                                                <span class="from label label-default">
+          2016阿迪达斯杯香山三夫超能量越野赛 | 阿迪越野跑鞋+参赛名额免费拿！
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <a href="/people/zhu-er" class="user" target="_blank">
+                                        <img alt="F80786490292f520fd87c3eeed4d308f" src="http://bskavatar.b0.upaiyun.com/profile/avatar/f80786490292f520fd87c3eeed4d308f.jpg!normal">
+                                    </a>
+                                    <div class="meta">
+                                        <div class="title">
+                                            <a href="/diaries/170467" target="_blank">身体和灵魂，总有一个要在路上——2016北山之巅（金华山）越野挑战赛复仇记</a>
+                                            <span class="counts pull-right">
+        <span class="count likes">
+          <a href="#" class="js-modal-login votable " data-position="点赞" id="diary-170467">
+            <i class="fa fa-thumbs-o-up"></i> 
+            <span class="vote-count">9</span>
+                                            </a>
+                                            </span>
+                                            <span class="count replies">
+          <a href="/diaries/170467#create_reply" target="_blank">
+            <i class="fa fa-comment-o"></i> 5
+</a>        </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="time">
+                                            <a href="/people/zhu-er" target="_blank">朱二</a> 2016-04-03
+                                        </div>
+
+                                        <div class="text subtitle">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 作为一名深度懒癌症患者，虽然大大小小跑了几十场越野赛和马拉松，但我只为武功山写过一篇完赛记。去年跑过武功山越野的跑友应该能够理解，那样壮美的风光，不写赛记是有罪的。
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现在，我愿为3月27日完成的2016北山之巅（金华山）全国越野挑战...
+                                        </div>
+
+                                        <div class="body-images">
+                                            <a href="/diaries/170467" target="_blank">
+                                                <img alt="北山之巅•2016金华越野挑战赛" src="http://pic.iranshao.com/photo/image/11-d3e4dd2b4e73f932232e0461919746c6.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170467" target="_blank">
+                                                <img alt="北山之巅•2016金华越野挑战赛" src="http://pic.iranshao.com/photo/image/22_旋转-e1ec66b5fee8f6048e9a15f8c6a24886.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170467" target="_blank">
+                                                <img alt="北山之巅•2016金华越野挑战赛" src="http://pic.iranshao.com/photo/image/33-b6263add5c916b117c4d7959436e0c38.jpg!168x168">
+                                            </a>
+                                            <a href="/diaries/170467" target="_blank">
+                                                <img alt="北山之巅•2016金华越野挑战赛" src="http://pic.iranshao.com/photo/image/44-fab8852224f08ac622ddf65e209f743a.jpg!168x168">
+                                            </a>
+                                        </div>
+
+                                        <div class="from">
+                                            <a href="/races/3689" target="_blank">
+                                                <span class="from label label-default">
+          北山之巅•2016金华越野挑战赛
+        </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div style="padding-top:10px">
+                            <a href="http://c.admaster.com.cn/c/a66492,b1038352,c2848,i0,m101,h" onclick="_czc.push(['_trackEvent', 'home_v4', 'a2', '0--puma','0','']);"
+                                target="_blank"><img src="http://pic.iranshao.com/photo/image/4a51c86dac57214c38b18245d08e8df9.jpg" width="100%"></a>
+                        </div>
+                        <!--
+  <div style="padding-top:10px"><a href="http://iranshao.com/register/reg_races/378?utm_source=iranshao&utm_medium=home&utm_campaign=A2-shangou" onclick="_czc.push(['_trackEvent', 'home_v4', 'a2', '0--adi','0','']);" target="_blank"><img src="http://pic.iranshao.com/photo/image/4d0925a09c740835c8dec9eb5a73cd59.jpg" width="100%"></a></div>
+  -->
+                        <div class=" home-side" style="border: 1px solid #dddddd; margin: 10px 0 0 0;">
+                            <h4 class="title">赛事动态</h4>
+                            <ul class="post-list">
+                                <li class="post" id="post_130889">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/5050" target="_blank">
+                                            <img alt="2016邛崃南丝路半程马拉松" class="avatar" src="http://pic.iranshao.com/photo/image/%E5%8D%97%E4%B8%9D%E8%B7%AF%E4%B8%BB%E8%A7%86%E8%A7%89-01-2de5eb2f78cdc95b420cef5684f6e786.jpg!80x80">                                            2016邛崃南丝路半程马拉松
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016成都南丝路马拉松将于5月22日8:00在成都邛崃市举行，设5公里欢乐马拉松、10公里欢乐马拉松、半程马拉松等三个项目，赛事规模10000人（半程 3000人、10K 4000人、5K 3000人）。
+                                        <a href="http://iranshao.com/register/reg_races/nansilu" target="_blank">http://iranshao.com/register/reg_races/nansilu</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-14 22:57:50 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_130328">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/4982" target="_blank">
+                                            <img alt="型跑成都·环球Mall甜品跑" class="avatar" src="http://pic.iranshao.com/photo/image/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_s20160412152014-415863cb687166d65e0a75c6a0c2be7e.jpg!80x80">                                            型跑成都·环球Mall甜品跑
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】如果你爱跑、爱吃、爱拍，那就来成都·环球Mall甜品跑吧！跑一段，吃一站，吃完一站，再跑一段！活动4月23日在成都环球中心起跑，仅设5公里组别，报名费60元/人，限额1000人：
+                                        <a href="http://iranshao.com/register/reg_races/2016mallrun" target="_blank">http://iranshao.com/register/reg_races/2016mallrun</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-14 09:26:20 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_130322">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/5027" target="_blank">
+                                            <img alt="昆百大●野鸭湖酷搏健身情侣森林越野跑" class="avatar" src="http://pic.iranshao.com/photo/image/722497101213454616-38517643082e6a26aeb4b0fde60a083c.jpg!80x80">                                            昆百大●野鸭湖酷搏健身情侣森林越野跑
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016野鸭湖酷搏健身情侣森林越野跑将于5月21日在云南昆明野鸭湖风景区起跑，设有12公里和5公里组别，报名费25元/人。和牵挂的Ta一起自在漫跑，穿过初夏森林，越过宁静湖滨，在爱情的旅途中留下难忘的足迹：
+                                        <a href="http://iranshao.com/register/reg_races/kunming521" target="_blank">http://iranshao.com/register/reg_races/kunming521</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-14 09:17:21 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_129962">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/5021" target="_blank">
+                                            <img alt="从北京到关岛—古北水镇10公里越野赛" class="avatar" src="http://pic.iranshao.com/photo/image/filehelper_1460525854807_22-8770c6c699bb2b051470e67f91129c18.png!80x80">                                            从北京到关岛—古北水镇10公里越野赛
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016从北京到关岛—古北水镇10公里越野赛将于6月11日在北京密云古北水镇景区起跑，仅设10公里项目，爬升500米，赛道分柏油路、石板路、土路、山路、长城台阶路等，报名费199元/人，限额200人：
+                                        <a href="http://iranshao.com/register/reg_races/gubei" target="_blank">http://iranshao.com/register/reg_races/gubei</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-13 18:54:02 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_129906">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/5023" target="_blank">
+                                            <img alt="白草百花山地马拉松" class="avatar" src="http://pic.iranshao.com/photo/image/4_%E5%89%AF%E6%9C%AC1-b550917a896010ecf410a0716f010f4e.jpg!80x80">                                            白草百花山地马拉松
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016白草百花山地马拉松将于5月29日在北京霞云岭森林公园起跑，设40公里和25公里越野跑项目，报名费380元/人，包含住宿费、景区往返车费、门票费等：
+                                        <a href="http://iranshao.com/register/reg_races/baicaobaihua" target="_blank">http://iranshao.com/register/reg_races/baicaobaihua</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-13 17:32:27 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_129815">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/1985" target="_blank">
+                                            <img alt="上海国际半程马拉松赛" class="avatar" src="http://pic.iranshao.com/photo/image/QQ%E6%88%AA%E5%9B%BE20150925150929-2905e9a3f4f1e4f550555ada435db911.png!80x80">                                            上海国际半程马拉松赛
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【领物通知】4月15日-16日，携带报名确认单（官网下载）、身份证、医院体检合格证明（仅半马参赛者需提供），到东方体育中心游泳馆11号门领物，详情：<a href="http://iranshao.com/races/1985/topics/2274"
+                                            target="_blank">http://iranshao.com/races/1985/topics/2274</a> 。 2016上海国际半程马拉松赛爱燃烧视频探路报告：
+                                        <a href="http://iranshao.com/articles/2501-2016-shaghai-half-marathon" target="_blank">http://iranshao.com/articles/2501-2016-shaghai-half-marathon</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-13 16:16:39 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_129402">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/4993" target="_blank">
+                                            <img alt="八婺仙源金华南山越野挑战赛" class="avatar" src="http://pic.iranshao.com/photo/image/81_%E5%89%AF%E6%9C%AC1-24be92d6a96dcdfd0e483cfc9fb5ea13.jpg!80x80">                                            八婺仙源金华南山越野挑战赛
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016八婺仙源金华南山越野挑战赛将于5月15日在浙江金华举办，设有38公里/25公里/8公里家庭（1-2大人+1儿童）组，用跑步感受诗意“仙源南山，八婺之地”：
+                                        <a href="http://iranshao.com/register/reg_races/bawu" target="_blank">http://iranshao.com/register/reg_races/bawu</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-13 10:30:23 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_129379">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/2132" target="_blank">
+                                            <img alt="广发银行•智跑杯第二届深圳跑团争霸赛（中山公园站）" class="avatar" src="http://pic.iranshao.com/photo/image/921177438464369389-c6713110ef66eee98a06130f24d0bfcf.jpg!80x80">                                            广发银行•智跑杯第二届深圳跑团争霸赛（中山公园站）
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】2016第二届深圳跑团争霸赛将于5月15日在中山公园起跑，仅设团体组，每组4人，全程10公里，报名费200元/组：<a href="http://iranshao.com/register/reg_races/zhipao"
+                                            target="_blank">http://iranshao.com/register/reg_races/zhipao</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-13 10:15:11 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_128957">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/4078" target="_blank">
+                                            <img alt="四川亚丁·天空跑【龙腾亚丁】" class="avatar" src="http://pic.iranshao.com/photo/image/webwxgetmsgimg%20(1)-d1e92bb4105971eab6ad95eff54cb751.jpg!80x80">                                            四川亚丁·天空跑【龙腾亚丁】
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】4月30日在亚丁香格里拉起跑，是国内首场Skyrunning（天空跑）全球积分赛，全程29公里，起点海拔2,800 米，终点海拔4,000 米，报名费750元/人，11小时关门
+                                        <a href="http://iranshao.com/register/reg_races/Skyrunning" target="_blank">http://iranshao.com/register/reg_races/Skyrunning</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-12 20:08:10 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_128857">
+                                    <div class="post-title clearfix">
+                                        <a href="/races/2738" target="_blank">
+                                            <img alt="特步欢乐跑·中国10公里锦标赛（苏州站）" class="avatar" src="http://pic.iranshao.com/photo/image/484400858465908176-785eb3c8375105f88d121dc3f954e891.jpg!80x80">                                            特步欢乐跑·中国10公里锦标赛（苏州站）
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        【一键报名】特步欢乐跑·中国10公里锦标赛（苏州站）将于6月26日（周日）8：30举行，设10公里：<a href="http://iranshao.com/register/reg_races/2016happy10k-sz"
+                                            target="_blank">http://iranshao.com/register/reg_races/2016happy10k-sz</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-12 19:09:02 </span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class=" home-side" style="border: 1px solid #dddddd; margin: 10px 0 0 0;">
+                            <h4 class="title">用户动态</h4>
+                            <ul class="post-list">
+                                <li class="post" id="post_131107">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/13c0fff54f" target="_blank">
+                                            <img alt="Michelle_艳" class="avatar" src="http://bskavatar.b0.upaiyun.com/default.jpg!small">                                            Michelle_艳
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/4330" target="_blank">2016 南京国际跑步节•欢乐公益跑</a>，目标成绩: 01:30:00，目标配速:
+                                        9:00/km
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:28:34 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_131106">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/darling-ling-r-yi-hao" target="_blank">
+                                            <img alt="Darling灵儿一号" class="avatar" src="http://bskavatar.b0.upaiyun.com/profile/avatar/3b0ead10d2a2f26cd43a87d111ad909d.jpg!small">                                            Darling灵儿一号
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/4788" target="_blank">复旦大学111周年校庆长跑暨“鲜得味”杯乐跑赛•10公里竞技跑</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:26:36 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_131105">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/cf6439eaa8" target="_blank">
+                                            <img alt="QYXsring" class="avatar" src="http://bskavatar.b0.upaiyun.com/default.jpg!small">                                            QYXsring
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/4667" target="_blank">第四届张江6Km企业竞跑赛•企业混合组</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:26:06 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_131104">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/a544f525b8" target="_blank">
+                                            <img alt="Phx" class="avatar" src="http://bskavatar.b0.upaiyun.com/default.jpg!small">                                            Phx
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/4788" target="_blank">复旦大学111周年校庆长跑暨“鲜得味”杯乐跑赛•10公里竞技跑</a>，目标成绩:
+                                        00:00:00
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:23:25 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_131103">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/4eb5c226f1" target="_blank">
+                                            <img alt="参考点" class="avatar" src="http://bskavatar.b0.upaiyun.com/default.jpg!small">                                            参考点
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/4164" target="_blank">2016佛山国际超级马拉松（半程赛）•欢乐跑</a>，目标成绩: 00:00:00
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:22:12 </span>
+                                    </div>
+                                </li>
+                                <li class="post" id="post_131102">
+                                    <div class="post-title clearfix">
+                                        <a href="/people/06be907e3f" target="_blank">
+                                            <img alt="guobingulugulu " class="avatar" src="http://bskavatar.b0.upaiyun.com/default.jpg!small">                                            guobingulugulu
+                                        </a>
+                                    </div>
+                                    <div class="post-body">
+                                        预计参加 <a href="/races/3067" target="_blank">2016漠河 · 极昼马拉松•全程马拉松</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <span class="time"> 2016-04-15 14:18:33 </span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-bottom"></div>
+        <div class="scroll-to-top hide" style="display: block;">
+            <i class="icon-arrow-up"></i>
+        </div>
+        <div style="display:none">
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe1afc974687855fe8c7318ef56f0dbae' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script src=" http://hm.baidu.com/h.js?e1afc974687855fe8c7318ef56f0dbae" type="text/javascript"></script>
+
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40213891-1', 'auto');
+  ga('send', 'pageview');
+            </script>
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000317233'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1000317233' type='text/javascript'%3E%3C/script%3E"));
+            </script><span id="cnzz_stat_icon_1000317233"><a href="http://www.cnzz.com/stat/website.php?web_id=1000317233" target="_blank" title="站长统计">站长统计</a></span>
+            <script src=" http://s5.cnzz.com/z_stat.php?id=1000317233" type="text/javascript"></script>
+            <script src="http://c.cnzz.com/core.php?web_id=1000317233&amp;t=z" charset="utf-8" type="text/javascript"></script>
+        </div>
+        <div class="">
+
+        </div>
+        <div class="modal" id="modal-login">
+            <div class="modal-dialog">
+                <div class="modal-content login-theme-default">
+                    <!-- <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">登录/注册</h4>
+        </div> -->
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">登录/注册</h4>
+                    </div>
+                    <div class="text-center logo-wrapper">
+                        <img src="http://pic.iranshao.com/photo/image/logo72x72-8f06f6215fa5d284a330a3e69c82400b.png" alt="爱燃烧" class="circle-logo">
+                        <div class="slogan">爱燃烧 —「运动不止于梦想」</div>
+                    </div>
+
+                    <div class="modal-body loading">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="hide" id="footer-m">
+        <p style="">2016 © 爱燃烧 iranshao.com All rights reserved.</p>
+        <p class="switchStyle">
+            <span><a href="/m">手机版</a></span>
+            <span>电脑版</span>
+        </p>
+    </footer>
+
+    <footer id="footer" class="hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="copyright-txt">
+                        <div class="logo-gray"><a href="/">爱燃烧</a></div>
+                        <p>© Copyright 爱燃烧 2016. All rights reserved. (沪ICP备14009403号-2)</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="footer-irs">
+                        <h4>爱燃烧</h4>
+                        <ul>
+                            <li><a href="/about" title="关于我们">关于我们</a></li>
+                            <li><a href="/terms#contact" title="联系我们">联系我们</a></li>
+                            <li><a href="/terms#friendlink" title="友情链接">友情链接</a></li>
+                            <li><a href="/terms#terms" title="爱燃烧协议">爱燃烧协议</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="footer-social">
+                        <h4>关注我们</h4>
+                        <div class="sns-sina">
+                            <strong>新浪微博</strong>
+                            <ul>
+                                <li><a href="http://weibo.com/airanshao" title="i爱燃烧" target="_blank">@i爱燃烧</a></li>
+                                <li><a href="http://weibo.com/bisaikong" title="比赛控" target="_blank">@比赛控</a></li>
+                                <li><a href="http://weibo.com/u/3430687714" title="装备派" target="_blank">@装备派</a></li>
+                                <li><a href="http://weibo.com/u/1885063543" title="训练圈" target="_blank">@训练圈</a></li>
+                            </ul>
+                        </div>
+                        <div class="sns-weixin">
+                            <strong>微信</strong>
+                            <ul>
+                                <li><img src="/assets/global/qrcode-iranshao.jpg" alt="爱燃烧"></li>
+                                <li><img src="/assets/global/qrcode-bisaikong.jpg" alt="比赛控"></li>
+                                <li></li>
+                            </ul>
+                            <a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" width="114"
+                                    height="36"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="mm-blocker"></div>
+</body>
+
+</html>

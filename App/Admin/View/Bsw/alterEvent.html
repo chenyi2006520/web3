@@ -1,0 +1,36 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/"> 首页</a></li>
+        <li>赛事项目</li>
+        <li>修改赛事项目</li>
+    </ul>
+        <form action="{:U('/Admin/Bsw/handleAlterEvent/')}" method="POST">
+            <table class="talbe">
+                <tr>
+                    <th align="center">修改赛事项目</th>
+                </tr>
+                <tr>
+                    <td align="right">赛事项目：</td>
+                    <td colspan="2">
+                        <input type="text" name="e_name" id="e_name" value="{$eventModel.e_name}"/>
+                        <input type="hidden" name="id" value="{$eventModel.id}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="left" colspan="2">
+                        <input type="hidden" name="e_pid" value="{$eventModel.e_pid}" />
+                        <input type="submit" value="保存修改">
+                    </td>
+                </tr>
+            </table>
+        </form>
+</block>

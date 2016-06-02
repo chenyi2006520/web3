@@ -1,0 +1,42 @@
+[ 2016-06-01T16:29:38+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:29:55+08:00 ] 127.0.0.1 /game/?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:40:38+08:00 ] 127.0.0.1 /game/?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:40:43+08:00 ] 127.0.0.1 /games
+ERR: 无法加载控制器:Games
+
+[ 2016-06-01T16:41:42+08:00 ] 127.0.0.1 /index.php?s=/game/zuqiu/all/all/all/all
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:51:38+08:00 ] 127.0.0.1 /index.php?s=/game/zuqiu/all/all/all/all
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:51:45+08:00 ] 127.0.0.1 /game/zuqiu/all/all/all/all
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:51:58+08:00 ] 127.0.0.1 /game/zuqiu/all/all/all/all
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:06+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:09+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:35+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:35+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:36+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+
+[ 2016-06-01T16:52:36+08:00 ] 127.0.0.1 /game?type=zuqiu
+ERR: 无法加载控制器:Game
+

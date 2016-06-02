@@ -1,0 +1,40 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <table class="table table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>角色名称</th>
+                <th>角色描述</th>
+                <th>开启状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name='role' item='val'>
+                <tr>
+                    <td>{$val.id}</td>
+                    <td>{$val.name}</td>
+                    <td>{$val.remark}</td>
+                    <td>
+                        <if condition='$val["status"]'>开启
+                            <else/>关闭</if>
+                    </td>
+                    <td><a href="{:U('/Admin/Rbac/access',array('rid' => $val['id']))}">配置权限</a></td>
+                </tr>
+            </foreach>
+            <tr>
+                <td colspan="5" align='center'>
+                    <div class="Pagination">{$show}</div>
+                </td>
+            </tr>   
+        </tbody>
+    </table>
+</block>

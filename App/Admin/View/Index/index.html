@@ -1,0 +1,18 @@
+<extend name="Public:base" />
+<block name="header">
+    <include file="Public/header" title="宽土猫科技有限公司" keywords="宽土猫,宽土猫科技,宽土猫公司,合肥宽土猫" description="合肥宽土猫科技有限公司" copyright="合肥宽土猫科技有限公司"
+    />
+</block> 
+<!--菜单列表-->
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <div class="container">
+        <input id="test001" type="button" value="测试">
+    <input type="hidden" id="acFlag" value="{$acFlag}">
+    </div>
+</block>
+<block name="scriptContent">
+</block>

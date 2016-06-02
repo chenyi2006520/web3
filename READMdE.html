@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>help</title>
+</head>
+
+<body>
+    后台tree结构只有根目录才用配置iconstyle
+    
+    百度编辑器没有使用TP自带的七牛上传服务，而是使用了七牛提供的集成了七牛服务的编辑器，目前水印地址没有配置，且没有开启水印。配置的账户目前属于个人
+    配置编辑器的地址在 \web3\ThinkPHP\Library\Think\Template\TagLib\Html.class.php
+    case 'QUEDITOR': $parseStr = "\n".'
+    <!--<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/Admin/QUEditor/ueditor.config.js"></script>'."\n".'
+    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/Admin/QUEditor/ueditor.all.js"></script>'."\n".'
+    <script type="text/plain" id="'.$id.'" name="'.$name.'" style="'.$style.'">'.$content.'</script>'."\n".'
+    <script type="text/javascript">
+        var ue_'.$id.' = UE.getEditor("'.$id.'");
+    </script>'."\n"; break;-->
+</body>
+
+</html>

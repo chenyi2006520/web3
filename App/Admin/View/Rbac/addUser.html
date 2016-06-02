@@ -1,0 +1,82 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <style>
+        .add-role {
+            display: inline-block;
+            width: 100px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border: 1px solid blue;
+            border-radius: 4px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content"> 
+        <form action="{:U('/Admin/Rbac/AddUserHandle/')}" method="POST">
+            <table class="table">
+                <tr>
+                    <td align="center" colspan="2">添加用户</td>
+                </tr>
+                <tr>
+                    <td align="right">用户账号：</td>
+                    <td>
+                        <input type="text" name="username" id="username" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">密码：</td>
+                    <td>
+                        <input type="password" name="password" id="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">所属角色：</td>
+                    <td>
+                        <select name="role_id[]" id="role_id">
+                            <option value="0">--请选择角色--</option>
+                            <foreach name="roleList" item="role">
+                                <option value="{$role['id']}">{$role["remark"]}</option>
+                            </foreach>
+                        </select>
+                        <span class="add-role">添加一个角色</span>
+                    </td>
+                </tr>
+                <tr id="last">
+                    <td>&nbsp;</td>
+                    <td align="left">
+                        <input type="submit" value="保存添加">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input type="hidden" name="roleLenght" id="roleLength" value="{$roleLength}">
+        <input type="hidden" name="clickTimes" id="clickTimes" value="1"> 
+</block>
+
+<block name="scriptContent">
+    <script type="text/javascript">
+        $(function(){    
+    var roleLength = $("#roleLength").val();
+     
+    $(".add-role").click(function(){
+        var clickTimes = $("#clickTimes").val();
+        if(roleLength != clickTimes)
+        {
+            var cloneObj = $(this).parents('tr').clone();
+            cloneObj.find('.add-role').remove();
+            $("#last").before(cloneObj);
+            clickTimes = parseInt(clickTimes) + 1;
+            $("#clickTimes").val(clickTimes);
+        }
+    });
+});
+    </script>
+</block>

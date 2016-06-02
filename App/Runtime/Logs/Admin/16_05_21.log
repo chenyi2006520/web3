@@ -1,0 +1,20 @@
+[ 2016-05-21T14:37:56+08:00 ] 127.0.0.1 /Admin/Bsw/handleAlterGame
+ERR: 1048:Column 'g_image' cannot be null
+ [ SQL语句 ] : UPDATE `ktm_bsw_game` SET `g_name`='湖南隆回县曲棍球',`g_event`='7',`g_location`='[{&quot;id&quot;:&quot;430000&quot;,&quot;name&quot;:&quot;湖南省&quot;},{&quot;id&quot;:&quot;430500&quot;,&quot;name&quot;:&quot;邵阳市&quot;},{&quot;id&quot;:&quot;430524&quot;,&quot;name&quot;:&quot;隆回县&quot;}]',`g_time_s`='1464253500',`g_time_e`='1464426300',`g_age`='23',`g_star`='2',`g_gps`='27.11399778092772,111.03250980377197',`g_gender`='0',`g_introduction`='湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松',`g_image`=NULL,`g_singup_s`='1970',`g_singup_e`='1970',`g_address`='',`g_fee`='500',`g_amount`='50',`g_sponsor`='隆回西安' WHERE `id` = 7
+
+[ 2016-05-21T14:53:23+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430000  [ RunTime:0.0189s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430100  [ RunTime:0.0240s ]
+
+[ 2016-05-21T17:00:38+08:00 ] 127.0.0.1 /Admin/Bsw/AddGameHandle
+ERR: 1048:Column 'g_image' cannot be null
+ [ SQL语句 ] : INSERT INTO `ktm_bsw_game` (`g_name`,`g_event`,`g_location`,`g_time_s`,`g_time_e`,`g_age`,`g_star`,`g_gps`,`g_gender`,`g_introduction`,`g_image`,`g_singup_s`,`g_singup_e`,`g_address`,`g_fee`,`g_amount`,`g_sponsor`) VALUES ('','','','0','0','','','','','',NULL,'0','0','','0','0','')
+

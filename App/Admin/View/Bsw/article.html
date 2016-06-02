@@ -1,0 +1,49 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <link rel="stylesheet" href="__STATIC__/JQuery/jquery-ui.min.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="{:U('/Admin/Index/')}"> Home</a></li>
+        <li>比赛网</li>
+        <li>文章列表</li>
+    </ul>
+    <div class="row">
+        <a href="{:U('/Admin/Bsw/addarticle')}" class="btn btn-success col-xs-offset-11">添加文章</a>
+        <table class="table table-striped" id="dataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>比赛标题</th>
+                    <th>时间</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <foreach name='dataList' item='val'>
+                    <tr>
+                        <td>{$val.id}</td>
+                        <td>{$val.a_title}</td>
+                        <td>{$val.a_time|date='Y-m-d H:i',###}</td>
+                        <td>{$val.a_content|substr=###,0,100}</td>
+                        <td>
+                            <a href="{:U('/Admin/Bsw/alterArticle/', array('id' => $val['id']))}" class="btn btn-primary">修改</a>                            
+                            <a href="#" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+                <tr>
+                    <td colspan="5" align='center'>
+                        <div class="Pagination">{$show}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</block>

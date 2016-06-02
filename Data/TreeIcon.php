@@ -1,0 +1,1 @@
+a:8:{i:1;s:7:"fa-home";i:2;s:7:"fa-tags";i:3;s:10:"fa-desktop";i:4;s:9:"fa-anchor";i:5;s:9:"fa-bell-o";i:6;s:10:"fa-archive";i:7;s:7:"fa-list";i:8;s:6:"fa-cog";}

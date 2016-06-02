@@ -1,0 +1,57 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+</block>
+<!--菜单列表-->
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="{:U('/Admin/Index/')}"> Home</a></li>
+        <li>比赛网</li>
+        <li>赛事列表</li>
+    </ul>
+    <div class="row">
+        <a href="{:U('/Admin/Bsw/addgame')}" class="btn btn-success col-xs-offset-11">添加赛事</a>
+        <table class="table table-striped" id="dataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>赛事名称</th>
+                    <th>赛事项目</th>
+                    <th>赛事地点</th>
+                    <th>具体地址</th>
+                    <th>时间</th>
+                    <th>简介</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <foreach name='dataList' item='val'>
+                    <tr>
+                        <td>{$val.id}</td>
+                        <td>{$val.g_name}</td>
+                        <td>{$val.nee}</td>
+                        <td>{$val.g_location}</td>
+                        <td>{$val.g_address}</td>
+                        <td>{$val.g_time_e|date = 'Y-m-d',###}</td>
+                        <td>{$val.g_introduction|substr=###,0,100}</td>
+                        <td>
+                            <a href="{:U('/Admin/Bsw/addMatch/',array('g_id' => $val['id'],'g_name' => $val['g_name']))}" class="btn btn-primary">添加比赛</a>
+                            <a href="{:U('/Admin/Bsw/alterGame/',array('id' => $val['id']))}" class="btn btn-primary">修改</a>
+                            <a href="#" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+                <tr>
+                    <td colspan="7" align='center'>
+                        <div class="Pagination"> {$show} </div>
+                        <input type="hidden" id="acFlag" value="{$acFlag}">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</block>

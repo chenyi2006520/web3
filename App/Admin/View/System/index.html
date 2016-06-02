@@ -1,0 +1,56 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/Css/node.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="{:U('/Admin/Index/')}"> Home</a></li>
+        <li>系统管理</li>
+        <li>菜单管理</li>
+        <li>菜单列表</li>
+    </ul>
+    <div class="container">
+        <a href="{:U('/Admin/System/addTree/')}" class="btn btn-success col-xs-offset-11">添加一级菜单</a>
+        <table class="table table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>序号</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name='dataList' item='val'>
+                <tr>
+                    <td>{$val.id}</td>
+                    <td>{$val.html}{$val.t_title}</td>
+                    <td>{$val.t_sort}</td>
+                    <td>
+                        <if condition='$val["t_pid"] eq 0'> 
+                            <a href="{:U('/Admin/System/addTree/',array('t_pid' => $val['id'],'t_level' => $val['t_level']))}" class="btn btn-success">新增下一级</a>
+                        <else/>
+                             <a href="{:U('/Admin/System/addTree/',array('t_pid' => $val['id'],'t_level' => $val['t_level']))}" class="btn btn-default">新增下一级</a> 
+                        </if>
+                        <a href="{:U('/Admin/System/alterTree/', array('id' => $val['id']))}" class="btn btn-primary">修改</a>
+                        <a href="{:U('/Admin/System/lockTree/', array('id' => $val['id']))}" class="btn btn-sm btn-danger col-xs-offset-1">锁定</a>
+                    </td>
+                </tr>
+            </foreach>
+            <tr>
+                <td colspan="4" align='center'>
+                    <div class="Pagination">{$show}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</block>
+<block name="scriptContent">
+
+</block>

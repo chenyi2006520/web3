@@ -1,0 +1,480 @@
+<extend name="Public:base" />
+<block name="headerCss">
+	<link rel="stylesheet" href="__PUBLIC__/css/bisai.css">
+</block>
+<block name="PageHeader">
+	<include file="Public/PageHeader" />
+</block>
+<block name="content">
+	<div class="container">
+		<div class="col-md-9 ">
+			<div class="row clearfix">
+				<div class="col-md-12 ">
+					<div class="row clearfix">
+						<div class="col-md-12 ">
+							<div class="filter-bar less-bar {:compareValue('1',$listModel['showMore'],'more')}">
+								<div class="filters">
+									<div class="filter type clearfix"><span class="tit">类型:</span>
+										<span class="word {:compareValue('all',$listModel['event'],'active')}">
+											<a href="{:U('/game/all')}" datavalue = "all">全部</a>
+											<input type="hidden" name="activeType" id="activeType" value="{$listModel.event}">
+										</span>
+										<foreach name="eventList" item="value">
+											<span class="word {:compareValue($value['e_name'],$listModel['event'],'active')}">
+											<a href="{:U('/game/'.$value['e_name'])}"   datavalue = "{$value['e_name']}">{$value['e_name']}</a>
+											</span>
+										</foreach>
+										<!--<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
+											</span>-->
+										<span style="float:right;">
+											<a href="javascript:void(0)" id="showOther">更多</a>
+											</span>
+									</div>
+									<div id="otherEvent" style="padding-top: 0px;" class="filter clearfix hidden">
+										<span class="tit">&nbsp;</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%93%81%E4%BA%BA%E4%B8%89%E9%A1%B9">铁人三项</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%BE%92%E6%AD%A5">徒步</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%A9%AC%E6%8B%89%E6%9D%BE">马拉松</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E8%B6%8A%E9%87%8E%E8%B7%91">越野跑</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%85%B6%E4%BB%96">测试</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%93%81%E4%BA%BA%E4%B8%89%E9%A1%B9">铁人三项</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%BE%92%E6%AD%A5">徒步</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%A9%AC%E6%8B%89%E6%9D%BE">马拉松</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E8%B6%8A%E9%87%8E%E8%B7%91">越野跑</a>
+											</span>
+										<span class="word ">
+											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%85%B6%E4%BB%96">测试</a>
+											</span>
+									</div>
+									<div class="filter js-less less-item clearfix"><span class="tit">省份:</span>
+										<span class="word {:compareValue('all',$listModel['province'],'active')}">
+											<a href="{:U('/game/all')}" datavalue = "all">全部</a>
+											<input type="hidden" name="activeProvince" id = "activeProvince" value="{$listModel.province}">											
+										</span>
+										<foreach name="provinceList" item="value">
+											<span class="word {:compareValue($value['shortname'],$listModel['province'],'active')}">
+												<a href="{:U('/game/'.$value['shortname'])}"   datavalue = "{$value['shortname']}">{$value['shortname']}</a>
+											</span>
+										</foreach>
+									</div>
+									<!--{overrideCompareValue(1,$listModel['showCityFlag'],'1','hidden')}-->
+									<if condition="$listModel['showCityFlag'] eq 0">
+										<div class="filter js-less less-item clearfix " id="citydiv"><span class="tit">市级:</span>
+											<span class="word {:compareValue('all',$listModel['city'],'active')}">
+												<a href="{:U('/game/all')}" datavalue = "all">全部</a>
+												<input type="hidden" name="activeCity" id="activeCity" value="{$listModel.city}">	
+											</span>
+											<foreach name="cityList" item="value">
+												<span class="word {:compareValue($value['shortname'],$listModel['city'],'active')}">
+														<a href="{:U('/game/'.$value['shortname'])}"  datavalue = "{$value['shortname']}">{$value['shortname']}</a>
+														<!--<a href="{:U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])))}">{$value['shortname']}</a>-->
+													</span>
+											</foreach>
+										</div>
+									</if>
+
+
+									<div class="filter js-less less-item clearfix" style="border:0"><span class="tit">时间:</span>
+										<span class="word {:compareValue('all',$listModel['year'],'active')}">
+											<a href="{:U('/game/all')}" datavalue = "all" >全部</a>
+												<input type="hidden" name="activeYear" id="activeYear" value="{$listModel.year}">											
+												<input type="hidden" name="activeMonth" id="activeMonth" value="{$listModel.month}">
+										</span>
+										<foreach name="yearList" item="value">
+											<span class="word {:compareValue($value,$listModel['year'],'active')}">
+												<a href="{:U('/game/'.$value)}" datavalue = "{$value}" >{$value}年</a>
+											</span>
+										</foreach>
+									</div>
+									<if condition="$listModel['year'] neq 'all'">
+										<div class="filter js-less less-item clearfix" style="border:0"><span class="tit"></span>
+											<span class="word {:compareValue('all',$listModel['month'],'active')}">
+											<a href="{:U('/game/all')}" datavalue = "all" >全部</a>
+										</span>
+											<for start="1" end="13">
+												<span class="word {:compareValue($i,$listModel['month'],'active')}">
+											<a href="{:U('/game/'.$i)}" datavalue = "{$i}" >{$i}月</a>
+											</span>
+											</for>
+										</div>
+									</if>
+
+									<div class="filter-bottom text-center">
+										<a href="javascript:void(0);" class="expand">展开更多<i class="fa fa-angle-down"></i></a>
+										<a href="javascript:void(0);" class="collapse">收起<i class="fa fa-angle-up"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-6 ">
+							<div class="jumbotron">
+								<h1>
+									Hello, world!
+								</h1>
+								<p>
+									This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and
+									three supporting pieces of content. Use it as a starting point to create something more unique.
+								</p>
+								<p>
+									<a class="btn btn-primary btn-large" href="#">Learn more</a>
+								</p>
+							</div>
+						</div>
+						<div class="col-md-6 ">
+							<div class="page-header">
+								<h1>
+									Example page header <small>Subtext for header</small>
+								</h1>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-xs-12">
+							<h2>Heading</h2>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-12 ">
+							<img alt="140x140" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/140/140/default.jpg" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-3">
+				<div class="col-xs-12 rightHeader">
+					<img class="carousel-inner img-responsive img-rounded" src="__STATIC__/images/Watermark.png" />
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="side-list clearfix">
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/runningwild" target="_blank" title="2016“京西野马”北京西部山野马拉松">
+							<img alt="2016“京西野马”北京西部山野马拉松" src="http://pic.iranshao.com/photo/image/%E4%BA%AC%E8%A5%BF%E9%87%8E%E9%A9%AC_%E5%89%AF%E6%9C%AC3-7e86f23c8da2d624d2a05044bc79f36d.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/runningwild" target="_blank" title="2016“京西野马”北京西部山野马拉松">2016“京西野马”北京西部山野马拉松</a>
+							</div>
+							<div class="attr time">2016-05-21</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/tiaozhan100" target="_blank" title="挑战100-一起跑（上海站）">
+							<img alt="挑战100-一起跑（上海站）" src="http://pic.iranshao.com/photo/image/4d0fc19166f2214241e36760be7b678b.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/tiaozhan100" target="_blank" title="挑战100-一起跑（上海站）">挑战100-一起跑（上海站）</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/tourrunchangshang" target="_blank" title="2016橘子洲半程马拉松暨腾讯体育TOUR RUN长沙站">
+							<img alt="2016橘子洲半程马拉松暨腾讯体育TOUR RUN长沙站" src="http://pic.iranshao.com/photo/image/LOGO-a537d5d791da711f19c41d1a1dce6bf6.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/tourrunchangshang" target="_blank" title="2016橘子洲半程马拉松暨腾讯体育TOUR RUN长沙站">2016橘子洲半程马拉松暨腾讯体育TOUR RUN长沙站</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/nansilu" target="_blank" title="2016邛崃南丝路半程马拉松">
+							<img alt="2016邛崃南丝路半程马拉松" src="http://pic.iranshao.com/photo/image/f06bb56934695ad1a8a45009c2a8a688.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/nansilu" target="_blank" title="2016邛崃南丝路半程马拉松">2016邛崃南丝路半程马拉松</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/shexianmarathon" target="_blank" title="2016中国·歙县户外健身大会暨第三届 新安江山水画廊国际马拉松">
+							<img alt="2016中国·歙县户外健身大会暨第三届 新安江山水画廊国际马拉松" src="http://pic.iranshao.com/photo/image/c9bf6c560de89d4757620de4c06547db.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/shexianmarathon" target="_blank" title="2016中国·歙县户外健身大会暨第三届 新安江山水画廊国际马拉松">2016中国·歙县户外健身大会暨第三届 新安江山水画廊国际马拉松</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/hangzhougirl" target="_blank" title="杭州女子越野">
+							<img alt="杭州女子越野" src="http://pic.iranshao.com/photo/image/6b6b534098e5daebf54f0a1e91f39144.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/hangzhougirl" target="_blank" title="杭州女子越野">杭州女子越野</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/gsriverwhmarathon" target="_blank" title="2016年北京妫水河女子半程马拉松">
+							<img alt="2016年北京妫水河女子半程马拉松" src="http://pic.iranshao.com/photo/image/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-06%20%E4%B8%8A%E5%8D%8810.39.29-e507ac7e33b60404c2b516ce2cecf098.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/gsriverwhmarathon" target="_blank" title="2016年北京妫水河女子半程马拉松">2016年北京妫水河女子半程马拉松</a>
+							</div>
+							<div class="attr time">2016-05-22</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/CHINAULTRAPUER" target="_blank" title="CHINA ULTRA 100 - 普洱 100K/50K">
+							<img alt="CHINA ULTRA 100 - 普洱 100K/50K" src="http://pic.iranshao.com/photo/image/5f4dd62aadf3a2f188b64d53cef0055a.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/CHINAULTRAPUER" target="_blank" title="CHINA ULTRA 100 - 普洱 100K/50K">CHINA ULTRA 100 - 普洱 100K/50K</a>
+							</div>
+							<div class="attr time">2016-05-28</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/mudrun" target="_blank" title="2016 泥泞跑 北京站 Mud Run">
+							<img alt="2016 泥泞跑 北京站 Mud Run" src="http://pic.iranshao.com/photo/image/77cb83fd948669c5c9a64da4bf07f3ac.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/mudrun" target="_blank" title="2016 泥泞跑 北京站 Mud Run">2016 泥泞跑 北京站 Mud Run</a>
+							</div>
+							<div class="attr time">2016-05-28</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/2016zhongbaxiaji" target="_blank" title="中ba约跑亲子接力赛--夏季赛">
+							<img alt="中ba约跑亲子接力赛--夏季赛" src="http://pic.iranshao.com/photo/image/70337bec84a4d8446086872426c7286b.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/2016zhongbaxiaji" target="_blank" title="中ba约跑亲子接力赛--夏季赛">中ba约跑亲子接力赛--夏季赛</a>
+							</div>
+							<div class="attr time">2016-05-28</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/HAGL%C3%96FSTRAIL" target="_blank" title="HAGLÖFS TRAIL国际越野挑战赛北京怀柔宝山站">
+							<img alt="HAGLÖFS TRAIL国际越野挑战赛北京怀柔宝山站" src="http://pic.iranshao.com/photo/image/LOGO1-6ba612d5d21c973ed36bce5ae7c465b8.png!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/HAGL%C3%96FSTRAIL" target="_blank" title="HAGLÖFS TRAIL国际越野挑战赛北京怀柔宝山站">HAGLÖFS TRAIL国际越野挑战赛北京怀柔宝山站</a>
+							</div>
+							<div class="attr time">2016-05-28</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+					<div class="item col-xs-12">
+						<a href="/register/reg_races/baicaobaihua" target="_blank" title="2016白草百花山地马拉松">
+							<img alt="2016白草百花山地马拉松" src="http://pic.iranshao.com/photo/image/4_%E5%89%AF%E6%9C%AC1-b550917a896010ecf410a0716f010f4e.jpg!80x80">
+						</a>
+						<div class="meta">
+							<div class="text img-rt-title">
+								<a href="/register/reg_races/baicaobaihua" target="_blank" title="2016白草百花山地马拉松">2016白草百花山地马拉松</a>
+							</div>
+							<div class="attr time">2016-05-29</div>
+							<div class="attr state">
+								报名中
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		var thisUrl = "{:U('/Home/Bsw/Index')}";
+		$(function(){
+			$(".expand").click(function () {
+				$(".filter-bar").addClass("more");
+			});
+			$(".collapse").click(function () {
+				$(".filter-bar").removeClass("more");				
+			});
+			
+			$("#showOther").click(function(){
+				if($("#otherEvent").hasClass("hidden")){
+					$("#otherEvent").removeClass("hidden");					
+				}else{
+					$("#otherEvent").addClass("hidden");					
+				}
+			}); 
+			
+			handleLink();
+		});
+		
+		
+		function handleLink()
+		{
+			var activeType = $("#activeType").val();
+			var activeProvince = $("#activeProvince").val();
+			var activeCity = $("#activeCity").val();
+			var activeYear = $("#activeYear").val(); 
+			var activeMonth = $("#activeMonth").val(); 
+			
+			var tempHref = "";
+			$(".filter .word a").click(function(){
+				
+				var thisHref = $(this).attr("href");
+				var thisHrefText = $(this).attr("datavalue");	
+				
+				if(thisHref.indexOf("type") > 0)
+				{
+					tempHref = "/type/" + thisHrefText;
+					if(typeof(activeCity) == "undefined")
+					{
+					 	tempHref +=  "/province/" + activeProvince + "/year/" + activeYear	 + "/month/" + activeMonth;					
+					}
+					else
+					{
+						tempHref +=  "/province/" + activeProvince + "/city/" + activeCity + "/year/" + activeYear + "/month/" + activeMonth;						
+					}
+				}
+			
+				
+				if(thisHref.indexOf("province") > 0)
+				{
+					if(typeof(activeCity) == "undefined")
+					{
+					 	tempHref += "/type/" + activeType + "/province/" + thisHrefText + "/year/" + activeYear	 + "/month/" + activeMonth;					
+					}
+					else
+					{
+						//如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all？
+					 	tempHref += "/type/" + activeType + "/province/" + thisHrefText  + "/city/" + activeCity + "/year/" + activeYear + "/month/" + activeMonth;				
+					}									
+				}
+				
+				
+				
+				if(thisHref.indexOf("city") > 0)
+				{
+					if(thisHrefText != "all")
+					{
+						tempHref += "/type/" + activeType + "/province/" + activeProvince  + "/city/" + thisHrefText + "/year/" + activeYear + "/month/" + activeMonth;						
+					}else
+					{
+					 	tempHref += "/type/" + activeType + "/province/" + activeProvince + "/year/" + activeYear + "/month/" + activeMonth	;											
+					}
+				}
+				
+				
+				if(thisHref.indexOf("year") > 0 )
+				{
+					if(typeof(activeCity) == "undefined")//如果没有城市
+					{
+					 	tempHref += "/type/" + activeType + "/province/" + activeProvince + "/year/" + thisHrefText	 + "/month/" + activeMonth;					
+					}
+					else
+					{
+					    if(typeof(activeMonth) == "undefined")//如果没有月份
+                        {
+                            if(activeYear != "all")//如果年份不是所有
+                            {
+                                tempHref += "/type/" + activeType + "/province/" + activeProvince  + "/city/" + activeCity + "/year/" + thisHrefText + "/month/" + activeMonth;				                            
+                            }
+                            else
+                            {
+                                tempHref += "/type/" + activeType + "/province/" + activeProvince  + "/city/" + activeCity + "/year/" + activeYear;				                            
+                            }
+                        }else
+						{
+                                tempHref += "/type/" + activeType + "/province/" + activeProvince  + "/city/" + activeCity + "/year/"+ thisHrefText +"/month/" + activeMonth;								
+						}                      
+					}										
+				}
+                
+                if(thisHref.indexOf("month") > 0 )
+				{
+					if(typeof(activeCity) == "undefined")
+					{
+					 	tempHref += "/type/" + activeType + "/province/" + activeProvince + "/year/" + activeYear	 + "/month/" + thisHrefText;					
+					}
+					else
+					{
+					 	tempHref += "/type/" + activeType + "/province/" + activeProvince  + "/city/" + activeCity + "/year/" + activeYear + "/month/" + thisHrefText;				
+					}										
+				}
+				
+				//alert(thisUrl + tempHref);
+				//tempHref = "";
+				location.href = thisUrl + tempHref;	
+				return false;
+			});
+		}
+	</script>
+</block>
+<block name="PageFooter">
+	<include file="Public/PageFooter" />
+</block>

@@ -1,0 +1,76 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <!--<link rel="stylesheet" href="__STATIC__/JQuery/jquery-ui.min.css">-->
+    <taglib name="html" />
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+        <li>比赛网</li>
+        <li>添加文章</li>
+    </ul>
+    <form action="{:U('/Admin/Bsw/addArticleHandle/')}" method="POST">
+        <table class="table">
+            <tr>
+                <td align="center" colspan="2">添加文章</td>
+            </tr>
+            <tr>
+                <td align="right">所属比赛：</td>
+                <td>
+                    <p>{$m_name}</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛文章标题：</td>
+                <td>
+                    <input type="text" name="a_title" id="a_title" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">发布时间：</td>
+                <td>
+                    <div style="position: relative; z-index: 200;">
+                        <input type="text" name="a_time" id="a_time"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">内容：</td>
+                <td>
+                    <!--<input type="text" name="a_content" id="a_content" value="1">-->
+                    <div>
+                        <html:editor id="a_content" name="a_content" type="QUEDITOR" style="width:1024px;height:300px;"></html:editor>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <input type="hidden" name="g_id" value="{$g_id}">
+                    <input type="hidden" name="m_id" value="{$m_id}">
+                    <input type="submit" value="保存添加">
+                </td>
+            </tr>
+        </table>
+    </form>
+</block>
+<block name="scriptContent">
+    <!--<script src="__STATIC__/JQuery/jquery-ui.min.js"></script>-->
+            <script src="__STATIC__/my97/WdatePicker.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            
+            
+        // $("#a_time").datepicker({
+        //     inline: true,
+        //     dateFormat: "yy-mm-dd"
+        // });     
+    });
+    </script>
+</block>

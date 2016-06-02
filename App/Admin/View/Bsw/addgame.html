@@ -1,0 +1,424 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <link rel="stylesheet" href="__STATIC__/JQuery/jquery-ui.min.css">
+    <link rel="stylesheet" href="__STATIC__/JQuery/raty/jquery.raty.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <form action="{:U('/Admin/Bsw/AddGameHandle/')}" method="POST" id="bsw_game_form" enctype="multipart/form-data">
+        <table class="table">
+            <tr>
+                <td align="center" colspan="2">添加赛事</td>
+            </tr>
+            <tr>
+                <td align="right">赛事名称：</td>
+                <td>
+                    <input type="text" name="g_name" id="g_name" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事项目：</td>
+                <td>
+                    <select name="g_event" id="g_event">
+                            <option value="0">--选择赛事项目--</option>
+                            <foreach name="eventList" item="event">
+                                <option value="{$event['id']}">{$event["e_name"]}</option>
+                            </foreach>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事地点：</td>
+                <td>
+                   <div id = "areanDiv">
+                        <select name="g_location" id="g_province" level="1">
+                            <foreach name="provinceList" item="province">
+                                <option value="{$province['id']}">{$province['name']}</option>
+                            </foreach>
+                        </select>
+                    <select name="g_location" id="g_city" level="2">
+                            <foreach name="cityList" item="city">
+                                <option value="{$city[id]}">{$city['name']}</option>
+                            </foreach>
+                        </select>
+                    <select name="g_location" id="g_town" level="3">
+                            <foreach name="townList" item="town">
+                                <option value="{$town['id']}">{$town['name']}</option>
+                            </foreach>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;
+                    <input type="text" name="g_address" id="g_address" style="width:400px;" placeholder="详细地址,手动输入必须填写，可以是起跑点，或者比赛的具体点">
+                   </div>
+                    <input type="hidden" name="g_location_str" id="g_location_str" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">报名开始时间：</td>
+                <td>
+                    <input type="text" name="g_singup_s" id="g_singup_s" onFocus="singuptime(1)" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">报名结束时间：</td>
+                <td>
+                    <input type="text" name="g_singup_e" id="g_singup_e" onFocus="singuptime(2)" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事开始时间：</td>
+                <td>
+                    <input type="text" name="g_time_s" id="g_time_s" onFocus="selecttime(1)" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛事结束时间：</td>
+                <td>
+                    <input type="text" name="g_time_e" id="g_time_e" onFocus="selecttime(2)" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">主办方：</td>
+                <td>
+                    <input type="text" name="g_sponsor" id="g_sponsor" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">报名费：</td>
+                <td>
+                    <input type="text" name="g_fee" id="g_fee">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">人数限制：</td>
+                <td>
+                    <!--<input type="text" name="g_image" id="g_image">-->
+                    <input type="text" name="g_amount" id="g_amount">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">宣传主图：</td>
+                <td>
+                    <!--<input type="text" name="g_image" id="g_image">-->
+                    <input type="file" name="g_image_file" id="g_image_file">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">年龄：</td>
+                <td>
+                    <input type="text" name="g_age" id="g_age">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">星级：</td>
+                <td>
+                    <input type="text" name="g_star" id="g_star" readonly>
+                    <div id="starDiv"></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">GPS坐标：</td>
+                <td>
+                    <input type="text" name="g_gps" id="g_gps" style="width:23%;" readonly>
+                    <div id="container" style="width:500px; height:300px"></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">性别：</td>
+                <td>
+                    <select name="g_gender" id="g_gender">
+                            <option value="0">不限</option>
+                            <option value="1">男</option>
+                            <option value="2">女</option>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">简介：</td>
+                <td>
+                    <textarea name="g_introduction" id="g_introduction" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+            <!--<tr>
+                <td align="right">是否开启</td>
+                <td>
+                    <input type="radio" name="nodeStatus" value="1" checked="checked" />&nbsp;开启&nbsp;
+                    <input type="radio" name="nodeStatus" value="0">&nbsp;关闭
+                </td>
+            </tr>-->
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <input type="submit" value="保存添加">
+                </td>
+            </tr>
+        </table>
+    </form>
+</block>
+<block name="scriptContent">
+    <script src="__STATIC__/my97/WdatePicker.js"></script>
+    <script src="__STATIC__/JQuery/jquery-ui.min.js"></script>
+    <script src="__STATIC__/JQuery/raty/jquery.raty.js"></script>
+    <script src="__PUBLIC__/js/adminFunction.js"></script>
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <!--XI4BZ-3COC4-HDEU7-DBFRN-OIDPJ-QTFGW-->
+    <script type="text/javascript">
+        var ajaxUrl = "{:U('/Admin/Bsw/handleLocation/')}";
+    $(function(){                    
+        //初始化腾讯地图
+        initialQQMap();
+        //初始化五角星
+        $("#starDiv").raty({click: function(score, evt)
+        {
+            //alert('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
+            $("#g_star").val(score);
+        }});
+        
+        $("#bsw_game_form").submit(function(){
+            var g_location = locationSelect();
+            $("#g_location_str").val(g_location);
+            // alert(g_location);
+            // return false;
+        }); 
+        
+        
+        
+        $("#g_province").change(function(){
+            var level = $(this).attr("level");
+            var parentid = $("#g_province").val();
+            //省级发生变化，市级和区级都先清空
+            $("#g_city").empty();
+            $("#g_town").empty();
+            
+            $.ajax({
+                url: ajaxUrl,
+                dataType: 'json',
+                type:"POST",
+                async: true,
+                data: { "parentid": parentid,"level": level },
+                success: function (results) {
+                    
+                    var reval = handleLocationJson(results,"2")
+                    $("#g_city").html("");
+                    $("#g_city").append(reval);
+                    reval = handleLocationJson(results,"3");    
+                    $("#g_town").html("");
+                    $("#g_town").append(reval);                                     
+                },
+                error: function (result) {
+                    alert("查询失败1");
+                }
+            });
+            
+            // var province = $("#g_province").find("option:selected").text();
+            // var city = $("#g_city").find("option:selected").text();
+            // var town = $("#g_town").find("option:selected").text();
+            // alert(province + city + town);
+            
+            // searchKeyword();            
+        });
+        
+        
+        $("#g_city").change(function(){
+                var level = $(this).attr("level");
+                var parentid = $("#g_city").val(); 
+                $.ajax({
+                    url: ajaxUrl,
+                    dataType: 'json',
+                    type:"GET",
+                    async: true,
+                    data: { "parentid": parentid,"level": level },
+                    success: function (results) {
+                        reval = handleLocationJson(results,"3");    
+                        $("#g_town").html("");
+                        $("#g_town").append(reval);                                     
+                    },
+                    error: function (result) {
+                        alert("查询失败1");
+                    }
+                }); 
+                // searchKeyword();
+        });
+        
+        // $("#g_town").change(function(){
+        //     searchKeyword();
+        // });
+        $("#g_address").blur(function(){
+            searchKeyword();
+        });
+    });
+    
+    //初始化腾讯地图
+    var searchService, markers = [];
+    var initialQQMap = function() {
+            var center = new qq.maps.LatLng(31.853848557461927,117.25720882448513);
+            var map = new qq.maps.Map(document.getElementById('container'), {
+                center: center,
+                zoom: 12
+            });
+            
+        //绑定单击事件添加参数
+        qq.maps.event.addListener(map, 'click', function(event) {
+            var gpsValue = event.latLng.getLat() + ',' +
+            event.latLng.getLng();
+            $("#g_gps").val(gpsValue);
+        });
+
+        //设置Poi检索服务，用于本地检索、周边检索
+        searchService = new qq.maps.SearchService({
+            //检索成功的回调函数
+            complete: function(results) { 
+                //设置回调函数参数
+                var pois = results.detail.pois;
+                var infoWin = new qq.maps.InfoWindow({
+                    map: map
+                });
+                var latlngBounds = new qq.maps.LatLngBounds();
+                    for (var i = 0, l = pois.length; i < l; i++) {
+                    var poi = pois[i];
+                    //扩展边界范围，用来包含搜索到的Poi点
+                    latlngBounds.extend(poi.latLng);
+
+                    (function(n) {
+                        var marker = new qq.maps.Marker({
+                            map: map
+                        });
+                        marker.setPosition(pois[n].latLng);
+
+                        marker.setTitle(i + 1);
+                        markers.push(marker);
+
+
+                        qq.maps.event.addListener(marker, 'click', function() {
+                            infoWin.open();
+                            infoWin.setContent('<div style="width:280px;height:100px;">' + 'POI的ID为：' +
+                                pois[n].id + '，POI的名称为：' + pois[n].name + '，POI的地址为：' + pois[n].address + '，POI的类型为：' + pois[n].type + '</div>');
+                            infoWin.setPosition(pois[n].latLng);
+                        });
+                    })(i);
+                }
+                //调整地图视野
+                map.fitBounds(latlngBounds);
+            },
+            //若服务请求失败，则运行以下函数
+            error: function() {
+                alert("出错了。");
+            }
+        });
+
+    }
+
+        //清除地图上的marker
+        function clearOverlays(overlays) {
+            var overlay;
+            while (overlay = overlays.pop()) {
+                overlay.setMap(null);
+            }
+        }
+        //设置搜索的范围和关键字等属性
+        function searchKeyword() {
+            
+            var keyword = $("#g_address").val();
+            var province = $("#g_province").find("option:selected").text();
+            var city = $("#g_city").find("option:selected").text();
+            var town = $("#g_town").find("option:selected").text();
+            if(keyword.length <= 0)
+            {
+                keyword  = province + city + town;
+            }
+            var region  = province + city + town;
+            clearOverlays(markers);
+            //根据输入的城市设置搜索范围
+            searchService.setLocation(region);
+            //根据输入的关键字在搜索范围内检索
+            searchService.search(keyword);
+            //根据输入的关键字在圆形范围内检索
+            //var region = new qq.maps.LatLng(39.916527,116.397128);
+            //searchService.searchNearBy(keyword, region , 2000);
+            //根据输入的关键字在矩形范围内检索
+            //region = new qq.maps.LatLngBounds(new qq.maps.LatLng(39.936273,116.440043),new qq.maps.LatLng(39.896775,116.354212));
+            //searchService.searchInBounds(keyword, region);
+        }
+    
+    //my97日期控件处理
+    //报名时间
+    function selecttime(flag){
+        if(flag==1){
+            var endTime = $("#g_time_e").val();                                
+            if(endTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:endTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }
+        }else{
+            var startTime = $("#g_time_s").val();
+            if(startTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:startTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }    
+        }
+    }
+    
+    //赛事时间
+    function singuptime(flag){
+        if(flag==1){
+            var endTime = $("#g_singup_e").val();                                
+            if(endTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:endTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }
+        }else{
+            var startTime = $("#g_singup_s").val();
+            if(startTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:startTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }    
+        }
+    }
+        
+    //处理location的最终选择只构建json储存到数据库
+    function locationSelect()
+    {
+        var location = $("select[name='g_location']");
+        var g_location_str = '';
+        for(i=0;i<location.length;i++)
+        {
+            if(i == (location.length -1) )
+            {
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"}';
+            }
+            else
+            {
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},';
+            }
+        }
+        
+        g_location_str = "[" + g_location_str + "]";
+        
+        return g_location_str;
+    }
+    
+    //需要把城市的第一列的默认县级数据显示
+    function handleLocationJson(jsonData,level)
+    {
+        var reval = "";
+        $.each(jsonData,function(code,item){
+            // alert(item.level);
+            //         return false;
+            if(item.leveltype == level)
+            {
+                reval += " <option value=\""+ item.id +"\">"+ item.name +" </option>";
+            }
+        });
+        return reval;
+    }
+    </script>
+
+</block>

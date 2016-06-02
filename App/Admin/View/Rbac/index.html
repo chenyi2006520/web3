@@ -1,0 +1,61 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="{:U('/Admin/Index/')}"> Home</a></li>
+        <li>RBAC权限管理</li>
+        <li>用户列表</li>
+    </ul>
+    <table class="table table-striped" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>最后登陆时间</th>
+                <th>最后登陆IP</th>
+                <th>锁定状态</th>
+                <th>用户所属别组</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name='userList' item='val'>
+                <tr>
+                    <td>{$val.id}</td>
+                    <td>{$val.username}</td>
+                    <td>{$val.logiontime|date='Y-m-d H:i',###}</td>
+                    <td>{$val.logionip}</td>
+                    <td>
+                        <if condition='$val["islock"]'>
+                            锁定
+                            <else/> 正常
+                        </if>
+                    </td>
+                    <td>
+                        <ul>
+                            <if condition='$val["username"] eq C("RBAC_SUPERADMIN")'>
+                                超级管理员
+                                <else/>
+                                <foreach name="val.role" item='value'>
+                                    <li>{$value.name}[{$value.remark}]</li>
+                                </foreach>
+                            </if>
+                        </ul>
+                    </td>
+                    <td><a href="#">锁定</a></td>
+                </tr>
+            </foreach>
+            <tr>
+                <td colspan="7" align='center'>
+                    <div class="Pagination">{$show}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</block>

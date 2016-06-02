@@ -1,0 +1,680 @@
+[ 2016-05-16T08:50:14+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002100s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0459s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0369s ]
+
+[ 2016-05-16T08:50:55+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 130000  [ RunTime:0.0221s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 130100  [ RunTime:0.0228s ]
+
+[ 2016-05-16T08:50:57+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=130300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001073s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 130300  [ RunTime:0.0315s ]
+
+[ 2016-05-16T08:53:02+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0268s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0208s ]
+
+[ 2016-05-16T08:53:19+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340200&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340200  [ RunTime:0.0238s ]
+
+[ 2016-05-16T08:53:22+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340100&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0229s ]
+
+[ 2016-05-16T09:13:58+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120000  [ RunTime:0.0252s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120100  [ RunTime:0.0191s ]
+
+[ 2016-05-16T09:15:38+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 370000  [ RunTime:0.0224s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 370100  [ RunTime:0.0180s ]
+
+[ 2016-05-16T09:15:52+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120000  [ RunTime:0.0206s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120100  [ RunTime:0.0206s ]
+
+[ 2016-05-16T09:15:55+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 360000  [ RunTime:0.0215s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 360100  [ RunTime:0.0215s ]
+
+[ 2016-05-16T09:21:41+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=360600&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 360600  [ RunTime:0.0262s ]
+
+[ 2016-05-16T09:22:57+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220000  [ RunTime:0.0186s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220100  [ RunTime:0.0170s ]
+
+[ 2016-05-16T09:24:08+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 420000  [ RunTime:0.0207s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 420100  [ RunTime:0.0217s ]
+
+[ 2016-05-16T09:27:24+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220000  [ RunTime:0.0197s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220100  [ RunTime:0.0229s ]
+
+[ 2016-05-16T09:27:42+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=220300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220300  [ RunTime:0.0195s ]
+
+[ 2016-05-16T09:27:57+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=220700&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 220700  [ RunTime:0.0218s ]
+
+[ 2016-05-16T09:36:19+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320000  [ RunTime:0.0219s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320100  [ RunTime:0.0236s ]
+
+[ 2016-05-16T09:36:32+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=320300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320300  [ RunTime:0.0231s ]
+
+[ 2016-05-16T09:36:36+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=320100&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320100  [ RunTime:0.0177s ]
+
+[ 2016-05-16T09:36:53+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=320200&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320200  [ RunTime:0.0214s ]
+
+[ 2016-05-16T09:36:56+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=320100&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320100  [ RunTime:0.0222s ]
+
+[ 2016-05-16T09:40:17+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=320300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320300  [ RunTime:0.0250s ]
+
+[ 2016-05-16T09:40:33+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0250s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0225s ]
+
+[ 2016-05-16T09:42:31+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120000  [ RunTime:0.0181s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120100  [ RunTime:0.0176s ]
+
+[ 2016-05-16T09:42:37+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 150000  [ RunTime:0.0240s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 150100  [ RunTime:0.0232s ]
+
+[ 2016-05-16T09:42:39+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=150400&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 150400  [ RunTime:0.0209s ]
+
+[ 2016-05-16T09:42:52+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320000  [ RunTime:0.0234s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320100  [ RunTime:0.0217s ]
+
+[ 2016-05-16T09:42:56+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=321000&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 321000  [ RunTime:0.0214s ]
+
+[ 2016-05-16T14:31:32+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 230000  [ RunTime:0.0244s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 230100  [ RunTime:0.0220s ]
+
+[ 2016-05-16T14:31:49+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 140000  [ RunTime:0.0246s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 140100  [ RunTime:0.0228s ]
+
+[ 2016-05-16T14:32:10+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320000  [ RunTime:0.0210s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 320100  [ RunTime:0.0195s ]
+
+[ 2016-05-16T14:32:41+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 150000  [ RunTime:0.0219s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 150100  [ RunTime:0.0211s ]
+
+[ 2016-05-16T14:35:19+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 310000  [ RunTime:0.0205s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 310100  [ RunTime:0.0232s ]
+
+[ 2016-05-16T16:16:59+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 210000  [ RunTime:0.0185s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 210100  [ RunTime:0.0266s ]
+
+[ 2016-05-16T16:17:03+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=210500&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 210500  [ RunTime:0.0188s ]
+
+[ 2016-05-16T16:17:06+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 330000  [ RunTime:0.0178s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 330100  [ RunTime:0.0265s ]
+
+[ 2016-05-16T16:31:36+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 210000  [ RunTime:0.0211s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 210100  [ RunTime:0.0185s ]
+
+[ 2016-05-16T16:35:25+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120000  [ RunTime:0.0223s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 120100  [ RunTime:0.0203s ]
+
+[ 2016-05-16T16:35:34+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 230000  [ RunTime:0.0222s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 230100  [ RunTime:0.0194s ]
+
+[ 2016-05-16T16:35:44+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0191s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0187s ]
+
+[ 2016-05-16T16:40:04+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 330000  [ RunTime:0.0236s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 330100  [ RunTime:0.0192s ]
+
+[ 2016-05-16T16:40:26+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0235s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0187s ]
+
+[ 2016-05-16T16:40:33+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340300  [ RunTime:0.0176s ]
+
+[ 2016-05-16T16:40:47+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340200&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340200  [ RunTime:0.0252s ]
+
+[ 2016-05-16T16:40:57+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340300&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340300  [ RunTime:0.0240s ]
+
+[ 2016-05-16T16:41:01+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340100&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0252s ]
+
+[ 2016-05-16T16:41:11+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340400&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340400  [ RunTime:0.0284s ]
+
+[ 2016-05-16T16:41:25+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340100&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0208s ]
+
+[ 2016-05-16T16:41:43+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340000  [ RunTime:0.0234s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340100  [ RunTime:0.0227s ]
+
+[ 2016-05-16T16:41:54+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=340400&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 340400  [ RunTime:0.0226s ]
+
+[ 2016-05-16T17:33:19+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001425s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430000  [ RunTime:0.0339s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430100  [ RunTime:0.0211s ]
+
+[ 2016-05-16T17:33:21+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=430500&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430500  [ RunTime:0.0259s ]
+
+[ 2016-05-16T17:39:36+08:00 ] 127.0.0.1 /Admin/Bsw/AddGameHandle
+ERR: 1364:Field 'g_singup_s' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `ktm_bsw_game` (`g_name`,`g_event`,`g_location`,`g_time_s`,`g_time_e`,`g_age`,`g_star`,`g_gps`,`g_gender`,`g_introduction`,`g_image`) VALUES ('湖南隆回县曲棍球','7','[{&quot;id&quot;:&quot;430000&quot;,&quot;name&quot;:&quot;湖南省&quot;},{&quot;id&quot;:&quot;430500&quot;,&quot;name&quot;:&quot;邵阳市&quot;},{&quot;id&quot;:&quot;430524&quot;,&quot;name&quot;:&quot;隆回县&quot;}]','1464255180','1464427980','23','5','27.113993006196896,111.03248834618171','0','湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松','http://img.bisai.cn/20160516_57399557d076a.jpg')
+
+[ 2016-05-16T17:45:57+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 440000  [ RunTime:0.0233s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 440100  [ RunTime:0.0226s ]
+
+[ 2016-05-16T17:45:59+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430000  [ RunTime:0.0182s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430100  [ RunTime:0.0219s ]
+
+[ 2016-05-16T17:46:02+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=430500&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430500  [ RunTime:0.0227s ]
+
+[ 2016-05-16T17:46:57+08:00 ] 127.0.0.1 /Admin/Bsw/AddGameHandle
+ERR: 1364:Field 'g_address' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `ktm_bsw_game` (`g_name`,`g_event`,`g_location`,`g_time_s`,`g_time_e`,`g_age`,`g_star`,`g_gps`,`g_gender`,`g_introduction`,`g_image`,`g_singup_s`,`g_singup_e`,`g_fee`,`g_amount`) VALUES ('湖南隆回县曲棍球','7','[{&quot;id&quot;:&quot;430000&quot;,&quot;name&quot;:&quot;湖南省&quot;},{&quot;id&quot;:&quot;110100&quot;,&quot;name&quot;:&quot;北京市&quot;},{&quot;id&quot;:&quot;110101&quot;,&quot;name&quot;:&quot;东城区&quot;}]','1464255180','1464427980','23','4','27.11399778092772,111.03250980377197','0','湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松湖南隆回县马拉松','http://img.bisai.cn/20160516_57399710e05af.jpg','2016','2016','500','50')
+
+[ 2016-05-16T17:49:23+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 410000  [ RunTime:0.0239s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 410100  [ RunTime:0.0191s ]
+
+[ 2016-05-16T17:49:25+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430000  [ RunTime:0.0237s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430100  [ RunTime:0.0216s ]
+
+[ 2016-05-16T17:49:27+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation?parentid=430500&level=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+NOTIC: [8] Undefined index: username /mypc/www/web3/App/Admin/Controller/CommonController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE `parentid` = 430500  [ RunTime:0.0247s ]
+

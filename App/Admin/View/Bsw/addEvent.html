@@ -1,0 +1,35 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+        <li>UI Elements</li>
+        <li>Widget</li>
+    </ul>
+        <form action="{:U('/Admin/Bsw/AddEventHandle/')}" method="POST">
+            <table class="talbe">
+                <tr>
+                    <th align="center">添加赛事</th>
+                </tr>
+                <tr>
+                    <td align="right">赛事项目：</td>
+                    <td colspan="2">
+                        <input type="text" name="e_name" id="e_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="left" colspan="2">
+                        <input type="hidden" name="e_pid" value="{$e_pid}" />
+                        <input type="submit" value="保存添加">
+                    </td>
+                </tr>
+            </table>
+        </form>
+</block>

@@ -1,0 +1,70 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <taglib name="html" />
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+        <li>比赛网</li>
+        <li>修改文章</li>
+    </ul>
+    <form action="{:U('/Admin/Bsw/handleAlterArticle/')}" method="POST">
+        <table class="table">
+            <tr>
+                <td align="center" colspan="2">修改文章</td>
+            </tr>
+            <tr>
+                <td align="right">所属比赛：</td>
+                <td>
+                    <select name="m_id" id="m_id">
+                        <foreach name="matchList" item = "match">
+                            <option value="{$match['id']}">{$match['m_name']}</option>
+                        </foreach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">赛文章标题：</td>
+                <td>
+                    <input type="text" name="a_title" id="a_title" value="{$articleModel.a_title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">发布时间：</td>
+                <td>
+                    <div style="position: relative; z-index: 200;">
+                        <input type="text" name="a_time" id="a_time" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value="{$articleModel.a_time|date='Y-m-d H:i',###}"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">内容：</td>
+                <td>
+                    <!--<input type="text" name="a_content" id="a_content" value="1">-->
+                    <div>
+                        <html:editor id="a_content" name="a_content" type="QUEDITOR" style="width:1024px;height:300px;">{:htmlspecialchars_decode($articleModel['a_content'])}</html:editor>
+                        <!--<html:editor id="a_content" name="a_content" type="KINDEDITOR" style="width:1024px;height:300px;">{:htmlspecialchars_decode($articleModel['a_content'])}</html:editor>-->
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <input type="hidden" name="g_id" value="{$articleModel.g_id}">
+                    <input type="hidden" name="id" value="{$articleModel.id}">
+                    <input type="submit" value="保存修改">
+                </td>
+            </tr>
+        </table>
+    </form>
+</block>
+<block name="scriptContent">
+    <script src="__STATIC__/my97/WdatePicker.js"></script>
+    <!--<script>KindEditor.ready(function(K) {window.editor = K.create('#editor_id');});</script>-->
+</block>

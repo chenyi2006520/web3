@@ -1,0 +1,131 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__STATIC__/JQuery/jquery-ui.min.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <form action="{:U('/Admin/Bsw/handleAlterMatch/')}" method="POST">
+        <table class="table">
+            <tr>
+                <td align="center" colspan="2">修改比赛</td>
+            </tr>
+            <tr>
+                <td align="right">所属赛事：</td>
+                <td>
+                    <select name="g_id" id = "g_id">
+                        <foreach name="gameList" item="game">
+                            <option value="{$game['id']}" {:compareValue($game["id"],$matchModel["g_id"]," selected ")}>{$game['g_name']}</option>
+                        </foreach>
+                    </select>       
+                    <input type="hidden" name="id" value="{$matchModel.id}">             
+                </td>
+            </tr>
+            <tr>
+                <td align="right">比赛名称：</td>
+                <td>
+                    <input type="text" name="m_name" id="m_name" value="{$matchModel.m_name}"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">开始时间：</td>
+                <td>
+                    <input type="text" name="m_time_s" id="m_time_s" value="{$matchModel.m_time_s|date='Y-m-d',###}"  onFocus="selecttime(1)" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">结束时间：</td>
+                <td>
+                    <input type="text" name="m_time_e" id="m_time_e" value="{$matchModel.m_time_e|date='Y-m-d',###}"  onFocus="selecttime(2)" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">GPS坐标：</td>
+                <td>
+                    <input type="text" name="m_gps" id="m_gps" style="width:23%;" value="{$matchModel.m_gps}">
+                    <div id="container" style="width:500px; height:300px"></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">简介：</td>
+                <td>
+                    <textarea name="m_introduction" id="m_introduction" cols="30" rows="10">{$matchModel.m_introduction}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <input type="submit" value="保存修改">
+                </td>
+            </tr>
+        </table>
+    </form>
+</block>
+<block name="scriptContent">
+        <script src="__STATIC__/my97/WdatePicker.js"></script>
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <!--XI4BZ-3COC4-HDEU7-DBFRN-OIDPJ-QTFGW-->
+    <script type="text/javascript">
+        $(function(){                    
+        //初始化腾讯地图
+        initialQQMap();
+    });
+    
+    //my97日期控件处理
+    function selecttime(flag){
+        if(flag==1){
+            var endTime = $("#g_time_e").val();                                
+            if(endTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:endTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }
+        }else{
+            var startTime = $("#g_time_s").val();
+            if(startTime != ""){
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:startTime});
+            }else{
+                WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'});
+            }    
+        }
+    }
+    
+    //初始化腾讯地图
+    function initialQQMap(){
+        var center = new qq.maps.LatLng(31.853848557461927,117.25720882448513);
+        var map = new qq.maps.Map(document.getElementById("container"),{
+            center: center,
+            zoom: 16
+        });
+        //绑定单击事件添加参数
+        qq.maps.event.addListener(map, 'click', function(event) {
+            var gpsValue = event.latLng.getLat() + ',' +
+            event.latLng.getLng();
+            //创建marker
+            new qq.maps.Marker({
+            position: new qq.maps.LatLng(event.latLng.getLat(),event.latLng.getLng()),
+            draggable: true,
+            map: map
+        });
+            $("#m_gps").val(gpsValue);
+        });
+        
+        //创建marker
+        // var marker = new qq.maps.Marker({
+        //     position: center,
+        //     draggable: true,
+        //     map: map
+        // });
+        
+        
+        //比例尺控件
+        var scaleControl = new qq.maps.ScaleControl({
+            align: qq.maps.ALIGN.BOTTOM_LEFT,
+            margin: qq.maps.Size(85, 15),
+            map: map
+        });
+    }
+    </script>
+</block>

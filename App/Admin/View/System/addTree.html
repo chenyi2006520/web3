@@ -1,0 +1,139 @@
+<extend name="Public:base" />
+<block name="headerCss">
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/Css/node.css">
+</block>
+<block name="menuTree">
+    <!--<include file="Public/listree" />    -->
+    {:BaseTreeList($treeArr)}
+</block>
+<block name="content">
+    <ul class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="{:U('/Admin/Index/')}"> Home</a></li>
+        <li>系统管理</li>
+        <li>菜单管理</li>
+        <li>菜单列表</li>
+    </ul>
+    <div class="smart-widget widget-dark-blue">
+        <div class="smart-widget-header">
+            添加菜单
+        </div>
+        <div class="smart-widget-inner">
+            <div class="smart-widget-hidden-section">
+            </div>
+            <div class="smart-widget-body">
+                <form class="form-horizontal" method="POST" action="{:U('/Admin/System/handleAddData/')}">
+                    <div class="form-group">
+                        <label for="t_Title" class="col-lg-2 control-label">菜单名称</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="t_Title" name="t_Title" placeholder="菜单名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="t_sort" class="col-lg-2 control-label">序号</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="t_sort" name="t_sort" placeholder="序号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="t_url" class="col-lg-2 control-label">链接参数</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="t_url" name="t_url" placeholder="链接参数">
+                        </div>
+                    </div>
+                    <div class="form-group {$hiddleValue}">
+                        <label class="col-lg-2 control-label">样式图标</label>
+                        <div class="col-lg-10">
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio1" name="t_iconStyle" value="1">
+                                    <label for="inlineRadio1"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-home fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block  col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio2" name="t_iconStyle" value="2">
+                                    <label for="inlineRadio2"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-tags fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio3" name="t_iconStyle" value="3">
+                                    <label for="inlineRadio3"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-desktop fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio4" name="t_iconStyle" value="4">
+                                    <label for="inlineRadio4"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa  fa-anchor fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio5" name="t_iconStyle" value="5">
+                                    <label for="inlineRadio5"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-bell-o fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio6" name="t_iconStyle" value="6">
+                                    <label for="inlineRadio6"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-archive fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio7" name="t_iconStyle" value="7">
+                                    <label for="inlineRadio7"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-list fa-lg"></i></div>
+                            </div>
+                            <div class="radio inline-block col-xs-1">
+                                <div class="custom-radio m-right-xs">
+                                    <input type="radio" id="inlineRadio8" name="t_iconStyle" value="8">
+                                    <label for="inlineRadio8"></label>
+                                </div>
+                                <div class="inline-block vertical-top"><i class="block fa fa-cog fa-lg"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="t_url" class="col-lg-2 control-label">是否启用</label>
+                        <div class="col-lg-3 ">
+                             <div class="checkbox">
+                                <label>
+                                <input type="checkbox"  id="t_status" name="t_status" value="1"> 启用
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="t_url" class="col-lg-2 control-label">是否前台导航</label>
+                        <div class="col-lg-3 ">
+                             <div class="checkbox">
+                                <label>
+                                <input type="checkbox"  id="t_showFlag" name="t_showFlag" value="1"> 是
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-success btn-lg">新增</button>
+                            <input type="hidden" value="{$t_pid}" name="t_pid" id="t_pid">
+                            <input type="hidden" value="{$t_level}" name="t_level" id="t_level">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="scriptContent">
+
+</block>
