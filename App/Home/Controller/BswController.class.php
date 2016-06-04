@@ -36,6 +36,7 @@ class BswController extends Controller {
             $whereSQL .= " and g_event = ".$eventid;
             $typeFlag = true;
             $listModel['typeFlag'] = "true";
+            $listModel['event'] = $event;
         }
         
         //如果没有赛事项目id出来就表示是省份 typeFlag = flase
@@ -75,6 +76,7 @@ class BswController extends Controller {
                         $listModel['city'] = $city;                  
                     }                 
                 }
+                $listModel['province'] = strtolower($event);                  
                 
             }else
             {
@@ -85,17 +87,8 @@ class BswController extends Controller {
             
             
             $listModel['event'] = "all"; 
-            $listModel['province'] = $event;  
             $listModel['typeFlag'] = "false";          
         }
-        pp($listModel);die;//此处有问题
-        if (empty($event)) {//赛事项目为空赋值为all
-           $listModel['event'] = 'all' ;                         
-        }else
-        {
-           $listModel['event'] = $event ;             
-        }
-        
         
         //年份数组 自动增长
         $thisYear = date("Y");
