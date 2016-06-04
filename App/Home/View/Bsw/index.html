@@ -16,12 +16,12 @@
 								<div class="filters">
 									<div class="filter type clearfix"><span class="tit">类型:</span>
 										<span class="word {:compareValue('all',$listModel['event'],'active')}">
-											<a href="{:U('/game/all')}" datatype="type" datavalue = "all">全部</a>
+											<a href="{:U('/matches/all')}" datatype="type" datavalue = "all">全部</a>
 											<input type="hidden" name="activeType" id="activeType" value="{$listModel.event}">
 										</span>
 										<foreach name="eventList" item="value">
 											<span class="word {:compareValue($value['e_pyname'],$listModel['event'],'active')}">
-											<a href="{:U('/game/'.$value['e_pyname'])}" datatype="type"  datavalue = "{$value['e_pyname']}">{$value['e_name']}</a>
+											<a href="{:U('/matches/'.$value['e_pyname'])}" datatype="type"  datavalue = "{$value['e_pyname']}">{$value['e_name']}</a>
 											</span>
 										</foreach>
 										<!--<span class="word ">
@@ -72,12 +72,12 @@
 									</div>-->
 									<div class="filter js-less less-item clearfix"><span class="tit">省份:</span>
 										<span class="word {:compareValue('all',$listModel['province'],'active')}">
-											<a href="{:U('/game/all')}" datatype="province" datavalue = "all">全部</a>
+											<a href="{:U('/matches/all')}" datatype="province" datavalue = "all">全部</a>
 											<input type="hidden" name="activeProvince" id = "activeProvince" value="{$listModel.province}">											
 										</span>
 										<foreach name="provinceList" item="value">
-											<span class="word {:compareValue($value['pinyin'],$listModel['province'],'active')}">
-												<a href="{:U('/game/'.$value['shortname'])}"  datatype="province"  datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
+											<span class="word {:compareValue(strtolower($value['pinyin']),$listModel['province'],'active')}">
+												<a href="{:U('/matches/'.strtolower($value['pinyin']))}"  datatype="province"  datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
 											</span>
 										</foreach>
 									</div>
@@ -85,12 +85,12 @@
 									<if condition="$listModel['showCityFlag'] eq 0">
 										<div class="filter js-less less-item clearfix " id="citydiv"><span class="tit">市级:</span>
 											<span class="word {:compareValue('all',$listModel['city'],'active')}">
-												<a href="{:U('/game/all')}"  datatype="city" datavalue = "all">全部</a>
+												<a href="{:U('/matches/all')}"  datatype="city" datavalue = "all">全部</a>
 												<input type="hidden" name="activeCity" id="activeCity" value="{$listModel.city}">	
 											</span>
 											<foreach name="cityList" item="value">
 												<span class="word {:compareValue($value['pinyin'],$listModel['city'],'active')}">
-														<a href="{:U('/game/'.$value['shortname'])}"   datatype="city" datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
+														<a href="{:U('/matches/'.strtolower($value['pinyin']))}"   datatype="city" datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
 														<!--<a href="{:U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])))}">{$value['shortname']}</a>-->
 													</span>
 											</foreach>
@@ -100,24 +100,24 @@
 
 									<div class="filter js-less less-item clearfix" style="border:0"><span class="tit">时间:</span>
 										<span class="word {:compareValue('all',$listModel['year'],'active')}">
-											<a href="{:U('/game/all')}"   datatype="year" datavalue = "all" >全部</a>
+											<a href="{:U('/matches/all')}"   datatype="year" datavalue = "all" >全部</a>
 												<input type="hidden" name="activeYear" id="activeYear" value="{$listModel.year}">											
 												<input type="hidden" name="activeMonth" id="activeMonth" value="{$listModel.month}">
 										</span>
 										<foreach name="yearList" item="value">
 											<span class="word {:compareValue($value,$listModel['year'],'active')}">
-												<a href="{:U('/game/'.$value)}"   datatype="year" datavalue = "{$value}" >{$value}年</a>
+												<a href="{:U('/matches/'.$value)}"   datatype="year" datavalue = "{$value}" >{$value}年</a>
 											</span>
 										</foreach>
 									</div>
 									<if condition="$listModel['year'] neq 'all'">
 										<div class="filter js-less less-item clearfix" style="border:0"><span class="tit"></span>
 											<span class="word {:compareValue('all',$listModel['month'],'active')}">
-											<a href="{:U('/game/all')}"   datatype="month" datavalue = "all" >全部</a>
+											<a href="{:U('/matches/all')}"   datatype="month" datavalue = "all" >全部</a>
 										</span>
 											<for start="1" end="13">
 												<span class="word {:compareValue($i,$listModel['month'],'active')}">
-											<a href="{:U('/game/'.$i)}"   datatype="month" datavalue = "{$i}" >{$i}月</a>
+											<a href="{:U('/matches/'.$i)}"   datatype="month" datavalue = "{$i}" >{$i}月</a>
 											</span>
 											</for>
 										</div>
@@ -136,11 +136,11 @@
 							<foreach name="gameList" item="game">
 								<div class="race-itemlist clearfix">
 									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-10">
-										<a href="{:U('/games/'.$game['id'])}" target="_blank">
+										<a href="{:U('/match/'.$game['id'])}" target="_blank">
 											<img alt="{$game['g_name']}" src="{$game['g_image']}">
 										</a>
 										<div class="itemname">
-											<strong><a href="{:U('/games/'.$game['id'])}" class="" target="_blank">{$game['g_name']}</a></strong>
+											<strong><a href="{:U('/match/'.$game['id'])}" class="" target="_blank">{$game['g_name']}</a></strong>
 										</div>
 										<div class="attr">
 											{:getLocation($game['g_location'],1,1,0)}
@@ -187,12 +187,12 @@
 				<div class="side-list clearfix">
 					<foreach name="gameRanList" item="game">
 						<div class="item col-xs-12">
-						<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
+						<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
 							<img alt="{$game['g_name']}"  class="rightImage" src="{$game['g_image']}">
 						</a>
 						<div class="meta">
 							<div class="text img-rt-title">
-								<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
+								<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
 							</div>
 							<div class="attr time">{$game['g_time_s']||date='Y-m-d',###}</div>
 							<div class="attr state">
@@ -207,7 +207,7 @@
 	</div>
 	</div>
 	<script type="text/javascript">
-		var thisUrl = "{:U('/game/')}";
+		var thisUrl = "{:U('/matches/')}";
 		$(function(){
 			$(".expand").click(function () {
 				$(".filter-bar").addClass("more");

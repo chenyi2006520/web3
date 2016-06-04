@@ -47,7 +47,7 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
-					<li><a href="/games">赛事</a></li>
+					<li><a href="/matches">赛事</a></li>
 				</ul>
 			</div>
 		</div>
@@ -136,12 +136,12 @@
 			<div class="col-md-3 col-md-offset-1">
 				<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="side-list clearfix">
 						<div class="item col-xs-12">
-							<a href="<?php echo U('/games/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
+							<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
 								<img alt="<?php echo ($game['g_name']); ?>" class="rightImage" src="<?php echo ($game['g_image']); ?>">
 							</a>
 							<div class="meta">
 								<div class="text img-rt-title">
-									<a href="<?php echo U('/games/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
+									<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
 								</div>
 								<div class="attr time"><?php echo (date('Y-m-d',$game['g_time_s'])); ?></div>
 								<div class="attr state">

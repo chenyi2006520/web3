@@ -220,8 +220,8 @@ class BswController extends CommonController {
         
         $locationStr = I("g_location_str");
         $gameData = array("id"=> $g_id,'g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor"=>$g_sponsor);
-        // pp($gameData);
-        // die;
+        // pp($gameData);die;
+        
         if (M("bsw_game")->save($gameData)) {
             $this->success("修改成功", U("/Admin/Bsw/Index/"));
         } else {

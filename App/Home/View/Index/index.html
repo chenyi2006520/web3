@@ -30,7 +30,7 @@
 											<else/>
 												<div class="item">
 											</if>
-												<a href="{:U('/games/'.$game['id'])}" target="_blank">
+												<a href="{:U('/match/'.$game['id'])}" target="_blank">
 													<img alt="{$game['g_name']}" class="img-rounded" src="{$game['g_image']}">
 													<div class="carousel-caption">
 
@@ -86,7 +86,7 @@
 							<div class="mod mod-lg">
 								<div class="mod-hd">
 									<h2>推荐比赛</h2>
-									<a href="/games/" class="more pull-right">更多</a>
+									<a href="/match/" class="more pull-right">更多</a>
 								</div>
 							</div>
 							<foreach name="gameList" item="game">
@@ -95,7 +95,7 @@
 									<p>
 										{$game['g_introduction']}
 									</p>
-									<p><a class="btn btn-default" href="{:U('/games/'.$game['id'])}" role="button">详情 »</a></p>
+									<p><a class="btn btn-default" href="{:U('/match/'.$game['id'])}" role="button">详情 »</a></p>
 								</div>
 							</foreach>
 						</div>
@@ -114,12 +114,12 @@
 					<div class="side-list clearfix">
 						<foreach name="gameRanList" item="game">
 							<div class="item col-xs-12">
-								<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
+								<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
 									<img alt="{$game['g_name']}" class="rightImage" src="{$game['g_image']}">
 								</a>
 								<div class="meta">
 									<div class="text img-rt-title">
-										<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
+										<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
 									</div>
 									<div class="attr time">2016-05-21</div>
 									<div class="attr state">

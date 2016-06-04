@@ -241,10 +241,10 @@
                             <?php if(is_array($provinceList)): foreach($provinceList as $key=>$province): ?><option value="<?php echo ($province['id']); ?>" pydata="<?php echo ($province['pinyin']); ?>" <?php echo compareValue($province['id'],$gameModel["province"]," selected ");?>><?php echo ($province['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                         <select name="g_location" id="g_city" level="2">
-                            <?php if(is_array($cityList)): foreach($cityList as $key=>$city): ?><option value="<?php echo ($city[id]); ?>" <?php echo compareValue($city['id'],$gameModel["city"]," selected ");?>><?php echo ($city['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($cityList)): foreach($cityList as $key=>$city): ?><option value="<?php echo ($city[id]); ?>"  pydata="<?php echo ($city['pinyin']); ?>" <?php echo compareValue($city['id'],$gameModel["city"]," selected ");?>><?php echo ($city['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                         <select name="g_location" id="g_town" level="3">
-                            <?php if(is_array($townList)): foreach($townList as $key=>$town): ?><option value="<?php echo ($town['id']); ?>" <?php echo compareValue($town['id'],$gameModel["area"]," selected ");?>><?php echo ($town['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($townList)): foreach($townList as $key=>$town): ?><option value="<?php echo ($town['id']); ?>"  pydata="<?php echo ($town['pinyin']); ?>" <?php echo compareValue($town['id'],$gameModel["area"]," selected ");?>><?php echo ($town['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                         <input type="text" name="g_address" id="g_address" style="width:400px;" placeholder="详细地址,手动输入必须填写，可以是起跑点，或者比赛的具体点" value="<?php echo ($gameModel["g_address"]); ?>">
                         <input type="hidden" name="g_location_str" id="g_location_str" value="0">
@@ -608,15 +608,16 @@
     {
         var location = $("select[name='g_location']");
         var g_location_str = '';
+
         for(i=0;i<location.length;i++)
         {
             if(i == (location.length -1) )
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"}';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
             }
             else
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
             }
         }
         
@@ -632,7 +633,7 @@
         $.each(jsonData,function(code,item){
             if(item.leveltype == level)
             {
-                reval += " <option value=\""+ item.id +"\">"+ item.name +" </option>";
+                reval += " <option value=\""+ item.id +"\" pydata=\""+ item.pinyin +"\">"+ item.name +" </option>";
             }
         });
         return reval;

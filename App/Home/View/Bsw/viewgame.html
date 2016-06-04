@@ -87,12 +87,12 @@
 				<foreach name="gameRanList" item="game">
 					<div class="side-list clearfix">
 						<div class="item col-xs-12">
-							<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
+							<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">
 								<img alt="{$game['g_name']}" class="rightImage" src="{$game['g_image']}">
 							</a>
 							<div class="meta">
 								<div class="text img-rt-title">
-									<a href="{:U('/games/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
+									<a href="{:U('/match/'.$game['id'])}" target="_blank" title="{$game['g_name']}">{$game['g_name']}</a>
 								</div>
 								<div class="attr time">{$game['g_time_s']||date='Y-m-d',###}</div>
 								<div class="attr state">

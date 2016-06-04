@@ -58,19 +58,26 @@ function Qiniu_Sign($url) {//$info里面的url
     return $RealDownloadUrl;
 }
 
-//处理比赛网game表中g_location的json数据格式
+//处理比赛网game表中g_location的json数据格式,省市区值为1返回name，为2返回pyname
 function getLocation($locationJSON,$pronviceFlag,$cityFlag,$areaFlag)
 {
 	$tempjson = json_decode(htmlspecialchars_decode($locationJSON));
 	$returnValue = "";
 	if ($pronviceFlag == 1) {
 			$returnValue .= $tempjson[0] ->{'name'}." ";
-	}
+	}elseif ($pronviceFlag == 2) {
+		$returnValue .= $tempjson[0] ->{'pinyin'}." ";
+	}	
+	
 	if ($cityFlag == 1) {
 		$returnValue .= $tempjson[1] ->{'name'}." ";
+	}elseif ($cityFlag == 2) {
+		$returnValue .= $tempjson[1] ->{'pinyin'}." ";
 	}
 	if ($areaFlag == 1) {
 		$returnValue .= $tempjson[2] ->{'name'};
+	}elseif ($areaFlag == 2) {
+		$returnValue .= $tempjson[2] ->{'pinyin'};
 	}
 	
 	return $returnValue;

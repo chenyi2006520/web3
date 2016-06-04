@@ -47,7 +47,7 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
-					<li><a href="/games">赛事</a></li>
+					<li><a href="/matches">赛事</a></li>
 				</ul>
 			</div>
 		</div>
@@ -66,11 +66,11 @@
 								<div class="filters">
 									<div class="filter type clearfix"><span class="tit">类型:</span>
 										<span class="word <?php echo compareValue('all',$listModel['event'],'active');?>">
-											<a href="<?php echo U('/game/all');?>" datatype="type" datavalue = "all">全部</a>
+											<a href="<?php echo U('/matches/all');?>" datatype="type" datavalue = "all">全部</a>
 											<input type="hidden" name="activeType" id="activeType" value="<?php echo ($listModel["event"]); ?>">
 										</span>
 										<?php if(is_array($eventList)): foreach($eventList as $key=>$value): ?><span class="word <?php echo compareValue($value['e_pyname'],$listModel['event'],'active');?>">
-											<a href="<?php echo U('/game/'.$value['e_pyname']);?>" datatype="type"  datavalue = "<?php echo ($value['e_pyname']); ?>"><?php echo ($value['e_name']); ?></a>
+											<a href="<?php echo U('/matches/'.$value['e_pyname']);?>" datatype="type"  datavalue = "<?php echo ($value['e_pyname']); ?>"><?php echo ($value['e_name']); ?></a>
 											</span><?php endforeach; endif; ?>
 										<!--<span class="word ">
 											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
@@ -120,21 +120,21 @@
 									</div>-->
 									<div class="filter js-less less-item clearfix"><span class="tit">省份:</span>
 										<span class="word <?php echo compareValue('all',$listModel['province'],'active');?>">
-											<a href="<?php echo U('/game/all');?>" datatype="province" datavalue = "all">全部</a>
+											<a href="<?php echo U('/matches/all');?>" datatype="province" datavalue = "all">全部</a>
 											<input type="hidden" name="activeProvince" id = "activeProvince" value="<?php echo ($listModel["province"]); ?>">											
 										</span>
-										<?php if(is_array($provinceList)): foreach($provinceList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['province'],'active');?>">
-												<a href="<?php echo U('/game/'.$value['shortname']);?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+										<?php if(is_array($provinceList)): foreach($provinceList as $key=>$value): ?><span class="word <?php echo compareValue(strtolower($value['pinyin']),$listModel['province'],'active');?>">
+												<a href="<?php echo U('/matches/'.strtolower($value['pinyin']));?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 											</span><?php endforeach; endif; ?>
 									</div>
 									<!--{overrideCompareValue(1,$listModel['showCityFlag'],'1','hidden')}-->
 									<?php if($listModel['showCityFlag'] == 0): ?><div class="filter js-less less-item clearfix " id="citydiv"><span class="tit">市级:</span>
 											<span class="word <?php echo compareValue('all',$listModel['city'],'active');?>">
-												<a href="<?php echo U('/game/all');?>"  datatype="city" datavalue = "all">全部</a>
+												<a href="<?php echo U('/matches/all');?>"  datatype="city" datavalue = "all">全部</a>
 												<input type="hidden" name="activeCity" id="activeCity" value="<?php echo ($listModel["city"]); ?>">	
 											</span>
 											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['city'],'active');?>">
-														<a href="<?php echo U('/game/'.$value['shortname']);?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+														<a href="<?php echo U('/matches/'.strtolower($value['pinyin']));?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 														<!--<a href="<?php echo U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])));?>"><?php echo ($value['shortname']); ?></a>-->
 													</span><?php endforeach; endif; ?>
 										</div><?php endif; ?>
@@ -142,20 +142,20 @@
 
 									<div class="filter js-less less-item clearfix" style="border:0"><span class="tit">时间:</span>
 										<span class="word <?php echo compareValue('all',$listModel['year'],'active');?>">
-											<a href="<?php echo U('/game/all');?>"   datatype="year" datavalue = "all" >全部</a>
+											<a href="<?php echo U('/matches/all');?>"   datatype="year" datavalue = "all" >全部</a>
 												<input type="hidden" name="activeYear" id="activeYear" value="<?php echo ($listModel["year"]); ?>">											
 												<input type="hidden" name="activeMonth" id="activeMonth" value="<?php echo ($listModel["month"]); ?>">
 										</span>
 										<?php if(is_array($yearList)): foreach($yearList as $key=>$value): ?><span class="word <?php echo compareValue($value,$listModel['year'],'active');?>">
-												<a href="<?php echo U('/game/'.$value);?>"   datatype="year" datavalue = "<?php echo ($value); ?>" ><?php echo ($value); ?>年</a>
+												<a href="<?php echo U('/matches/'.$value);?>"   datatype="year" datavalue = "<?php echo ($value); ?>" ><?php echo ($value); ?>年</a>
 											</span><?php endforeach; endif; ?>
 									</div>
 									<?php if($listModel['year'] != 'all'): ?><div class="filter js-less less-item clearfix" style="border:0"><span class="tit"></span>
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
-											<a href="<?php echo U('/game/all');?>"   datatype="month" datavalue = "all" >全部</a>
+											<a href="<?php echo U('/matches/all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_461570856__=1;$__FOR_END_461570856__=13;for($i=$__FOR_START_461570856__;$i < $__FOR_END_461570856__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
-											<a href="<?php echo U('/game/'.$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
+											<?php $__FOR_START_115681269__=1;$__FOR_END_115681269__=13;for($i=$__FOR_START_115681269__;$i < $__FOR_END_115681269__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<a href="<?php echo U('/matches/'.$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
 
@@ -170,11 +170,11 @@
 					<div class="raceitems">
 						<?php if($listModel['NoGameData'] != 1): if(is_array($gameList)): foreach($gameList as $key=>$game): ?><div class="race-itemlist clearfix">
 									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-10">
-										<a href="<?php echo U('/games/'.$game['id']);?>" target="_blank">
+										<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
 											<img alt="<?php echo ($game['g_name']); ?>" src="<?php echo ($game['g_image']); ?>">
 										</a>
 										<div class="itemname">
-											<strong><a href="<?php echo U('/games/'.$game['id']);?>" class="" target="_blank"><?php echo ($game['g_name']); ?></a></strong>
+											<strong><a href="<?php echo U('/match/'.$game['id']);?>" class="" target="_blank"><?php echo ($game['g_name']); ?></a></strong>
 										</div>
 										<div class="attr">
 											<?php echo getLocation($game['g_location'],1,1,0);?>
@@ -218,12 +218,12 @@
 			<div class="col-md-3">
 				<div class="side-list clearfix">
 					<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="item col-xs-12">
-						<a href="<?php echo U('/games/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
+						<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
 							<img alt="<?php echo ($game['g_name']); ?>"  class="rightImage" src="<?php echo ($game['g_image']); ?>">
 						</a>
 						<div class="meta">
 							<div class="text img-rt-title">
-								<a href="<?php echo U('/games/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
+								<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
 							</div>
 							<div class="attr time"><?php echo (date('Y-m-d',$game['g_time_s'])); ?></div>
 							<div class="attr state">
@@ -237,7 +237,7 @@
 	</div>
 	</div>
 	<script type="text/javascript">
-		var thisUrl = "<?php echo U('/game/');?>";
+		var thisUrl = "<?php echo U('/matches/');?>";
 		$(function(){
 			$(".expand").click(function () {
 				$(".filter-bar").addClass("more");

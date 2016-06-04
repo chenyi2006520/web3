@@ -42,12 +42,12 @@
                         </select>
                     <select name="g_location" id="g_city" level="2">
                             <foreach name="cityList" item="city">
-                                <option value="{$city[id]}">{$city['name']}</option>
+                                <option value="{$city[id]}"  pydata="{$city['pinyin']}">{$city['name']}</option>
                             </foreach>
                         </select>
                     <select name="g_location" id="g_town" level="3">
                             <foreach name="townList" item="town">
-                                <option value="{$town['id']}">{$town['name']}</option>
+                                <option value="{$town['id']}"  pydata="{$town['pinyin']}">{$town['name']}</option>
                             </foreach>
                         </select>
                         &nbsp;&nbsp;&nbsp;
@@ -392,11 +392,11 @@
         {
             if(i == (location.length -1) )
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"}';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
             }
             else
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},,"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
             }
         }
         
@@ -414,7 +414,7 @@
             //         return false;
             if(item.leveltype == level)
             {
-                reval += " <option value=\""+ item.id +"\">"+ item.name +" </option>";
+                reval += " <option value=\""+ item.id +"\"  pydata=\""+ item.pinyin +"\">"+ item.name +" </option>";
             }
         });
         return reval;

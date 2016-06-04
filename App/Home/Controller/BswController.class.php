@@ -6,8 +6,8 @@ use Think\Controller;
 class BswController extends Controller {
     // public function index($type="all",$province="all",$city="all",$year="all",$month="all") {
     public function index() {        
-        //saishi/zuqiu
-        //saishi/anhui
+        //matches/zuqiu
+        //matches/anhui
         //类型,省份都是使用此   url，暂未找到单个参数匹配区分的正则，然后在读取页面通过先处理event如果有就确定为搜索event，如果没有就是判断为搜索省份
         
         //页面城市选择处理
@@ -19,51 +19,76 @@ class BswController extends Controller {
         $event = urldecode(I("type"));
         $year = I("year");
         $month = I("month");
-        $cityParentId = "";        
-        if ($province != "all" && !empty($province)) {//如果省份不为空或者all，就获取当前省份的id
-            $listModel['province'] = $province;
-            $listModel['showMore'] = "1" ;            
-                            
-            foreach ($provinceList as $value) {//获取id赋值
-                if ($value['pinyin'] == strtolower($province)) {
-                    $cityParentId = $value['id'];
-                }
-            }
+        $cityParentId = ""; 
+        
+        //typeFlag 区分是赛事项目还是省份标志,默认false表示为省份
+        $typeFlag = false;
+        
+        //赛事项目event
+        $eventModel = M("bsw_event");
+        $eventList = $eventModel ->select();
+        $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
+
+        
+        // $eventid = array_filter($eventList, function($e) use ($event) { return $e['e_name'] == "排球"; })[0][id];
+        $whereSQL = " 1 = 1";
+        if ($eventid > 0) {//赛事项目的查询
+            $whereSQL .= " and g_event = ".$eventid;
+            $typeFlag = true;
+            $listModel['typeFlag'] = "true";
+        }
+        
+        //如果没有赛事项目id出来就表示是省份 typeFlag = flase
+        if ($typeFlag == false && trim($province) == "" && trim($event) != "") {
+                $province = $event;
             
-            $cityList =  $locationModel ->where("parentid = '" . $cityParentId ."'") ->select();//获得当前省份的城市列表
-            
-            if (!empty($cityList)) {
-                $listModel['showCityFlag'] = "0" ;//如果城市列表 不为空就要打开 more 样式
-                $this ->cityList = $cityList;                                
-            }else
-            {
-                $listModel['showCityFlag'] = "1" ;                
-            } 
-            
-                        
-            if (empty($city) || $city == "") {//如果城市为空 默认为当前省份所有城市
-                $listModel['city'] = 'all';
-            }else
-            {
-                //如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all
-                if (!deep_in_array($city,$cityList)) {
-                    $listModel['city'] = "all"; 
-                    $city = "all";
-                    // pp($cityList);die;                   
+                if ($province != "all" && !empty($province) && trim($province) != "") {//如果省份不为空或者all，就获取当前省份的id
+                $listModel['province'] = $province;
+                $listModel['showMore'] = "1" ;            
+                                
+                foreach ($provinceList as $value) {//获取id赋值
+                    if (strtolower($value['pinyin']) == strtolower($province)) {
+                        $cityParentId = $value['id'];
+                    }
+                }         
+                
+                $cityList =  $locationModel ->where("parentid = '" . $cityParentId ."'") ->select();//获得当前省份的城市列表
+                if (!empty($cityList)) {
+                    $listModel['showCityFlag'] = "0" ;//如果城市列表 不为空就要打开 more 样式
+                    $this ->cityList = $cityList;                                
                 }else
                 {
-                    $listModel['city'] = $city;                  
-                }                 
+                    $listModel['showCityFlag'] = "1" ;                
+                } 
+                            
+                if (empty($city) || $city == "") {//如果城市为空 默认为当前省份所有城市
+                    $listModel['city'] = 'all';
+                }else
+                {
+                    //如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all
+                    if (!deep_in_array($city,$cityList)) {
+                        $listModel['city'] = "all"; 
+                        $city = "all";
+                        // pp($cityList);die;                   
+                    }else
+                    {
+                        $listModel['city'] = $city;                  
+                    }                 
+                }
+                
+            }else
+            {
+                $listModel['province'] = 'all';
+                $listModel['showCityFlag'] = '1';  //如果省份为all 关闭 more 样式
             }
             
-        }else
-        {
-            $listModel['province'] = 'all';
-            $listModel['showCityFlag'] = '1';  //如果省份为all 关闭 more 样式
-        } 
-        
-        
-        
+            
+            
+            $listModel['event'] = "all"; 
+            $listModel['province'] = $event;  
+            $listModel['typeFlag'] = "false";          
+        }
+        pp($listModel);die;//此处有问题
         if (empty($event)) {//赛事项目为空赋值为all
            $listModel['event'] = 'all' ;                         
         }else
@@ -94,29 +119,7 @@ class BswController extends Controller {
             $listModel['month'] = $month;            
         }
         
-        //typeFlag 区分是赛事项目还是省份标志,默认false表示为省份
-        $typeFlag = false;
-        
-        //赛事项目event
-        $eventModel = M("bsw_event");
-        $eventList = $eventModel ->select();
-        $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
-
         $gameModel = M("bsw_game");
-        // $eventid = array_filter($eventList, function($e) use ($event) { return $e['e_name'] == "排球"; })[0][id];
-        $whereSQL = " 1 = 1";
-        if ($eventid > 0) {//赛事项目的查询
-            $whereSQL .= " and g_event = ".$eventid;
-            $typeFlag = true;
-        }
-        
-        //如果没有赛事项目id出来就表示是省份 typeFlag = flase
-        if ($typeFlag == false && trim($province) == "") {
-            $province = $event;
-        }
-        
-        $listModel['typeFlag'] = $typeFlag;
-        
         //比赛省市的查询
         if ($province != "all" && $city != "all" && trim($province) != "" && trim($city) != "") {
             $whereSQL .= " and (g_location like '%". $province ."%' and g_location like '%". $city ."%')"; 
@@ -159,7 +162,7 @@ class BswController extends Controller {
         }
         
         //pp($provinceList);DIE;        
-        pp($whereSQL);die;
+        // pp($listModel);die;
         // pp(strtotime("2014")."\n".strtotime("2014-01")."\n".strtotime("2014-01-01 00:00:00")."\n".time());die;
         // $search1 = array('g_event' => $eventid);
         // $search2['g_location'] = array(array('LIKE','%'. $province .'%'),array('LIKE','%'. $city .'%'),"or");

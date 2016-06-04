@@ -238,13 +238,13 @@
                 <td>
                    <div id = "areanDiv">
                         <select name="g_location" id="g_province" level="1">
-                            <?php if(is_array($provinceList)): foreach($provinceList as $key=>$province): ?><option value="<?php echo ($province['id']); ?>"><?php echo ($province['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($provinceList)): foreach($provinceList as $key=>$province): ?><option value="<?php echo ($province['id']); ?>" pydata="<?php echo ($province['pinyin']); ?>" ><?php echo ($province['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                     <select name="g_location" id="g_city" level="2">
-                            <?php if(is_array($cityList)): foreach($cityList as $key=>$city): ?><option value="<?php echo ($city[id]); ?>"><?php echo ($city['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($cityList)): foreach($cityList as $key=>$city): ?><option value="<?php echo ($city[id]); ?>"  pydata="<?php echo ($city['pinyin']); ?>"><?php echo ($city['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                     <select name="g_location" id="g_town" level="3">
-                            <?php if(is_array($townList)): foreach($townList as $key=>$town): ?><option value="<?php echo ($town['id']); ?>"><?php echo ($town['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($townList)): foreach($townList as $key=>$town): ?><option value="<?php echo ($town['id']); ?>"  pydata="<?php echo ($town['pinyin']); ?>"><?php echo ($town['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                         &nbsp;&nbsp;&nbsp;
                     <input type="text" name="g_address" id="g_address" style="width:400px;" placeholder="详细地址,手动输入必须填写，可以是起跑点，或者比赛的具体点">
@@ -623,11 +623,11 @@
         {
             if(i == (location.length -1) )
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"}';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
             }
             else
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},,"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
             }
         }
         
@@ -645,7 +645,7 @@
             //         return false;
             if(item.leveltype == level)
             {
-                reval += " <option value=\""+ item.id +"\">"+ item.name +" </option>";
+                reval += " <option value=\""+ item.id +"\"  pydata=\""+ item.pinyin +"\">"+ item.name +" </option>";
             }
         });
         return reval;
