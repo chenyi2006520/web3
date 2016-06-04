@@ -1,0 +1,61 @@
+[ 2016-06-03T10:17:07+08:00 ] 127.0.0.1 /game/province-huhuan
+ERR: 无法加载控制器:Game
+
+[ 2016-06-03T10:22:18+08:00 ] 127.0.0.1 /saishi/province-huhuan
+ERR: 无法加载控制器:Saishi
+
+[ 2016-06-03T10:22:35+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 无法加载控制器:Saishi
+
+[ 2016-06-03T10:33:31+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:11:45+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:11:59+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:11:59+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:00+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:00+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:00+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:00+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:32+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:32+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:32+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:33+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+
+[ 2016-06-03T11:12:34+08:00 ] 127.0.0.1 /saishi/zuqiu
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and 978278400 <= g_time_e ) )' at line 1
+ [ SQL语句 ] : SELECT * FROM `ktm_bsw_game` WHERE (  1 = 1 and (g_location like '%%' and g_location like '%%') and (g_time_s <=  and 978278400 <= g_time_e ) ) 
+

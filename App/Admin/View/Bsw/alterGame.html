@@ -37,7 +37,7 @@
                     <td>
                         <select name="g_location" id="g_province" level="1">
                             <foreach name="provinceList" item="province">
-                                <option value="{$province['id']}" {:compareValue($province['id'],$gameModel["province"]," selected ")}>{$province['name']}</option>
+                                <option value="{$province['id']}" pydata="{$province['pinyin']}" {:compareValue($province['id'],$gameModel["province"]," selected ")}>{$province['name']}</option>
                             </foreach>
                         </select>
                         <select name="g_location" id="g_city" level="2">

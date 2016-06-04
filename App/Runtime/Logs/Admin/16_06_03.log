@@ -1,0 +1,11 @@
+[ 2016-06-03T10:18:42+08:00 ] 127.0.0.1 /Admin/Bsw/handleLocation
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001362s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /mypc/www/web3/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 104 行.
+SQL: SHOW COLUMNS FROM `ktm_treelist` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ktm_treelist` ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ktm_bsw_location` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE ( parentid = 110000 )  [ RunTime:0.0028s ]
+SQL: SELECT * FROM `ktm_bsw_location` WHERE ( parentid = 110100 )  [ RunTime:0.0028s ]
+

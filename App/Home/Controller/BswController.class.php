@@ -6,6 +6,10 @@ use Think\Controller;
 class BswController extends Controller {
     // public function index($type="all",$province="all",$city="all",$year="all",$month="all") {
     public function index() {        
+        //saishi/zuqiu
+        //saishi/anhui
+        //类型,省份都是使用此   url，暂未找到单个参数匹配区分的正则，然后在读取页面通过先处理event如果有就确定为搜索event，如果没有就是判断为搜索省份
+        
         //页面城市选择处理
         $locationModel = M("bsw_location");
         $provinceList = $locationModel ->where("parentid = 100000") ->select();
@@ -90,31 +94,42 @@ class BswController extends Controller {
             $listModel['month'] = $month;            
         }
         
+        //typeFlag 区分是赛事项目还是省份标志,默认false表示为省份
+        $typeFlag = false;
+        
         //赛事项目event
         $eventModel = M("bsw_event");
         $eventList = $eventModel ->select();
-        $eventid = $eventModel -> where(array("e_name" => $event)) ->select()[0]['id'];
+        $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
 
         $gameModel = M("bsw_game");
         // $eventid = array_filter($eventList, function($e) use ($event) { return $e['e_name'] == "排球"; })[0][id];
         $whereSQL = " 1 = 1";
         if ($eventid > 0) {//赛事项目的查询
             $whereSQL .= " and g_event = ".$eventid;
+            $typeFlag = true;
         }
+        
+        //如果没有赛事项目id出来就表示是省份 typeFlag = flase
+        if ($typeFlag == false && trim($province) == "") {
+            $province = $event;
+        }
+        
+        $listModel['typeFlag'] = $typeFlag;
+        
         //比赛省市的查询
-        if ($province != "all" && $city != "all") {
+        if ($province != "all" && $city != "all" && trim($province) != "" && trim($city) != "") {
             $whereSQL .= " and (g_location like '%". $province ."%' and g_location like '%". $city ."%')"; 
         }      
-        else if($province != "all")
+        else if($province != "all" && trim($province) != "")
         {
             $whereSQL .= " and g_location like '%". $province ."%'";             
         }
         
         $checkStartTime = "";
         $checkEndTime = "";
-        // pp($year);
                 
-        if ($year != "all" && $month != "all" ) {
+        if ($year != "all" && $month != "all" && !empty($year) && trim($year) != "" && !empty($month) && trim($month) != "" ) {
             //如果包含月份，那就需要查询这个月之内的所有数据从当月1日0点开始，到下个月1日0点之前,如果月份是12月的话，结束时间变为下一年的1月1日0点
             $checkStartTime = $year ."-". $month ."-01 00:00:01";
             
@@ -125,16 +140,16 @@ class BswController extends Controller {
                 $checkEndTime = ($year+1) ."-01-01 00:00:00";                
             }
             
-        } else {//如果没有月份的，就是当年的1月月1日0点开始，
+        } elseif (!empty($year) && trim($year) != "") {//如果没有月份的，就是当年的1月月1日0点开始，
             $checkStartTime = $year ."-01-01 00:00:01";            
             $checkEndTime = $year ."-12-30 00:00:00";            
         }
-        
-        if ($checkStartTime != "" && $checkEndTime != "" && $year != "all" && $month != "all") {
+              
+              
+        //如果时间相等好像没有数据出来，需要考虑怎么处理
+        if ($checkStartTime != "" && $checkEndTime != "" && $year != "all" && $month != "all"  && !empty($year) && trim($year) != "" && !empty($month) && trim($month) != "") {
             $whereSQL .= " and (g_time_s <= ".strtotime($checkStartTime) ." and ". strtotime($checkEndTime) ." <= g_time_e )";            
         }
-        // pp($_GET);
-        // pp($whereSQL);die;
         
         if (($type == "all" && $province == "all" && $city == "all" && $year == "all" && $month == "all") || empty($_GET)) {            
             $gameList = $gameModel ->select();
@@ -142,8 +157,9 @@ class BswController extends Controller {
         {
             $gameList = $gameModel ->where($whereSQL) ->select();            
         }
+        
         //pp($provinceList);DIE;        
-        //pp($whereSQL);die;
+        pp($whereSQL);die;
         // pp(strtotime("2014")."\n".strtotime("2014-01")."\n".strtotime("2014-01-01 00:00:00")."\n".time());die;
         // $search1 = array('g_event' => $eventid);
         // $search2['g_location'] = array(array('LIKE','%'. $province .'%'),array('LIKE','%'. $city .'%'),"or");
@@ -153,7 +169,7 @@ class BswController extends Controller {
             $listModel['NoGameData'] = '1';
         }
         
-        
+        // pp($_GET);die;
         // pp(getLocation($gameList[0]['g_location'],1,0,0));die;
         // pp($eventid);
         // pp($gameList);die;

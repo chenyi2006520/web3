@@ -238,7 +238,7 @@
                     <td align="right">赛事地点：</td>
                     <td>
                         <select name="g_location" id="g_province" level="1">
-                            <?php if(is_array($provinceList)): foreach($provinceList as $key=>$province): ?><option value="<?php echo ($province['id']); ?>" <?php echo compareValue($province['id'],$gameModel["province"]," selected ");?>><?php echo ($province['name']); ?></option><?php endforeach; endif; ?>
+                            <?php if(is_array($provinceList)): foreach($provinceList as $key=>$province): ?><option value="<?php echo ($province['id']); ?>" pydata="<?php echo ($province['pinyin']); ?>" <?php echo compareValue($province['id'],$gameModel["province"]," selected ");?>><?php echo ($province['name']); ?></option><?php endforeach; endif; ?>
                         </select>
                         <select name="g_location" id="g_city" level="2">
                             <?php if(is_array($cityList)): foreach($cityList as $key=>$city): ?><option value="<?php echo ($city[id]); ?>" <?php echo compareValue($city['id'],$gameModel["city"]," selected ");?>><?php echo ($city['name']); ?></option><?php endforeach; endif; ?>

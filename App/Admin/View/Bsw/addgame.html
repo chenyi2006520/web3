@@ -37,7 +37,7 @@
                    <div id = "areanDiv">
                         <select name="g_location" id="g_province" level="1">
                             <foreach name="provinceList" item="province">
-                                <option value="{$province['id']}">{$province['name']}</option>
+                                <option value="{$province['id']}" pydata="{$province['pinyin']}" >{$province['name']}</option>
                             </foreach>
                         </select>
                     <select name="g_location" id="g_city" level="2">

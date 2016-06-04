@@ -154,7 +154,7 @@
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
 											<a href="<?php echo U('/game/all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_79476702__=1;$__FOR_END_79476702__=13;for($i=$__FOR_START_79476702__;$i < $__FOR_END_79476702__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<?php $__FOR_START_461570856__=1;$__FOR_END_461570856__=13;for($i=$__FOR_START_461570856__;$i < $__FOR_END_461570856__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
 											<a href="<?php echo U('/game/'.$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
