@@ -223,7 +223,111 @@
 					$("#otherEvent").addClass("hidden");					
 				}
 			}); 
+			
+			//handleLink();
 		});
+		
+		
+		function handleLink()
+		{
+			var activeType = $("#activeType").val();
+			var activeProvince = $("#activeProvince").val();
+			var activeCity = $("#activeCity").val();
+			var activeYear = $("#activeYear").val(); 
+			var activeMonth = $("#activeMonth").val(); 
+			
+			var tempHref = "";
+			$(".filter .word a").click(function(){
+				
+				var thisHref = $(this).attr("datatype");
+				var thisHrefText = $(this).attr("datavalue");
+				
+				if(thisHrefText == "all")
+				{
+					 	tempHref = "/" + activeType + "/" + activeProvince	+ "/" + activeYear 	+ "/" + activeMonth;
+						location.href = thisUrl + tempHref;						 					
+				}	
+				
+				if(thisHref == "type")
+				{
+					if(typeof(activeCity) == "undefined")//如果city没有值
+					{
+					 	tempHref = "/" + thisHrefText + "/" + activeProvince	+ "/all/" + activeYear 	+ "/" + activeMonth;				
+					}
+					else//有city
+					{
+					 	tempHref = "/" +  thisHrefText	+ "/" + activeProvince + "/" + activeCity 	+ "/" + activeYear 	+ "/" + activeMonth;
+					}
+				}
+				
+				if(thisHref == "province")
+				{
+					if(typeof(activeCity) == "undefined")
+					{
+					 	tempHref = "/" + activeType + "/" + thisHrefText	+ "/all/" + activeYear 	+ "/" + activeMonth;									 					
+					}
+					else
+					{
+						//如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all？
+					 	tempHref = "/" + activeType + "/" + thisHrefText + "/" +  activeCity 	+ "/" + activeYear 	+ "/" + activeMonth;				
+					}									
+				}
+				
+				
+				if(thisHref == "city")
+				{
+					if(thisHrefText != "all")
+					{
+						tempHref = "/" + activeType + "/" + activeProvince + "/" + thisHrefText + "/" + activeYear + "/" + activeMonth;
+					}else
+					{
+						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;					 						 	
+					}
+				}
+				
+				if(thisHref  =="year")
+				{
+					if(typeof(activeCity) == "undefined")//如果没有城市
+					{
+						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;					 						
+					}
+					else
+					{
+					    if(typeof(activeMonth) == "undefined")//如果没有月份
+                        {
+                            if(activeYear != "all")//如果年份不是所有
+                            {
+								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/" + activeMonth;
+                            }
+                            else
+                            {
+								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/all/";
+                            }
+                        }else
+						{
+								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/" + activeMonth;
+						}                      
+					}										
+				}
+                
+                if(thisHref == "month")
+				{
+					if(typeof(activeCity) == "undefined")
+					{
+						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;
+					}
+					else
+					{
+					 	tempHref = "/" + activeType + "/" + activeProvince + "/"+ activeCity +"/" + activeYear + "/" + thisHrefText;				
+					}										
+				}
+				
+				//alert(thisUrl + tempHref);
+				//tempHref = "";
+				location.href = thisUrl + tempHref;	
+				return false;
+			});
+		}
 	</script>
 </block>
 <block name="PageFooter">

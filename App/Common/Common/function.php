@@ -6,6 +6,36 @@ function pp($array) {
 	
 }
 
+//获得赛事列表页面检索的url,type省份或者赛事url的类别，listModel检索页面的listModel,thisValue当前url所在的值
+function getMatchUrl($type,$listModel,$thisValue)
+{
+	// pp($listModel);
+	$tempUrl = "/matches/";
+	$returnUrl = "";
+	if (!empty($listModel)) {//如果url参数不为空,如果thisValue是all，
+		if ($type == 1) {
+			$tempUrl .= $thisValue .'-'. $listModel['province'] .'-'. $listModel['city'] .'-'. $listModel['year'] .'-'. $listModel['month'];
+		}elseif ($type == 2)
+		{
+			$tempUrl .= $listModel['event'] .'-'. $thisValue .'-'.  $listModel['city'] .'-'. $listModel['year'] .'-'. $listModel['month'];
+		}
+		elseif ($type == 3) {
+			$tempUrl .=  $listModel['event'] .'-'.  $listModel['province'] .'-'. $thisValue .'-'. $listModel['year'] .'-'. $listModel['month'];
+		}
+		elseif ($type == 4) {
+			$tempUrl .=  $listModel['event'] .'-'. $listModel['province'] .'-'. $listModel['city'] .'-'. $thisValue .'-'.  $listModel['month'];
+		}
+		elseif ($type == 5) {
+			$tempUrl .=  $listModel['event'] .'-'. $listModel['province'] .'-'. $listModel['city'] .'-'. $listModel['year'] .'-'. $thisValue;
+		}
+		$returnUrl = $tempUrl;
+	}else//如果url参数链接为空
+	{
+		$returnUrl = $tempUrl;
+	}
+	// pp($returnUrl);die;
+	return $returnUrl;
+}
 
 //g_time_s 赛事开始时间 g_time_e 赛事结束时间
 function handleGameStatus($g_time_s,$g_time_e)

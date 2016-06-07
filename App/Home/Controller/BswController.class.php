@@ -10,41 +10,93 @@ class BswController extends Controller {
         //matches/anhui
         //类型,省份都是使用此   url，暂未找到单个参数匹配区分的正则，然后在读取页面通过先处理event如果有就确定为搜索event，如果没有就是判断为搜索省份
         
+        $listModel = array();
+        
+        $search = I("search");
+        if (trim($search) != "") {
+            $dataArray = explode('-',$search);
+            if(sizeof($dataArray) ==5 )
+            {
+                $listModel['event'] = $event = $dataArray[0];
+                $listModel['province'] = $province = $dataArray[1];
+                $listModel['city'] = $city = $dataArray[2];
+                $listModel['year'] = $year = $dataArray[3];
+                $listModel['month'] = $month = $dataArray[4];
+            }
+        }else
+        {
+            $listModel['event'] = $listModel['province'] = $listModel['city'] = $listModel['year'] =  $listModel['month'] = "all";
+        }
+        // pp($listModel);
         //页面城市选择处理
         $locationModel = M("bsw_location");
         $provinceList = $locationModel ->where("parentid = 100000") ->select();
         $this -> provinceList =  $provinceList;
-        $province = urldecode(I("province"));
-        $city = urldecode(I("city"));
-        $event = urldecode(I("type"));
-        $year = I("year");
-        $month = I("month");
-        $cityParentId = ""; 
         
-        //typeFlag 区分是赛事项目还是省份标志,默认false表示为省份
-        $typeFlag = false;
+        // $province = urldecode(I("province"));
+        // $city = urldecode(I("city"));
+        // $event = urldecode(I("type"));
+        // $year = I("year");
+        // $month = I("month");
+        
+        // $cityParentId = ""; 
+        
+        // $typeUrl = "";//赛事项目的链接，除了event本身以外，所有参数如果都符合要求，就需要组合url，
+        // $provinceUrl = "";//省份链接，要求同上
+        // $cityUrl = "";//市链接，要求同上
+        // $yearUrl = "";//年份链接，要求同上
+        // $monthUrl = "";//月份链接，要求同上
+        // $tempUrl = "";
+        
+        // if (trim($event) != "" && !empty($event)) {
+        //     $tempUrl .= $event ."/";
+        // }
+        // if (trim($province) != "" && !empty($province)) {
+        //     $tempUrl .= $province ."/";
+        // }
+        // if (trim($city) != "" && !empty($city)) {
+        //     $tempUrl .= $city ."/";
+        // }
+        // if (trim($year) != "" && !empty($year)) {
+        //     $tempUrl .= $year ."/";
+        // }
+        // if (trim($month) != "" && !empty($month)) {
+        //     $tempUrl .= $month ."/";
+        // }
+       
+        // if (trim($tempUrl) != "") {
+            
+        // }
+        // // echo $tempUrl;
+        // echo "<br/>";
+        
+        // //typeFlag 区分是赛事项目还是省份标志,默认false表示为省份
+        // $typeFlag = false;
         
         //赛事项目event
         $eventModel = M("bsw_event");
         $eventList = $eventModel ->select();
         $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
-
         
         // $eventid = array_filter($eventList, function($e) use ($event) { return $e['e_name'] == "排球"; })[0][id];
         $whereSQL = " 1 = 1";
         if ($eventid > 0) {//赛事项目的查询
             $whereSQL .= " and g_event = ".$eventid;
-            $typeFlag = true;
-            $listModel['typeFlag'] = "true";
-            $listModel['event'] = $event;
+            // $typeFlag = true;
+            // $listModel['typeFlag'] = "true";
+            // $listModel['event'] = $event;
         }
+
+        // //如果没有赛事项目id出来就表示是省份 typeFlag = flase
+        // if ($typeFlag == false && trim($province) == "" && trim($event) != "") {
+        //     $province = $event;
+        //     $listModel['event'] = "all"; 
+        //     $listModel['typeFlag'] = "false";
+        //     $listModel['province'] = strtolower($event);           
+        // }
         
-        //如果没有赛事项目id出来就表示是省份 typeFlag = flase
-        if ($typeFlag == false && trim($province) == "" && trim($event) != "") {
-                $province = $event;
-            
-                if ($province != "all" && !empty($province) && trim($province) != "") {//如果省份不为空或者all，就获取当前省份的id
-                $listModel['province'] = $province;
+        if ($province != "all" && !empty($province) && trim($province) != "") {//如果省份不为空或者all，就获取当前省份的id
+                // $listModel['province'] = $province;
                 $listModel['showMore'] = "1" ;            
                                 
                 foreach ($provinceList as $value) {//获取id赋值
@@ -61,34 +113,30 @@ class BswController extends Controller {
                 {
                     $listModel['showCityFlag'] = "1" ;                
                 } 
-                            
-                if (empty($city) || $city == "") {//如果城市为空 默认为当前省份所有城市
-                    $listModel['city'] = 'all';
-                }else
-                {
+                           
+                
+                // if (empty($city) || $city == "") {//如果城市为空 默认为当前省份所有城市
+                //     $listModel['city'] = 'all'; 
+                // }else
+                // {
                     //如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all
-                    if (!deep_in_array($city,$cityList)) {
+                    if (!deep_in_array(ucfirst($city),$cityList)) {
                         $listModel['city'] = "all"; 
                         $city = "all";
                         // pp($cityList);die;                   
-                    }else
-                    {
-                        $listModel['city'] = $city;                  
-                    }                 
-                }
-                $listModel['province'] = strtolower($event);                  
+                    }
+                //     else
+                //     {
+                //         $listModel['city'] = $city;                  
+                //     }                 
+                // }
+                                 
                 
             }else
             {
                 $listModel['province'] = 'all';
                 $listModel['showCityFlag'] = '1';  //如果省份为all 关闭 more 样式
             }
-            
-            
-            
-            $listModel['event'] = "all"; 
-            $listModel['typeFlag'] = "false";          
-        }
         
         //年份数组 自动增长
         $thisYear = date("Y");
@@ -142,7 +190,7 @@ class BswController extends Controller {
         }
               
               
-        //如果时间相等好像没有数据出来，需要考虑怎么处理
+        //如果时间相等好像没有数据出来，需要考虑怎么处理????????????????????????????????
         if ($checkStartTime != "" && $checkEndTime != "" && $year != "all" && $month != "all"  && !empty($year) && trim($year) != "" && !empty($month) && trim($month) != "") {
             $whereSQL .= " and (g_time_s <= ".strtotime($checkStartTime) ." and ". strtotime($checkEndTime) ." <= g_time_e )";            
         }
@@ -154,7 +202,8 @@ class BswController extends Controller {
             $gameList = $gameModel ->where($whereSQL) ->select();            
         }
         
-        //pp($provinceList);DIE;        
+        // pp(getMatchUrl(1,$listModel,'all'));
+        // pp($whereSQL);DIE;        
         // pp($listModel);die;
         // pp(strtotime("2014")."\n".strtotime("2014-01")."\n".strtotime("2014-01-01 00:00:00")."\n".time());die;
         // $search1 = array('g_event' => $eventid);

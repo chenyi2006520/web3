@@ -66,11 +66,11 @@
 								<div class="filters">
 									<div class="filter type clearfix"><span class="tit">类型:</span>
 										<span class="word <?php echo compareValue('all',$listModel['event'],'active');?>">
-											<a href="<?php echo U('/matches/all');?>" datatype="type" datavalue = "all">全部</a>
+											<a href="<?php echo getMatchUrl(1,$listModel,'all');?>" datatype="type" datavalue = "all">全部</a>
 											<input type="hidden" name="activeType" id="activeType" value="<?php echo ($listModel["event"]); ?>">
 										</span>
 										<?php if(is_array($eventList)): foreach($eventList as $key=>$value): ?><span class="word <?php echo compareValue($value['e_pyname'],$listModel['event'],'active');?>">
-											<a href="<?php echo U('/matches/'.$value['e_pyname']);?>" datatype="type"  datavalue = "<?php echo ($value['e_pyname']); ?>"><?php echo ($value['e_name']); ?></a>
+											<a href="<?php echo getMatchUrl(1,$listModel,$value['e_pyname']);?>" datatype="type"  datavalue = "<?php echo ($value['e_pyname']); ?>"><?php echo ($value['e_name']); ?></a>
 											</span><?php endforeach; endif; ?>
 										<!--<span class="word ">
 											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
@@ -120,21 +120,21 @@
 									</div>-->
 									<div class="filter js-less less-item clearfix"><span class="tit">省份:</span>
 										<span class="word <?php echo compareValue('all',$listModel['province'],'active');?>">
-											<a href="<?php echo U('/matches/all');?>" datatype="province" datavalue = "all">全部</a>
+											<a href="<?php echo getMatchUrl(2,$listModel,'all');?>" datatype="province" datavalue = "all">全部</a>
 											<input type="hidden" name="activeProvince" id = "activeProvince" value="<?php echo ($listModel["province"]); ?>">											
 										</span>
 										<?php if(is_array($provinceList)): foreach($provinceList as $key=>$value): ?><span class="word <?php echo compareValue(strtolower($value['pinyin']),$listModel['province'],'active');?>">
-												<a href="<?php echo U('/matches/'.strtolower($value['pinyin']));?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+												<a href="<?php echo getMatchUrl(2,$listModel,strtolower($value['pinyin']));?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 											</span><?php endforeach; endif; ?>
 									</div>
 									<!--{overrideCompareValue(1,$listModel['showCityFlag'],'1','hidden')}-->
 									<?php if($listModel['showCityFlag'] == 0): ?><div class="filter js-less less-item clearfix " id="citydiv"><span class="tit">市级:</span>
 											<span class="word <?php echo compareValue('all',$listModel['city'],'active');?>">
-												<a href="<?php echo U('/matches/all');?>"  datatype="city" datavalue = "all">全部</a>
+												<a href="<?php echo getMatchUrl(3,$listModel,'all');?>"  datatype="city" datavalue = "all">全部</a>
 												<input type="hidden" name="activeCity" id="activeCity" value="<?php echo ($listModel["city"]); ?>">	
 											</span>
-											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['city'],'active');?>">
-														<a href="<?php echo U('/matches/'.strtolower($value['pinyin']));?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue(strtolower($value['pinyin']),$listModel['city'],'active');?>">
+														<a href="<?php echo getMatchUrl(3,$listModel,$value['pinyin']);?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 														<!--<a href="<?php echo U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])));?>"><?php echo ($value['shortname']); ?></a>-->
 													</span><?php endforeach; endif; ?>
 										</div><?php endif; ?>
@@ -142,20 +142,20 @@
 
 									<div class="filter js-less less-item clearfix" style="border:0"><span class="tit">时间:</span>
 										<span class="word <?php echo compareValue('all',$listModel['year'],'active');?>">
-											<a href="<?php echo U('/matches/all');?>"   datatype="year" datavalue = "all" >全部</a>
+											<a href="<?php echo getMatchUrl(4,$litModel,'all');?>"   datatype="year" datavalue = "all" >全部</a>
 												<input type="hidden" name="activeYear" id="activeYear" value="<?php echo ($listModel["year"]); ?>">											
 												<input type="hidden" name="activeMonth" id="activeMonth" value="<?php echo ($listModel["month"]); ?>">
 										</span>
 										<?php if(is_array($yearList)): foreach($yearList as $key=>$value): ?><span class="word <?php echo compareValue($value,$listModel['year'],'active');?>">
-												<a href="<?php echo U('/matches/'.$value);?>"   datatype="year" datavalue = "<?php echo ($value); ?>" ><?php echo ($value); ?>年</a>
+												<a href="<?php echo getMatchUrl(4,$listModel,$value);?>"   datatype="year" datavalue = "<?php echo ($value); ?>" ><?php echo ($value); ?>年</a>
 											</span><?php endforeach; endif; ?>
 									</div>
 									<?php if($listModel['year'] != 'all'): ?><div class="filter js-less less-item clearfix" style="border:0"><span class="tit"></span>
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
-											<a href="<?php echo U('/matches/all');?>"   datatype="month" datavalue = "all" >全部</a>
+											<a href="<?php echo getMatchUrl(5,$listModel,'all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_243634899__=1;$__FOR_END_243634899__=13;for($i=$__FOR_START_243634899__;$i < $__FOR_END_243634899__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
-											<a href="<?php echo U('/matches/'.$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
+											<?php $__FOR_START_583483480__=1;$__FOR_END_583483480__=13;for($i=$__FOR_START_583483480__;$i < $__FOR_END_583483480__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<a href="<?php echo getMatchUrl(5,$listModel,$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
 
@@ -253,111 +253,7 @@
 					$("#otherEvent").addClass("hidden");					
 				}
 			}); 
-			
-			handleLink();
 		});
-		
-		
-		function handleLink()
-		{
-			var activeType = $("#activeType").val();
-			var activeProvince = $("#activeProvince").val();
-			var activeCity = $("#activeCity").val();
-			var activeYear = $("#activeYear").val(); 
-			var activeMonth = $("#activeMonth").val(); 
-			
-			var tempHref = "";
-			$(".filter .word a").click(function(){
-				
-				var thisHref = $(this).attr("datatype");
-				var thisHrefText = $(this).attr("datavalue");
-				
-				if(thisHrefText == "all")
-				{
-					 	tempHref = "/" + activeType + "/" + activeProvince	+ "/" + activeYear 	+ "/" + activeMonth;
-						location.href = thisUrl + tempHref;						 					
-				}	
-				
-				if(thisHref == "type")
-				{
-					if(typeof(activeCity) == "undefined")//如果city没有值
-					{
-					 	tempHref = "/" + thisHrefText + "/" + activeProvince	+ "/all/" + activeYear 	+ "/" + activeMonth;				
-					}
-					else//有city
-					{
-					 	tempHref = "/" +  thisHrefText	+ "/" + activeProvince + "/" + activeCity 	+ "/" + activeYear 	+ "/" + activeMonth;
-					}
-				}
-				
-				if(thisHref == "province")
-				{
-					if(typeof(activeCity) == "undefined")
-					{
-					 	tempHref = "/" + activeType + "/" + thisHrefText	+ "/all/" + activeYear 	+ "/" + activeMonth;									 					
-					}
-					else
-					{
-						//如果省份更换，还带有原来的city值，就要检查这个值是不是在city list里面，不在赋值为all？
-					 	tempHref = "/" + activeType + "/" + thisHrefText + "/" +  activeCity 	+ "/" + activeYear 	+ "/" + activeMonth;				
-					}									
-				}
-				
-				
-				if(thisHref == "city")
-				{
-					if(thisHrefText != "all")
-					{
-						tempHref = "/" + activeType + "/" + activeProvince + "/" + thisHrefText + "/" + activeYear + "/" + activeMonth;
-					}else
-					{
-						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;					 						 	
-					}
-				}
-				
-				if(thisHref  =="year")
-				{
-					if(typeof(activeCity) == "undefined")//如果没有城市
-					{
-						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;					 						
-					}
-					else
-					{
-					    if(typeof(activeMonth) == "undefined")//如果没有月份
-                        {
-                            if(activeYear != "all")//如果年份不是所有
-                            {
-								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/" + activeMonth;
-                            }
-                            else
-                            {
-								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/all/";
-                            }
-                        }else
-						{
-								tempHref = "/" + activeType + "/" + activeProvince + "/" + activeCity + "/" + thisHrefText + "/" + activeMonth;
-						}                      
-					}										
-				}
-                
-                if(thisHref == "month")
-				{
-					if(typeof(activeCity) == "undefined")
-					{
-						tempHref = "/" + activeType + "/" + activeProvince + "/all/" + activeYear + "/" + activeMonth;
-					}
-					else
-					{
-					 	tempHref = "/" + activeType + "/" + activeProvince + "/"+ activeCity +"/" + activeYear + "/" + thisHrefText;				
-					}										
-				}
-				
-				//alert(thisUrl + tempHref);
-				//tempHref = "";
-				location.href = thisUrl + tempHref;	
-				return false;
-			});
-		}
 	</script>
 
             <!--页面尾部内容-->

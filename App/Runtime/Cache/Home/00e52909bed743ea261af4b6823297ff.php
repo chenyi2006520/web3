@@ -47,7 +47,7 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
-					<li><a href="/saishi">赛事</a></li>
+					<li><a href="/matches">赛事</a></li>
 				</ul>
 			</div>
 		</div>
@@ -73,7 +73,7 @@
 										<?php if(is_array($newGames)): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$game): $mod = ($i % 2 );++$i; if($key == 0): ?><div class="item active">
 											<?php else: ?>
 												<div class="item"><?php endif; ?>
-												<a href="<?php echo U('/saishi/'.$game['id']);?>" target="_blank">
+												<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
 													<img alt="<?php echo ($game['g_name']); ?>" class="img-rounded" src="<?php echo ($game['g_image']); ?>">
 													<div class="carousel-caption">
 
@@ -126,7 +126,7 @@
 							<div class="mod mod-lg">
 								<div class="mod-hd">
 									<h2>推荐比赛</h2>
-									<a href="/saishi/" class="more pull-right">更多</a>
+									<a href="/match/" class="more pull-right">更多</a>
 								</div>
 							</div>
 							<?php if(is_array($gameList)): foreach($gameList as $key=>$game): ?><div class="col-xs-12 ">
@@ -134,7 +134,7 @@
 									<p>
 										<?php echo ($game['g_introduction']); ?>
 									</p>
-									<p><a class="btn btn-default" href="<?php echo U('/saishi/'.$game['id']);?>" role="button">详情 »</a></p>
+									<p><a class="btn btn-default" href="<?php echo U('/match/'.$game['id']);?>" role="button">详情 »</a></p>
 								</div><?php endforeach; endif; ?>
 						</div>
 					</div>
@@ -151,12 +151,12 @@
 				<div class="col-md-3">
 					<div class="side-list clearfix">
 						<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="item col-xs-12">
-								<a href="<?php echo U('/saishi/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
+								<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
 									<img alt="<?php echo ($game['g_name']); ?>" class="rightImage" src="<?php echo ($game['g_image']); ?>">
 								</a>
 								<div class="meta">
 									<div class="text img-rt-title">
-										<a href="<?php echo U('/saishi/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
+										<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>"><?php echo ($game['g_name']); ?></a>
 									</div>
 									<div class="attr time">2016-05-21</div>
 									<div class="attr state">
