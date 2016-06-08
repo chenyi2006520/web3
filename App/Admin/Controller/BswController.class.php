@@ -139,13 +139,26 @@ class BswController extends CommonController {
         if ($id > 0) {
             $gameModel = M("bsw_game")->find($id);
             $locationJson = json_decode(htmlspecialchars_decode($gameModel['g_location']));
-            $parentStr = $locationJson[0] ->{'id'} ."," . $locationJson[1] ->{'id'} .",";
+            $parentStr = "";
+            $id1 = $locationJson[0] ->{'id'};
+            $id2 = $locationJson[1] ->{'id'};
+            if (trim($id1) != "" && trim($id2) != "") {
+                $parentStr = $id1 . ','  .$id2 . ","    ;          
+            }
+            // $locationJson[0] ->{'id'} ."," . $locationJson[1] ->{'id'} .",";
             $gameModel['province'] = $locationJson[0] ->{'id'};
             $gameModel['city'] = $locationJson[1] ->{'id'};
             $gameModel['area'] = $locationJson[2] ->{'id'};
-            //  pp($gameModel);
+            // pp(htmlspecialchars_decode($gameModel['g_location']));
+            // pp($gameModel['g_location']);
+            //  pp($gameModel);die;
             //location数据
-            $locationList = M("bsw_location")->where(" parentid in (". $parentStr ." 100000) ")->select();
+            if (trim($parentStr) != "") {
+                $locationList = M("bsw_location")->where(" parentid in (". $parentStr ." 100000) ")->select();                
+            }else
+            {
+                E("地址出错了");
+            }
             //  pp($locationList);die;
             
             $provinceList = array();

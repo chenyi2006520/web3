@@ -43,6 +43,7 @@ class RbacController extends CommonController {
             "loginip" => get_client_ip()
         );
         
+        // pp($user);die;
         //用户所属角色处理
         $roleArray = array();
         if($uid = M("rbac_user") ->add($user))
@@ -62,6 +63,19 @@ class RbacController extends CommonController {
         else
         {
             E("添加失败");            
+        }
+    }
+    
+    //锁定用户
+    public function lockUser($userid=0)
+    {
+        if ($userid > 0 ) {
+            $userModel = M('user') -> find($userid);
+            if (!empty($userModel)) {
+                $userdata = array(
+                    
+                );
+            }
         }
     }
     

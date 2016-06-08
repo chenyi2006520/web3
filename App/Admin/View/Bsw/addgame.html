@@ -392,11 +392,11 @@
         {
             if(i == (location.length -1) )
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
             }
             else
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},,"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
             }
         }
         

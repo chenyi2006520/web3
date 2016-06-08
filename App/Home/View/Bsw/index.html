@@ -90,7 +90,7 @@
 											</span>
 											<foreach name="cityList" item="value">
 												<span class="word {:compareValue(strtolower($value['pinyin']),$listModel['city'],'active')}">
-														<a href="{:getMatchUrl(3,$listModel,$value['pinyin'])}"   datatype="city" datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
+														<a href="{:getMatchUrl(3,$listModel,strtolower($value['pinyin']))}"   datatype="city" datavalue = "{$value['pinyin']}">{$value['shortname']}</a>
 														<!--<a href="{:U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])))}">{$value['shortname']}</a>-->
 													</span>
 											</foreach>

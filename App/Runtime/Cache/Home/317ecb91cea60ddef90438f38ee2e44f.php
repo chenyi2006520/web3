@@ -107,7 +107,7 @@
 							</dl>
 							<dl>
 								<dt>报名费用：</dt>
-								<dd><?php echo ($gameModel['g_fee']); ?>/人</dd>
+								<dd><?php echo ($gameModel['g_fee'] > 0 ? $gameModel['g_fee'] + "/人":"免费"); ?></dd>
 							</dl>
 							<dl>
 								<dt>起点：</dt>
@@ -115,11 +115,11 @@
 							</dl>
 							<dl>
 								<dt>报名资格：</dt>
-								<dd><?php echo ($gameModel['g_age']); ?>周岁以上</dd>
+								<dd><?php echo ($gameModel['g_age'] > 0 ? $gameModel['g_age'] + "周岁以上":"不限"); ?>;</dd>
 							</dl>
 							<dl>
 								<dt>人数限额：</dt>
-								<dd><?php echo ($gameModel['g_amount']); ?></dd>
+								<dd><?php echo ($gameModel['g_amount'] > 0 ? $gameModel['g_amount']+"人":"不限"); ?></dd>
 							</dl>
 						</div>
 					</div>
