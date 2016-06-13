@@ -262,8 +262,11 @@ class BswController extends CommonController {
         $eventName = I("e_name");
         $e_pid = I("e_pid", 0, "intval");
         $e_pyname = TranslateValue($eventName);
-        $eventData = array("e_name" => $eventName, "e_pid" => $e_pid, "e_pyname" => $e_pyname);
-
+        $e_sort = I("e_sort");
+        $eventData = array("e_name" => $eventName, "e_pid" => $e_pid, "e_pyname" => $e_pyname,"e_sort" => $e_sort);
+        
+        // pp($_POST);
+        // pp($eventData);die;
         if (M("bsw_event")->add($eventData)) {
             $this->success("添加赛事项目成功", U("/Admin/Bsw/eventIndex/"));
         } else {
@@ -286,8 +289,10 @@ class BswController extends CommonController {
         $eventName = I("e_name");
         $e_pid = I("e_pid", 0, "intval");
         $e_pyname = TranslateValue($eventName);
-        $eventData = array("id" =>$id,"e_name" => $eventName, "e_pid" => $e_pid, "e_pyname" => $e_pyname);
-
+        $e_sort = I("e_sort");
+        $eventData = array("id" =>$id,"e_name" => $eventName, "e_pid" => $e_pid, "e_pyname" => $e_pyname, "e_sort" => $e_sort);
+        
+        // pp($_POST);pp($eventData);die;
         if (M("bsw_event")->save($eventData)) {
             $this->success("修改赛事项目成功", U("/Admin/Bsw/eventIndex/"));
         } else {

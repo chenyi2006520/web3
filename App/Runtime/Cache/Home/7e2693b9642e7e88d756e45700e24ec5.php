@@ -123,8 +123,8 @@
 											<a href="<?php echo getMatchUrl(2,$listModel,'all');?>" datatype="province" datavalue = "all">全部</a>
 											<input type="hidden" name="activeProvince" id = "activeProvince" value="<?php echo ($listModel["province"]); ?>">											
 										</span>
-										<?php if(is_array($provinceList)): foreach($provinceList as $key=>$value): ?><span class="word <?php echo compareValue(strtolower($value['pinyin']),$listModel['province'],'active');?>">
-												<a href="<?php echo getMatchUrl(2,$listModel,strtolower($value['pinyin']));?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+										<?php if(is_array($provinceList)): foreach($provinceList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['province'],'active');?>">
+												<a href="<?php echo getMatchUrl(2,$listModel,$value['pinyin']);?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 											</span><?php endforeach; endif; ?>
 									</div>
 									<!--{overrideCompareValue(1,$listModel['showCityFlag'],'1','hidden')}-->
@@ -133,8 +133,8 @@
 												<a href="<?php echo getMatchUrl(3,$listModel,'all');?>"  datatype="city" datavalue = "all">全部</a>
 												<input type="hidden" name="activeCity" id="activeCity" value="<?php echo ($listModel["city"]); ?>">	
 											</span>
-											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue(strtolower($value['pinyin']),$listModel['city'],'active');?>">
-														<a href="<?php echo getMatchUrl(3,$listModel,strtolower($value['pinyin']));?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
+											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['city'],'active');?>">
+														<a href="<?php echo getMatchUrl(3,$listModel,$value['pinyin']);?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 														<!--<a href="<?php echo U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])));?>"><?php echo ($value['shortname']); ?></a>-->
 													</span><?php endforeach; endif; ?>
 										</div><?php endif; ?>
@@ -154,7 +154,7 @@
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,'all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_149034184__=1;$__FOR_END_149034184__=13;for($i=$__FOR_START_149034184__;$i < $__FOR_END_149034184__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<?php $__FOR_START_1860376369__=1;$__FOR_END_1860376369__=13;for($i=$__FOR_START_1860376369__;$i < $__FOR_END_1860376369__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>

@@ -29,15 +29,19 @@ class BswController extends Controller {
         
         //页面城市选择处理
         $locationModel = M("bsw_location");
-        $locationField = array('id','parentid','name','mergername','shortname','mergershortname','leveltype','citycode','zipcode','lower(pinyin) as pinyin','jianpin','firstchar','lng','lat','remarks');
-        $provinceList = $locationModel ->where("parentid = 100000") ->select();
+        $locationField = array('id','parentid','name','mergername','shortname','mergershortname','leveltype','citycode','zipcode','replace(lower(pinyin)," ","") as pinyin','jianpin','firstchar','lng','lat','remarks');
+        $provinceList = $locationModel ->field($locationField) ->where("parentid = 100000") ->select();
         $this -> provinceList =  $provinceList;
         
         
         //赛事项目event
         $eventModel = M("bsw_event");
-        $eventList = $eventModel ->select();
-        $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
+        $eventList = $eventModel  ->order('e_sort asc') ->select();
+        $eventid = 0;
+        if (trim($event) != "") {
+            $eventid = $eventModel -> where(array("e_pyname" => $event)) ->select()[0]['id'];
+        }
+        
         
         // $eventid = array_filter($eventList, function($e) use ($event) { return $e['e_name'] == "排球"; })[0][id];
         $whereSQL = " 1 = 1";
@@ -58,6 +62,7 @@ class BswController extends Controller {
             
             
             $cityList =  $locationModel -> field($locationField) ->where("parentid = '" . $cityParentId ."'") ->select();//获得当前省份的城市列表
+            // pp($cityList);die;
             if (!empty($cityList)) {
                 $listModel['showCityFlag'] = "0" ;//如果城市列表 不为空就要打开 more 样式
                 $this ->cityList = $cityList;                                

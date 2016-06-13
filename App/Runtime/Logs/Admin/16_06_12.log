@@ -1,0 +1,9 @@
+[ 2016-06-12T11:17:03+08:00 ] 127.0.0.1 /Admin/System/Index
+ERR: 模板不存在:./App/Admin/View/System/Index.html
+
+[ 2016-06-12T11:21:12+08:00 ] 127.0.0.1 /Admin/WishManage/Index
+ERR: 模板不存在:./App/Admin/View/WishManage/Index.html
+
+[ 2016-06-12T11:37:49+08:00 ] 127.0.0.1 /Admin/Bsw/handleAlterEvent
+ERR: Think\Controller:E方法不存在！
+
