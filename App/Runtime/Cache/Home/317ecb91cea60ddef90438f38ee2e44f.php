@@ -62,7 +62,7 @@
 				<h1><?php echo ($gameModel['g_name']); ?></h1>
 			</div>
 			<div class="col-md-5">
-				<img class="vGameImage" src="<?php echo ($gameModel['g_image']); ?>" alt="<?php echo ($gameModel['g_name']); ?>">
+				<img class="<vGameImage></vGameImage>" src="<?php echo ($gameModel['g_image']); ?>?imageView2/1/w/445/h/242" alt="<?php echo ($gameModel['g_name']); ?>">
 
 			</div>
 			<div class="col-md-7">
@@ -71,12 +71,6 @@
 					<p>主办方： <span><?php echo ($gameModel['g_sponsor']); ?></span></p>
 				</div>
 				<div id="starDiv"></div>
-				<!--<div class="race-info">
-					<p>
-						<?php echo ($gameModel['g_introduction']); ?>
-					</p>
-				</div>-->
-
 				<div class="race-menbers">
 					<p>
 						<span>
@@ -107,7 +101,7 @@
 							</dl>
 							<dl>
 								<dt>报名费用：</dt>
-								<dd><?php echo ($gameModel['g_fee'] > 0 ? $gameModel['g_fee'] + "/人":"免费"); ?></dd>
+								<dd><?php echo ($gameModel['g_fee']); ?></dd>
 							</dl>
 							<dl>
 								<dt>起点：</dt>
@@ -115,11 +109,11 @@
 							</dl>
 							<dl>
 								<dt>报名资格：</dt>
-								<dd><?php echo ($gameModel['g_age'] > 0 ? $gameModel['g_age'] + "周岁以上":"不限"); ?>;</dd>
+								<dd><?php echo ($gameModel['g_age']); ?></dd>
 							</dl>
 							<dl>
-								<dt>人数限额：</dt>
-								<dd><?php echo ($gameModel['g_amount'] > 0 ? $gameModel['g_amount']+"人":"不限"); ?></dd>
+								<dt>人数限额：</dt> 
+								<dd><?php echo ($gameModel['g_amount']); ?></dd>
 							</dl>
 						</div>
 					</div>
@@ -137,7 +131,7 @@
 				<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="side-list clearfix">
 						<div class="item col-xs-12">
 							<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
-								<img alt="<?php echo ($game['g_name']); ?>" class="rightImage" src="<?php echo ($game['g_image']); ?>">
+								<img alt="<?php echo ($game['g_name']); ?>" class="rightImage center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/100/h/100">
 							</a>
 							<div class="meta">
 								<div class="text img-rt-title">

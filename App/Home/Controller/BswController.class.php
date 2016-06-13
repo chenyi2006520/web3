@@ -179,7 +179,11 @@ class BswController extends Controller {
         $g_id = I("id");
         $game =  M("bsw_game");
         $gameModel = $game ->find($g_id);
-            if (!empty($gameModel)) {
+        if (!empty($gameModel)) {
+            $gameModel['g_fee'] = $gameModel['g_fee'] > 0 ? $gameModel['g_fee'] . "/人":"免费";
+            $gameModel['g_age'] = $gameModel['g_age'] > 0 ? $gameModel['g_age'] . "周岁以上":"不限";
+            $gameModel['g_amount'] = $gameModel['g_amount'] > 0 ? $gameModel['g_amount'] . "人":"不限";
+            // pp($gameModel);die;
             $this -> gameModel = $gameModel;            
         }else
         {

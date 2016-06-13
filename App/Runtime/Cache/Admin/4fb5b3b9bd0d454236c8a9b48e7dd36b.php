@@ -295,7 +295,10 @@
             </tr>
 
             <tr>
-                <td align="right">宣传主图：</td>
+                <td align="right">
+                     宣传主图：<br/>
+                    (800x385)
+                    </td>
                 <td>
                     <input type="hidden" name="g_image" id="g_image"  value="<?php echo ($gameModel["g_image"]); ?>">
                     <img src="<?php echo ($gameModel["g_image"]); ?>" style="width:200px;height:200px;">

@@ -70,11 +70,11 @@
 												<li data-target="#carousel" data-slide-to="<?php echo ($key); ?>" class=""></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 									</ol>
 									<div class="carousel-inner" role="listbox">
-										<?php if(is_array($newGames)): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$game): $mod = ($i % 2 );++$i; if($key == 0): ?><div class="item active">
+										<?php if(is_array($newGames)): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$game): $mod = ($i % 2 );++$i; if($key == 0): ?><div class="item slideIndex active">
 											<?php else: ?>
-												<div class="item"><?php endif; ?>
+												<div class="item slideIndex"><?php endif; ?>
 												<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
-													<img alt="<?php echo ($game['g_name']); ?>" class="img-rounded" src="<?php echo ($game['g_image']); ?>">
+													<img alt="<?php echo ($game['g_name']); ?>" class="img-rounded img-responsive center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/800/h/385">
 													<div class="carousel-caption">
 
 													</div>
@@ -90,36 +90,7 @@
 										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 										<span class="sr-only"></span>
 									</a>
-								</div>
-								<!--<div class="carousel slide" id="carousel" data-ride="carousel">
-									<ol class="carousel-indicators">
-										<li data-slide-to="0" data-target="#carousel">
-										</li>
-										<li data-slide-to="1" data-target="#carousel">
-										</li>
-										<li data-slide-to="2" data-target="#carousel" class="active">
-										</li>
-									</ol>
-									<div class="carousel-inner">
-										<?php if(is_array($newGames)): foreach($newGames as $key=>$game): ?><div class="item">
-												<img src="<?php echo ($game['g_image']); ?>" class="carousel-inner img-responsive img-rounded" />
-												<div class="carousel-caption">
-													<h4>
-													<?php echo ($game['g_name']); ?>
-												</h4>
-													<p>
-														<?php echo ($game['g_introduction']); ?>
-													</p>
-												</div>
-											</div><?php endforeach; endif; ?>
-									</div>
-									<a class="left carousel-control" href="#carousel" data-slide="prev">
-										<span class="glyphicon glyphicon-chevron-left"></span>
-									</a>
-									<a class="right carousel-control" href="#carousel" data-slide="next">
-										<span class="glyphicon glyphicon-chevron-right"></span>
-									</a>
-								</div>-->
+								</div>	
 							</div>
 						</div>
 						<div class="row clearfix">
@@ -152,7 +123,7 @@
 					<div class="side-list clearfix">
 						<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="item col-xs-12">
 								<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
-									<img alt="<?php echo ($game['g_name']); ?>" class="rightImage" src="<?php echo ($game['g_image']); ?>">
+									<img alt="<?php echo ($game['g_name']); ?>" class="rightImage center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/100/h/100">
 								</a>
 								<div class="meta">
 									<div class="text img-rt-title">
