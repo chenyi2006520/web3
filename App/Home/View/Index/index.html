@@ -26,15 +26,18 @@
 									<div class="carousel-inner" role="listbox">
 										<volist name="newGames" id="game">
 											<if condition="$key eq 0">
-												<div class="item slideIndex active">
+												<div class="item active">
 											<else/>
-												<div class="item slideIndex">
+												<div class="item ">
 											</if>
 												<a href="{:U('/match/'.$game['id'])}" target="_blank">
-													<img alt="{$game['g_name']}" class="img-rounded img-responsive center-block" src="{$game['g_image']}?imageView2/1/w/800/h/385">
-													<div class="carousel-caption">
-
-													</div>
+													<img alt="{$game['g_name']}" class="img-rounded img-responsive center-block slideIndex " src="{$game['g_image']}?imageView2/1/w/800/h/385">
+													<!--<div class="container">
+														<div class="carousel-caption">
+															<h1>Headling 3</h1>
+															<p> Description 3</p>
+														</div>
+													</div>-->
 												</a>
 											</div>
 										</volist>
@@ -55,7 +58,7 @@
 							<div class="mod mod-lg">
 								<div class="mod-hd">
 									<h2>推荐比赛</h2>
-									<a href="/match/" class="more pull-right">更多</a>
+									<a href="/matches/" class="more pull-right">更多</a>
 								</div>
 							</div>
 							<foreach name="gameList" item="game">

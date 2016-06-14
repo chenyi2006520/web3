@@ -72,52 +72,7 @@
 										<?php if(is_array($eventList)): foreach($eventList as $key=>$value): ?><span class="word <?php echo compareValue($value['e_pyname'],$listModel['event'],'active');?>">
 											<a href="<?php echo getMatchUrl(1,$listModel,$value['e_pyname']);?>" datatype="type"  datavalue = "<?php echo ($value['e_pyname']); ?>"><?php echo ($value['e_name']); ?></a>
 											</span><?php endforeach; endif; ?>
-										<!--<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
-											</span>-->
-										<!--<span style="float:right;">
-											<a href="javascript:void(0)" id="showOther">更多</a>
-											</span>-->
 									</div>
-									<!--<div id="otherEvent" style="padding-top: 0px;" class="filter clearfix hidden">
-										<span class="tit">&nbsp;</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%93%81%E4%BA%BA%E4%B8%89%E9%A1%B9">铁人三项</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%BE%92%E6%AD%A5">徒步</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%A9%AC%E6%8B%89%E6%9D%BE">马拉松</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E8%B6%8A%E9%87%8E%E8%B7%91">越野跑</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%85%B6%E4%BB%96">测试</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%93%81%E4%BA%BA%E4%B8%89%E9%A1%B9">铁人三项</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%BE%92%E6%AD%A5">徒步</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%81%A5%E5%BA%B7%E8%B7%91">健康跑</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E9%A9%AC%E6%8B%89%E6%9D%BE">马拉松</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E8%B6%8A%E9%87%8E%E8%B7%91">越野跑</a>
-											</span>
-										<span class="word ">
-											<a href="/Home/Bsw/Index/?page=1&amp;type=%E5%85%B6%E4%BB%96">测试</a>
-											</span>
-									</div>-->
 									<div class="filter js-less less-item clearfix"><span class="tit">省份:</span>
 										<span class="word <?php echo compareValue('all',$listModel['province'],'active');?>">
 											<a href="<?php echo getMatchUrl(2,$listModel,'all');?>" datatype="province" datavalue = "all">全部</a>
@@ -127,7 +82,6 @@
 												<a href="<?php echo getMatchUrl(2,$listModel,$value['pinyin']);?>"  datatype="province"  datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
 											</span><?php endforeach; endif; ?>
 									</div>
-									<!--{overrideCompareValue(1,$listModel['showCityFlag'],'1','hidden')}-->
 									<?php if($listModel['showCityFlag'] == 0): ?><div class="filter js-less less-item clearfix " id="citydiv"><span class="tit">市级:</span>
 											<span class="word <?php echo compareValue('all',$listModel['city'],'active');?>">
 												<a href="<?php echo getMatchUrl(3,$listModel,'all');?>"  datatype="city" datavalue = "all">全部</a>
@@ -135,11 +89,8 @@
 											</span>
 											<?php if(is_array($cityList)): foreach($cityList as $key=>$value): ?><span class="word <?php echo compareValue($value['pinyin'],$listModel['city'],'active');?>">
 														<a href="<?php echo getMatchUrl(3,$listModel,$value['pinyin']);?>"   datatype="city" datavalue = "<?php echo ($value['pinyin']); ?>"><?php echo ($value['shortname']); ?></a>
-														<!--<a href="<?php echo U('/Home/Bsw/Index/',array('page' => '1','province' =>urlencode($listModel['province']),'city' =>urlencode($value['shortname'])));?>"><?php echo ($value['shortname']); ?></a>-->
 													</span><?php endforeach; endif; ?>
 										</div><?php endif; ?>
-
-
 									<div class="filter js-less less-item clearfix" style="border:0"><span class="tit">时间:</span>
 										<span class="word <?php echo compareValue('all',$listModel['year'],'active');?>">
 											<a href="<?php echo getMatchUrl(4,$litModel,'all');?>"   datatype="year" datavalue = "all" >全部</a>
@@ -154,7 +105,7 @@
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,'all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_1860376369__=1;$__FOR_END_1860376369__=13;for($i=$__FOR_START_1860376369__;$i < $__FOR_END_1860376369__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<?php $__FOR_START_925717271__=1;$__FOR_END_925717271__=13;for($i=$__FOR_START_925717271__;$i < $__FOR_END_925717271__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
@@ -184,16 +135,6 @@
 										<span class="itemtime"><?php echo (date('Y-m-d',$game['g_time_s'])); ?></span>
 										<span class="itemtime"><?php echo (date('Y-m-d',$game['g_time_e'])); ?></span>
 									</div>
-									<!--<div class="col-md-2 hidden-xs">
-										<ul class="del-cnt">
-											<li>
-												<a href="/races/3391/albums" target="_blank">
-													<span><em>408</em>张照片</span>
-												</a>
-											</li>
-
-										</ul>
-									</div>-->
 									<div class="col-md-3">
 										<div class=""><?php echo handleGameStatus($game['g_time_s'],$game['g_time_e']);?></div>
 									</div>
@@ -219,7 +160,7 @@
 				<div class="side-list clearfix">
 					<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="item col-xs-12">
 						<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
-							<img alt="<?php echo ($game['g_name']); ?>"  class="rightImage" src="<?php echo ($game['g_image']); ?>">
+							<img alt="<?php echo ($game['g_name']); ?>"  class="rightImage center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/100/h/100">
 						</a>
 						<div class="meta">
 							<div class="text img-rt-title">

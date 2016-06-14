@@ -1,10 +1,10 @@
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
+  padding-top: 75px;
 }
-body {
-  padding-top: 90px;
-}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+
 footer {
   padding: 30px 0;
 }
@@ -65,8 +65,8 @@ footer {
 .mod.mod-lg{padding:0 5px;}
 .mod-hd h2{display:inline-block;margin:0 0 -2px 0;padding:0;border-bottom:2px solid #ff6920;color:#333;font-size:16px;line-height:36px;}
 .mod-hd .more{margin-top:10px;}
-.logo_v1{margin-left:5px;padding:10px;}
-.logo_v1 a{position:relative;display:block;margin:0;width:155px;height:52px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-image:url(../images/Watermark.png);background-image:-webkit-image-set(url(../images/Watermark.png) 2x);background-repeat:no-repeat;}
+.logo_v1{margin-left:5px;padding:auto;}
+.logo_v1 a{position:relative;display:block;margin:0;width:155px;height:52px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-image:url(../images/Watermark.png);background-image:-webkit-image-set(url(../images/Watermark.png));background-repeat:no-repeat;}
 .logo_v1 a i{display:none;color:#fff;font-size:48px;}
 
 .raceitems{padding:0 0 10px 0;}
@@ -139,7 +139,9 @@ footer {
   height: 250px;
 }
 
-.slideIndex{
-  width: 800px;
+.slideIndex
+{
   height: 385px;
+}
+@media (max-width:768px){.slideIndex{height: auto;}
 }

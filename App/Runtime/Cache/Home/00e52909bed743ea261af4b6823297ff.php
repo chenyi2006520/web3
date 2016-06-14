@@ -70,14 +70,17 @@
 												<li data-target="#carousel" data-slide-to="<?php echo ($key); ?>" class=""></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 									</ol>
 									<div class="carousel-inner" role="listbox">
-										<?php if(is_array($newGames)): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$game): $mod = ($i % 2 );++$i; if($key == 0): ?><div class="item slideIndex active">
+										<?php if(is_array($newGames)): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$game): $mod = ($i % 2 );++$i; if($key == 0): ?><div class="item active">
 											<?php else: ?>
-												<div class="item slideIndex"><?php endif; ?>
+												<div class="item "><?php endif; ?>
 												<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
-													<img alt="<?php echo ($game['g_name']); ?>" class="img-rounded img-responsive center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/800/h/385">
-													<div class="carousel-caption">
-
-													</div>
+													<img alt="<?php echo ($game['g_name']); ?>" class="img-rounded img-responsive center-block slideIndex " src="<?php echo ($game['g_image']); ?>?imageView2/1/w/800/h/385">
+													<!--<div class="container">
+														<div class="carousel-caption">
+															<h1>Headling 3</h1>
+															<p> Description 3</p>
+														</div>
+													</div>-->
 												</a>
 											</div><?php endforeach; endif; else: echo "" ;endif; ?>
 									</div>
@@ -97,7 +100,7 @@
 							<div class="mod mod-lg">
 								<div class="mod-hd">
 									<h2>推荐比赛</h2>
-									<a href="/match/" class="more pull-right">更多</a>
+									<a href="/matches/" class="more pull-right">更多</a>
 								</div>
 							</div>
 							<?php if(is_array($gameList)): foreach($gameList as $key=>$game): ?><div class="col-xs-12 ">
