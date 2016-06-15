@@ -1,0 +1,6 @@
+[ 2016-06-15T14:06:43+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[HY000] [1049] Unknown database 'mydbforcy'
+
+[ 2016-06-15T14:08:09+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[HY000] [1049] Unknown database 'mydbforcy'
+
