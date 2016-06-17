@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/Public/favicon.ico" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
-    <link href="/Public/Static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="/Public/Admin/css/font-awesome.min.css" rel="stylesheet">
@@ -18,10 +18,10 @@
     <!-- Simplify -->
     <link href="/Public/Admin/css/simplify.min.css" rel="stylesheet">
     <!-- Jquery -->
-    <script src="/Public/Static/js/jquery-2.2.0.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="/Public/Static/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     
     

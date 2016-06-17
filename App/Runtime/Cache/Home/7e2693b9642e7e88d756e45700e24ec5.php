@@ -105,7 +105,7 @@
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,'all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_1077322235__=1;$__FOR_END_1077322235__=13;for($i=$__FOR_START_1077322235__;$i < $__FOR_END_1077322235__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<?php $__FOR_START_768014062__=1;$__FOR_END_768014062__=13;for($i=$__FOR_START_768014062__;$i < $__FOR_END_768014062__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
@@ -122,7 +122,7 @@
 						<?php if($listModel['NoGameData'] != 1): if(is_array($gameList)): foreach($gameList as $key=>$game): ?><div class="race-itemlist clearfix">
 									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-10">
 										<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
-											<img alt="<?php echo ($game['g_name']); ?>" src="<?php echo ($game['g_image']); ?>">
+											<img alt="<?php echo ($game['g_name']); ?>" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/60/h/60">
 										</a>
 										<div class="itemname">
 											<strong><a href="<?php echo U('/match/'.$game['id']);?>" class="" target="_blank"><?php echo ($game['g_name']); ?></a></strong>
@@ -159,7 +159,7 @@
 				<div class="side-list clearfix">
 					<?php if(is_array($gameRanList)): foreach($gameRanList as $key=>$game): ?><div class="item col-xs-12">
 						<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank" title="<?php echo ($game['g_name']); ?>">
-							<img alt="<?php echo ($game['g_name']); ?>?imageView2/1/w/60/h/60"  class="rightImage center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/100/h/100">
+							<img alt="<?php echo ($game['g_name']); ?>"  class="rightImage center-block" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/100/h/100">
 						</a>
 						<div class="meta">
 							<div class="text img-rt-title">
