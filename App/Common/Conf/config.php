@@ -37,7 +37,7 @@ return array(
 	'URL_MODEL' => 2,//URL路径模型0、普通模式1、PATCH模式2、REWITE模式、3兼容模式
 	'TMPL_VAR_IDENTIFY' => 'array',//模板只处理数组，提高编译效率
     'SESSION_TYPE' => 'Db',//自定义session数据库存储
-    'SHOW_PAGE_TRACE' =>true, //显示页面读取数据库信息
+    // 'SHOW_PAGE_TRACE' =>true, //显示页面读取数据库信息
 	
 	'APP_SUB_DOMAIN_DEPLOY'   =>    0, // 开启子域名配置
     'APP_SUB_DOMAIN_RULES'    =>    array(

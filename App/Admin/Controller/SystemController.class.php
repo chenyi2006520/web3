@@ -86,6 +86,7 @@ class SystemController extends CommonController {
     {
         if ($id > 0) {
             $treeModel = M('treelist') ->find($id);
+            // pp($treeModel);die;
             $this -> treeModel = $treeModel;
             
             $t_pid = $treeModel['t_pid'];
@@ -95,6 +96,7 @@ class SystemController extends CommonController {
                 $this ->hiddleValue = "hidden";
             }
         }
+        
         $this -> display('alterTree');
     }
     

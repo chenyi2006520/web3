@@ -1,6 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +10,17 @@
     
         <!--html页面head区域定义-->
     <title>比赛网-民间比赛第一门户</title>
-    <meta name="keywords" content="比赛网,比赛,体育比赛,足球比赛,篮球比赛,羽毛球比赛,民间比赛" />
+    <meta name="keywords" content="比赛网,比赛,体育比赛,足球比赛,篮球比赛,羽毛球比赛,民间比赛,马拉松" />
     <meta name="description" content="民间比赛第一门户" />
     <meta name="copyright" content="合肥宽土猫科技有限公司" />
     
-    <link rel="stylesheet" href="/Public/Static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--单页自定义样式引入-->
     
 	<link rel="stylesheet" href="/Public/Home/default/css/bisai.css">
 
-    <script src="/Public/Static/js/jquery-2.2.0.min.js"></script>
-    <script src="/Public/Static/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -47,7 +46,7 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
-					<li><a href="/matches">赛事</a></li>
+					<li><a href="/matches" title="赛事">赛事</a></li>
 				</ul>
 			</div>
 		</div>
@@ -61,8 +60,8 @@
 			<div class="col-md-12">
 				<h1><?php echo ($gameModel['g_name']); ?></h1>
 			</div>
-			<div class="col-md-5">
-				<img class="<vGameImage></vGameImage>" src="<?php echo ($gameModel['g_image']); ?>?imageView2/1/w/445/h/242" alt="<?php echo ($gameModel['g_name']); ?>">
+			<div class="col-md-5 ">
+				<img class="carousel-inner img-responsive img-rounded  center-block" src="<?php echo ($gameModel['g_image']); ?>?imageView2/1/w/445/h/242" alt="<?php echo ($gameModel['g_name']); ?>">
 
 			</div>
 			<div class="col-md-7">
@@ -174,7 +173,10 @@
 				<div class="col-md-4">
 					<div class="copyright-txt">
 						<div class="logo-gray"><a href="/">比赛网</a></div>
-						<p>© Copyright 比赛网 2015-<?php echo date("Y");?>. All rights reserved. (皖ICP备15008148号-4)</p>
+						<p>© Copyright 比赛网 2015-<?php echo date("Y");?>. All rights reserved.
+							<br>
+							 (皖ICP备15008148号-4)
+						</p>
 					</div>
 				</div>
 				<div class="col-md-2">

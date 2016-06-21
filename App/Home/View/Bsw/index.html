@@ -87,11 +87,11 @@
 							<foreach name="gameList" item="game">
 								<div class="race-itemlist clearfix">
 									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-10">
-										<a href="{:U('/match/'.$game['id'])}" target="_blank">
+										<a href="{:U('/match/'.$game['id'])}" title="{$game['g_name']}" target="_blank">
 											<img alt="{$game['g_name']}" src="{$game['g_image']}?imageView2/1/w/60/h/60">
 										</a>
 										<div class="itemname">
-											<strong><a href="{:U('/match/'.$game['id'])}" class="" target="_blank">{$game['g_name']}</a></strong>
+											<strong><a href="{:U('/match/'.$game['id'])}" title="{$game['g_name']}" class="" target="_blank">{$game['g_name']}</a></strong>
 										</div>
 										<div class="attr">
 											{:getLocation($game['g_location'],1,1,0)}
@@ -109,7 +109,7 @@
 							<else/>
 							<div class="race-itemlist clearfix">
 								<div class="col-md-10">
-									没有内容 不好意思
+									这个姿势好像不对，要不换个姿势再试试？
 								</div>
 							</div>
 						</if>

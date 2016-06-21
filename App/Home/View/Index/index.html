@@ -63,11 +63,11 @@
 							</div>
 							<foreach name="gameList" item="game">
 								<div class="col-xs-12 ">
-									<h2>{$game['g_name']}</h2>
+									<a href="{:U('/match/'.$game['id'])}" title="{$game['g_name']}"><h2>{$game['g_name']}</h2></a>
 									<p>
 										{$game['g_introduction']}
 									</p>
-									<p><a class="btn btn-default" href="{:U('/match/'.$game['id'])}" role="button">详情 »</a></p>
+									<p><a title="{$game['g_name']}" href="{:U('/match/'.$game['id'])}"  >详情 »</a></p>
 								</div>
 							</foreach>
 						</div>

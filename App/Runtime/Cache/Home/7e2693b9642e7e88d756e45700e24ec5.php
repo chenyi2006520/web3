@@ -1,6 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +10,17 @@
     
         <!--html页面head区域定义-->
     <title>比赛网-民间比赛第一门户</title>
-    <meta name="keywords" content="比赛网,比赛,体育比赛,足球比赛,篮球比赛,羽毛球比赛,民间比赛" />
+    <meta name="keywords" content="比赛网,比赛,体育比赛,足球比赛,篮球比赛,羽毛球比赛,民间比赛,马拉松" />
     <meta name="description" content="民间比赛第一门户" />
     <meta name="copyright" content="合肥宽土猫科技有限公司" />
     
-    <link rel="stylesheet" href="/Public/Static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--单页自定义样式引入-->
     
 	<link rel="stylesheet" href="/Public/Home/default/css/bisai.css">
 
-    <script src="/Public/Static/js/jquery-2.2.0.min.js"></script>
-    <script src="/Public/Static/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -47,7 +46,7 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/">首页</a></li>
-					<li><a href="/matches">赛事</a></li>
+					<li><a href="/matches" title="赛事">赛事</a></li>
 				</ul>
 			</div>
 		</div>
@@ -105,7 +104,7 @@
 											<span class="word <?php echo compareValue('all',$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,'all');?>"   datatype="month" datavalue = "all" >全部</a>
 										</span>
-											<?php $__FOR_START_768014062__=1;$__FOR_END_768014062__=13;for($i=$__FOR_START_768014062__;$i < $__FOR_END_768014062__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
+											<?php $__FOR_START_331527587__=1;$__FOR_END_331527587__=13;for($i=$__FOR_START_331527587__;$i < $__FOR_END_331527587__;$i+=1){ ?><span class="word <?php echo compareValue($i,$listModel['month'],'active');?>">
 											<a href="<?php echo getMatchUrl(5,$listModel,$i);?>"   datatype="month" datavalue = "<?php echo ($i); ?>" ><?php echo ($i); ?>月</a>
 											</span><?php } ?>
 										</div><?php endif; ?>
@@ -121,11 +120,11 @@
 					<div class="raceitems">
 						<?php if($listModel['NoGameData'] != 1): if(is_array($gameList)): foreach($gameList as $key=>$game): ?><div class="race-itemlist clearfix">
 									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-10">
-										<a href="<?php echo U('/match/'.$game['id']);?>" target="_blank">
+										<a href="<?php echo U('/match/'.$game['id']);?>" title="<?php echo ($game['g_name']); ?>" target="_blank">
 											<img alt="<?php echo ($game['g_name']); ?>" src="<?php echo ($game['g_image']); ?>?imageView2/1/w/60/h/60">
 										</a>
 										<div class="itemname">
-											<strong><a href="<?php echo U('/match/'.$game['id']);?>" class="" target="_blank"><?php echo ($game['g_name']); ?></a></strong>
+											<strong><a href="<?php echo U('/match/'.$game['id']);?>" title="<?php echo ($game['g_name']); ?>" class="" target="_blank"><?php echo ($game['g_name']); ?></a></strong>
 										</div>
 										<div class="attr">
 											<?php echo getLocation($game['g_location'],1,1,0);?>
@@ -142,7 +141,7 @@
 							<?php else: ?>
 							<div class="race-itemlist clearfix">
 								<div class="col-md-10">
-									没有内容 不好意思
+									这个姿势好像不对，要不换个姿势再试试？
 								</div>
 							</div><?php endif; ?>
 					</div>
@@ -208,7 +207,10 @@
 				<div class="col-md-4">
 					<div class="copyright-txt">
 						<div class="logo-gray"><a href="/">比赛网</a></div>
-						<p>© Copyright 比赛网 2015-<?php echo date("Y");?>. All rights reserved. (皖ICP备15008148号-4)</p>
+						<p>© Copyright 比赛网 2015-<?php echo date("Y");?>. All rights reserved.
+							<br>
+							 (皖ICP备15008148号-4)
+						</p>
 					</div>
 				</div>
 				<div class="col-md-2">

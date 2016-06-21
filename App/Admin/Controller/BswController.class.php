@@ -24,7 +24,7 @@ class BswController extends CommonController {
     //添加赛事
     public function AddGame() {
         //获取所有项目项目
-        $eventData = M("bsw_event")->select();
+        $eventData = M("bsw_event")   ->order('e_sort asc') ->select();
         $this->eventList = $eventData;
 
         //location 默认数据读取出来，指定北京的数据
@@ -183,7 +183,7 @@ class BswController extends CommonController {
             $this->townList = $townList;
             
             $this->gameModel = $gameModel;
-            $this ->eventList = M("bsw_event") ->select();
+            $this ->eventList = M("bsw_event")   ->order('e_sort asc')  ->select();
         }
         $this->display("alterGame");
     }
@@ -208,7 +208,7 @@ class BswController extends CommonController {
         $g_fee = I("g_fee");
         $g_amount = I("g_amount");
         $g_sponsor = I("g_sponsor");
-        
+        $g_post = I("g_post");
         
         $g_image = I("g_image");
         $g_image_file = I("g_image_file");
@@ -231,6 +231,12 @@ class BswController extends CommonController {
             $imageUrl = Qiniu_Upload($g_image_file,1,"g_image_file");
         }
         
+        //没有提交百度
+        if ($g_post == 0) {
+            $postUrl = get_postUrl("g_game",$g_id);
+            $spiderMsg = "";
+        }
+        die;
         $locationStr = I("g_location_str");
         $gameData = array("id"=> $g_id,'g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor"=>$g_sponsor);
         // pp($gameData);die;

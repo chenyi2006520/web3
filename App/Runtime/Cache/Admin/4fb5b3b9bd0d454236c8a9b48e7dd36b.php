@@ -223,6 +223,7 @@
                     <td>
                         <input type="text" name="g_name" id="g_name" value="<?php echo ($gameModel["g_name"]); ?>" />
                         <input type="hidden" name="g_id" id="g_id" value="<?php echo ($gameModel["id"]); ?>">
+                        <input type="hidden" name="g_post" id = "g_post" value="<?php echo ($gameModel["g_post"]); ?>">
                     </td>
                 </tr>
                 <tr>

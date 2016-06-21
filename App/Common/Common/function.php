@@ -6,6 +6,61 @@ function pp($array) {
 	
 }
 
+
+//构建推送百度的链接，与前台一致，type与数据库表对应，idvalue与当前数据的id对应
+function get_postUrl($type,$idvalue)
+{
+	$urlHost = "http://www.bisai.cn/";
+	$tempUrl = "";
+	switch ($type) {
+		case 'g_game':
+			$tempUrl = "match/" . $idvalue;
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+}
+
+//百度推送函数，
+// 成功返回示例：
+// {
+//     "remain":4999998,
+//     "success":2,
+//     "not_same_site":[],
+//     "not_valid":[]
+// }
+// 失败返回示例：
+// {
+//     "error":401,
+//     "message":"token is not valid"
+// }
+function postBaiduSpider($urls)
+{
+	// $urls = array(
+	// 	'http://www.example.com/1.html',
+	// 	'http://www.example.com/2.html',
+	// );
+	$result = null;
+	
+	if (!empty($urls)) {
+		$api = 'http://data.zz.baidu.com/urls?site=www.bisai.cn&token=n3OAbzJ4VyP8qAtk';
+		$ch = curl_init();
+		$options =  array(
+			CURLOPT_URL => $api,
+			CURLOPT_POST => true,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_POSTFIELDS => implode("\n", $urls),
+			CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
+		);
+		curl_setopt_array($ch, $options);
+		$result = curl_exec($ch);
+	}
+	
+	return $result;
+}
+
 //获得赛事列表页面检索的url,type省份或者赛事url的类别，listModel检索页面的listModel,thisValue当前url所在的值
 function getMatchUrl($type,$listModel,$thisValue)
 {
