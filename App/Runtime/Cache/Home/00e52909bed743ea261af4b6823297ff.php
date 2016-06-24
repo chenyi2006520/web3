@@ -39,7 +39,6 @@
           </button>
 				<div class="logo_v1">
 					<a href="/" title="比赛网，民间比赛第一门">
-						<i>运动不止于梦想</i>
 					</a>
 				</div>
 			</div>
@@ -117,7 +116,7 @@
 			<div class="row clearfix ">
 				<div class="col-md-3">
 					<div class="col-xs-12 rightHeader">
-						<img class="carousel-inner img-responsive img-rounded" src="/Public/Static/images/Watermark.png" />
+						<img class="carousel-inner img-responsive img-rounded" src="/Public/Static/images/logo.png" />
 					</div>
 
 				</div>

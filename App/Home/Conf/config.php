@@ -32,7 +32,6 @@ return array(
         // 'matches/:year\d$' => 'Bsw/index?year=:1&type=all',//年份        
         // 'matches/:year\d$' => 'Bsw/index?year=:1&type=all',//年份        
         // 'matches/:type$' => 'Bsw/index?type=:1&=province=all',//类型,省份都是使用此   url，暂未找到单个参数匹配区分的正则，然后在读取页面通过先处理event如果有就确定为搜索event，如果没有就是判断为搜索省份
-        
        'matches/:search$' => 'Bsw/index?search=:1&type=all',
        'match/:id\d$'  => 'Home/Bsw/viewGame?id=:1',//赛事浏览，采用复数是为了减少与game/year/重复的几率
     ),

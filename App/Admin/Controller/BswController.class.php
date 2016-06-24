@@ -25,7 +25,7 @@ class BswController extends CommonController {
     public function AddGame() {
         //获取所有项目项目
         $eventData = M("bsw_event")   ->order('e_sort asc') ->select();
-        $this->eventList = $eventData;
+        $this->eventList = $eventData;  
 
         //location 默认数据读取出来，指定北京的数据
         $locationList = M("bsw_location")->where(" parentid in (110000,110100,100000) ")->select();
@@ -114,20 +114,38 @@ class BswController extends CommonController {
         $g_fee = I("g_fee");
         $g_amount = I("g_amount");
         $g_sponsor = I("g_sponsor");
-        
-        //$g_image = I("g_image");
+        $last_id = I("last_id");
         $g_image_file = I("g_image_file");
-        // pp($_FILES);        
-        // pp($g_image_file);die;
+        
+         
 
         //表单提交的文件数组，returnFlag=1返回上传成功以后url，0返回整个info,fileTagName表单中file标签的名称
         $imageUrl = Qiniu_Upload($g_image_file,1,"g_image_file");
         
-        $gameData = array('g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor" => $g_sponsor);
-        // pp($gameData);
-        // die;
-        if (M("bsw_game")->add($gameData)) {
-            $this->success("添加成功", U("/Admin/Bsw/Index/"));
+        $gameData = array('g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor" => $g_sponsor,"g_post" => 0);
+        
+        $gameModel = M("bsw_game");
+        $g_id = $gameModel  ->add($gameData);
+        
+        if ($g_id > 0) {
+            //提交百度
+            $g_post = null;
+            $temS = null;             
+            $postUrl = get_postUrl("g_game",$g_id);
+            $spiderMsg = postBaiduSpider($postUrl,1);
+            if ($spiderMsg == "1") {
+                //推送成功将g_post 更新
+                $g_post = $spiderMsg;
+                $gameData['id'] = $g_id; 
+                $gameData['g_post'] = $g_post;
+                $gameModel -> save($gameData); 
+                $temS = "并且推送百度成功";               
+            }
+            else
+            {
+                $temS = "但推送百度失败";
+            }
+            $this->success("添加成功," . $temS, U("/Admin/Bsw/Index/"));
         } else {
             E("添加失败");
         }
@@ -145,13 +163,12 @@ class BswController extends CommonController {
             if (trim($id1) != "" && trim($id2) != "") {
                 $parentStr = $id1 . ','  .$id2 . ","    ;          
             }
+            
             // $locationJson[0] ->{'id'} ."," . $locationJson[1] ->{'id'} .",";
             $gameModel['province'] = $locationJson[0] ->{'id'};
             $gameModel['city'] = $locationJson[1] ->{'id'};
             $gameModel['area'] = $locationJson[2] ->{'id'};
-            // pp(htmlspecialchars_decode($gameModel['g_location']));
-            // pp($gameModel['g_location']);
-            //  pp($gameModel);die;
+            
             //location数据
             if (trim($parentStr) != "") {
                 $locationList = M("bsw_location")->where(" parentid in (". $parentStr ." 100000) ")->select();                
@@ -234,11 +251,17 @@ class BswController extends CommonController {
         //没有提交百度
         if ($g_post == 0) {
             $postUrl = get_postUrl("g_game",$g_id);
-            $spiderMsg = "";
+            // pp($postUrl);   
+            $spiderMsg = postBaiduSpider($postUrl,1);
+            if ($spiderMsg == "1") {
+                $g_post = $spiderMsg;                
+            }
+            //{"remain":499,"success":1}
+            // pp($spiderMsg);
         }
-        die;
+        // die;
         $locationStr = I("g_location_str");
-        $gameData = array("id"=> $g_id,'g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor"=>$g_sponsor);
+        $gameData = array("id"=> $g_id,'g_name' => $g_name, 'g_event' => $g_event, 'g_location' => $locationStr, 'g_time_s' => strtotime($g_time_s), 'g_time_e' => strtotime($g_time_e), 'g_age' => $g_age, 'g_star' => $g_star, 'g_gps' => $g_gps, 'g_gender' => $g_gender, 'g_introduction' => $g_introduction,'g_image' => $imageUrl,"g_singup_s" => strtotime($g_singup_s),"g_singup_e" => strtotime($g_singup_e),"g_address" => $g_address,"g_fee" => $g_fee,"g_amount" => $g_amount,"g_sponsor"=>$g_sponsor,"g_post" => $g_post);
         // pp($gameData);die;
         
         if (M("bsw_game")->save($gameData)) {

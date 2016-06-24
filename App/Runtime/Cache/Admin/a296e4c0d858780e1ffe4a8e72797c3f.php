@@ -297,7 +297,10 @@
             </tr>
 
             <tr>
-                <td align="right">宣传主图：</td>
+                <td align="right">
+                    宣传主图：<br/>
+                    (800x385)
+                </td>
                 <td>
                     <!--<input type="text" name="g_image" id="g_image">-->
                     <input type="file" name="g_image_file" id="g_image_file">
@@ -623,11 +626,11 @@
         {
             if(i == (location.length -1) )
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"}';
             }
             else
             {
-                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'"},,"pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
+                g_location_str += '{"id":"'+ $(location[i]).val() +'","name":"'+ $(location[i]).find("option:selected").text().trim() +'","pinyin":"'+ $(location[i]).find("option:selected").attr("pydata").trim() +'"},';
             }
         }
         

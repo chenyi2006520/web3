@@ -10,17 +10,18 @@ function pp($array) {
 //构建推送百度的链接，与前台一致，type与数据库表对应，idvalue与当前数据的id对应
 function get_postUrl($type,$idvalue)
 {
-	$urlHost = "http://www.bisai.cn/";
-	$tempUrl = "";
+	$postHost = "http://www.bisai.cn";
+	$returnUrl = array();//返回的url
 	switch ($type) {
 		case 'g_game':
-			$tempUrl = "match/" . $idvalue;
+			$returnUrl[] = $postHost . "/match/" . $idvalue;
 			break;
-		
 		default:
 			# code...
 			break;
 	}
+	
+	return $returnUrl;
 }
 
 //百度推送函数，
@@ -36,26 +37,34 @@ function get_postUrl($type,$idvalue)
 //     "error":401,
 //     "message":"token is not valid"
 // }
-function postBaiduSpider($urls)
+//urlArray url数组，valueFlag返回值的标识0返回整个json数据，1只返回经过处理的success值
+function postBaiduSpider($urlArray,$valueFlag)
 {
 	// $urls = array(
 	// 	'http://www.example.com/1.html',
 	// 	'http://www.example.com/2.html',
 	// );
 	$result = null;
-	
-	if (!empty($urls)) {
+	$tempValue = null;
+	if (!empty($urlArray)) {
 		$api = 'http://data.zz.baidu.com/urls?site=www.bisai.cn&token=n3OAbzJ4VyP8qAtk';
 		$ch = curl_init();
 		$options =  array(
 			CURLOPT_URL => $api,
 			CURLOPT_POST => true,
 			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_POSTFIELDS => implode("\n", $urls),
+			CURLOPT_POSTFIELDS => implode("\n", $urlArray),
 			CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
 		);
 		curl_setopt_array($ch, $options);
-		$result = curl_exec($ch);
+		$tempValue =  curl_exec($ch);
+		// pp($tempValue);
+		if ($valueFlag == 0) {
+			$result = $tempValue;			
+		}elseif ($valueFlag == 1) {
+			$tempjson = json_decode($tempValue);
+			$result = $tempjson -> {'success'};
+		}
 	}
 	
 	return $result;

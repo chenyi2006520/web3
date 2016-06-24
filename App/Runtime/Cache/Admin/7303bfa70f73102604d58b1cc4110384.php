@@ -210,53 +210,29 @@
 
         <div class="main-container">
             <div class="padding-md">
-                
-    <ul class="breadcrumb">
-        <li><span class="primary-font"><i class="icon-home"></i></span><a href="<?php echo U('/Admin/Index/');?>"> Home</a></li>
-        <li>比赛网</li>
-        <li>赛事列表</li>
-    </ul>
-    <div class="row">
-        <a href="<?php echo U('/Admin/Bsw/addgame');?>" class="btn btn-success col-xs-offset-11">添加赛事</a>
-        <table class="table table-striped" id="dataTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>赛事名称</th>
-                    <th>赛事项目</th>
-                    <th>赛事地点</th>
-                    <th>具体地址</th>
-                    <th>时间</th>
-                    <th>百度</th>
-                    <th>简介</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if(is_array($dataList)): foreach($dataList as $key=>$val): ?><tr>
-                        <td><?php echo ($val["id"]); ?></td>
-                        <td><?php echo ($val["g_name"]); ?></td>
-                        <td><?php echo ($val["nee"]); ?></td>
-                        <td><?php echo ($val["g_location"]); ?></td>
-                        <td><?php echo ($val["g_address"]); ?></td>
-                        <td><?php echo (date( 'Y-m-d',$val["g_time_e"])); ?></td>
-                        <td><?php echo ($val['g_post'] == 0 ? "推送失败":"推送成功"); ?></td>
-                        <td><?php echo (substr($val["g_introduction"],0,100)); ?></td>
-                        <td>
-                            <a href="<?php echo U('/Admin/Bsw/addMatch/',array('g_id' => $val['id'],'g_name' => $val['g_name']));?>" class="btn btn-primary">添加比赛</a>
-                            <a href="<?php echo U('/Admin/Bsw/alterGame/',array('id' => $val['id']));?>" class="btn btn-primary">修改</a>
-                            <a href="#" class="btn btn-danger">删除</a>
-                        </td>
-                    </tr><?php endforeach; endif; ?>
-                <tr>
-                    <td colspan="7" align='center'>
-                        <div class="Pagination"> <?php echo ($show); ?> </div>
-                        <input type="hidden" id="acFlag" value="<?php echo ($acFlag); ?>">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                 
+        <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>内容</th>
+            <th>发布者</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+        <?php if(is_array($list)): foreach($list as $key=>$val): ?><tr>
+                <td><?php echo ($val["id"]); ?></td>
+                <td><?php echo (replace_phiz($val["content"])); ?></td>
+                <td><?php echo ($val["username"]); ?></td>
+                <td><?php echo (date('Y-m-d H:i',$val["time"])); ?></td>
+                <td><a href="<?php echo U('/Admin/WishManage/deleteFun',array('id'=>$val['id']));?>">删除</a></td>
+            </tr><?php endforeach; endif; ?>
+        <tr>
+            <td colspan="5" align='center'>
+                <div class="Pagination"><?php echo ($show); ?></div>
+                <input type="hidden" id="acFlag" value="<?php echo ($acFlag); ?>">
+            </td>
+        </tr>
+    </table> 
 
             </div>
         </div>

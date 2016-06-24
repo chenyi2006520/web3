@@ -24,6 +24,7 @@
                     <th>赛事地点</th>
                     <th>具体地址</th>
                     <th>时间</th>
+                    <th>百度</th>
                     <th>简介</th>
                     <th>操作</th>
                 </tr>
@@ -37,6 +38,7 @@
                         <td>{$val.g_location}</td>
                         <td>{$val.g_address}</td>
                         <td>{$val.g_time_e|date = 'Y-m-d',###}</td>
+                        <td>{$val['g_post'] == 0 ? "推送失败":"推送成功"}</td>
                         <td>{$val.g_introduction|substr=###,0,100}</td>
                         <td>
                             <a href="{:U('/Admin/Bsw/addMatch/',array('g_id' => $val['id'],'g_name' => $val['g_name']))}" class="btn btn-primary">添加比赛</a>

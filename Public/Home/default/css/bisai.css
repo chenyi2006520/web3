@@ -66,7 +66,7 @@ footer {
 .mod-hd h2{display:inline-block;margin:0 0 -2px 0;padding:0;border-bottom:2px solid #ff6920;color:#333;font-size:16px;line-height:36px;}
 .mod-hd .more{margin-top:10px;}
 .logo_v1{margin-left:5px;padding:auto;}
-.logo_v1 a{position:relative;display:block;margin:0;width:155px;height:52px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-image:url(../images/Watermark.png);background-image:-webkit-image-set(url(../images/Watermark.png));background-repeat:no-repeat;}
+.logo_v1 a{position:relative;display:block;margin:4px 0;width:155px;height:52px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-image:url(../images/logo.png);background-image:-webkit-image-set(url(../images/logo.png));background-repeat:no-repeat;}
 .logo_v1 a i{display:none;color:#fff;font-size:48px;}
 
 .raceitems{padding:0 0 10px 0;}
@@ -104,7 +104,9 @@ footer {
 
 .related_info{clear:both;}
 .mod{overflow:hidden;margin-bottom:12px!important;padding:0 10px;}
-@media (max-width:768px){.mod{padding:0;}
+@media (max-width:768px){
+  .mod{padding:0;}
+  .logo_v1 a{margin: 6px 0px;height: 38px;}
 }
 .group-info{padding:10px 0 0;}
 .group-info dl{float:left;margin:5px 0 10px;width:50%;}
