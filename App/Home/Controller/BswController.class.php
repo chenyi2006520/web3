@@ -143,10 +143,10 @@ class BswController extends Controller {
         }
         
         if (($type == "all" && $province == "all" && $city == "all" && $year == "all" && $month == "all") || empty($_GET)) {            
-            $gameList = $gameModel ->select();
+            $gameList = $gameModel ->order(" id desc ") ->select();
         }else
         {
-            $gameList = $gameModel ->where($whereSQL) ->select();            
+            $gameList = $gameModel ->where($whereSQL) ->order(" id desc ") ->select();            
         }
         
         // pp(getMatchUrl(1,$listModel,'all'));
